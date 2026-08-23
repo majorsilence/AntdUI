@@ -6,7 +6,8 @@
 
 using System;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -59,7 +60,7 @@ namespace AntdUI
 
         protected override bool ShowWithoutActivation => true;
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             if (form.Resizable)
             {
@@ -193,7 +194,7 @@ namespace AntdUI
             {
                 using (var path = rect_read.RoundPath(radius))
                 {
-                    using (var path2 = new System.Drawing.Drawing2D.GraphicsPath())
+                    using (var path2 = new Majorsilence.Forms.Drawing.Drawing2D.GraphicsPath())
                     {
                         path2.AddPath(path, false);
                         path2.AddRectangle(new Rectangle(0, 0, shadow_rect.Width, shadow_rect.Height));

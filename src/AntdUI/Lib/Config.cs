@@ -5,7 +5,7 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System.Collections.Generic;
-using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI
 {
@@ -210,7 +210,7 @@ namespace AntdUI
         /// <summary>
         /// 文本呈现的质量
         /// </summary>
-        public static System.Drawing.Text.TextRenderingHint? TextRenderingHint { get; set; }
+        public static Majorsilence.Forms.Drawing.Text.TextRenderingHint? TextRenderingHint { get; set; }
 
         /// <summary>
         /// 文本高质量呈现

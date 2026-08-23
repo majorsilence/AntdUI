@@ -6,9 +6,10 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
 using System.IO;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {

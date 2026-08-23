@@ -8,10 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
 using System.Linq;
-using System.Windows.Forms;
-using System.Windows.Forms.Layout;
+using Majorsilence.Forms;
+using Majorsilence.Forms.Layout;
 
 namespace AntdUI
 {
@@ -31,7 +32,7 @@ namespace AntdUI
         /// 跨度
         /// </summary>
         [Description("跨度"), Category(nameof(CategoryAttribute.Appearance)), DefaultValue("50% 50%;50% 50%")]
-        [Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(UITypeEditor))]
+        [Editor(typeof(Majorsilence.Forms.Design.MultilineStringEditor), typeof(UITypeEditor))]
         public string Span
         {
             get => layoutengine.Span;

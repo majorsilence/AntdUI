@@ -8,9 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -51,7 +53,7 @@ namespace AntdUI
         /// <summary>
         /// 文本
         /// </summary>
-        [Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(UITypeEditor))]
+        [Editor(typeof(Majorsilence.Forms.Design.MultilineStringEditor), typeof(UITypeEditor))]
         [Description("文本"), Category(nameof(CategoryAttribute.Appearance)), DefaultValue(null)]
         public override string? Text
         {

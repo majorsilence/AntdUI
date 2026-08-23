@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,20 +29,20 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel4 = new System.Windows.Forms.Panel();
-            panel5 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel4 = new Majorsilence.Forms.Panel();
+            panel5 = new Majorsilence.Forms.Panel();
             button2 = new AntdUI.Button();
             button1 = new AntdUI.Button();
             checkbox9 = new AntdUI.Checkbox();
             divider3 = new AntdUI.Divider();
-            panel3 = new System.Windows.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             checkbox8 = new AntdUI.Checkbox();
             checkbox7 = new AntdUI.Checkbox();
             checkbox6 = new AntdUI.Checkbox();
             checkbox5 = new AntdUI.Checkbox();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             checkbox4 = new AntdUI.Checkbox();
             checkbox3 = new AntdUI.Checkbox();
             checkbox2 = new AntdUI.Checkbox();
@@ -308,23 +309,23 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Checkbox checkbox8;
         private AntdUI.Checkbox checkbox7;
         private AntdUI.Checkbox checkbox6;
         private AntdUI.Checkbox checkbox5;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Checkbox checkbox4;
         private AntdUI.Checkbox checkbox3;
         private AntdUI.Checkbox checkbox2;
         private AntdUI.Checkbox checkbox1;
         private AntdUI.Divider divider1;
         private AntdUI.Divider divider2;
-        private System.Windows.Forms.Panel panel4;
+        private Majorsilence.Forms.Panel panel4;
         private AntdUI.Divider divider3;
         private AntdUI.Checkbox checkbox9;
-        private System.Windows.Forms.Panel panel5;
+        private Majorsilence.Forms.Panel panel5;
         private AntdUI.Button button2;
         private AntdUI.Button button1;
     }

@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,20 +29,20 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel4 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel4 = new Majorsilence.Forms.Panel();
             button11 = new AntdUI.Button();
             button12 = new AntdUI.Button();
             button13 = new AntdUI.Button();
             button14 = new AntdUI.Button();
             divider3 = new AntdUI.Divider();
-            panel3 = new System.Windows.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             button7 = new AntdUI.Button();
             button8 = new AntdUI.Button();
             button9 = new AntdUI.Button();
             button10 = new AntdUI.Button();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             button4 = new AntdUI.Button();
             button6 = new AntdUI.Button();
             button2 = new AntdUI.Button();
@@ -337,22 +338,22 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Button button1;
         private AntdUI.Button button4;
         private AntdUI.Button button2;
         private AntdUI.Button button3;
         private AntdUI.Button button6;
         private AntdUI.Button button5;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Button button7;
         private AntdUI.Button button8;
         private AntdUI.Button button9;
         private AntdUI.Button button10;
         private AntdUI.Divider divider2;
-        private System.Windows.Forms.Panel panel4;
+        private Majorsilence.Forms.Panel panel4;
         private AntdUI.Button button11;
         private AntdUI.Button button12;
         private AntdUI.Button button13;

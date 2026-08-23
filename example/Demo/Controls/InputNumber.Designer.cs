@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -34,8 +35,8 @@ namespace Demo.Controls
             input4 = new AntdUI.InputNumber();
             input5 = new AntdUI.InputNumber();
             input6 = new AntdUI.InputNumber();
-            panel1 = new System.Windows.Forms.Panel();
-            panel2 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             inputNumberWithoutValueFormatter = new AntdUI.InputNumber();
             inputNumberWithValueFormatter = new AntdUI.InputNumber();
             divider1 = new AntdUI.Divider();
@@ -209,8 +210,8 @@ namespace Demo.Controls
         private AntdUI.InputNumber input4;
         private AntdUI.InputNumber input5;
         private AntdUI.InputNumber input6;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Divider divider1;
         private AntdUI.InputNumber inputNumberWithValueFormatter;
         private AntdUI.InputNumber inputNumberWithoutValueFormatter;

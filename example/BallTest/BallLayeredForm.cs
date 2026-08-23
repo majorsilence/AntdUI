@@ -7,8 +7,9 @@
 using AntdUI;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
+using Majorsilence.Forms;
 
 namespace BallTest
 {
@@ -242,7 +243,7 @@ namespace BallTest
             var rect = TargetRectXY;
 
             // 创建一个与目标区域大小相同的位图，使用32位ARGB格式
-            var bitmap = new Bitmap(rect.Width, rect.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            var bitmap = new Bitmap(rect.Width, rect.Height, Majorsilence.Forms.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
             using (var g = Graphics.FromImage(bitmap).HighLay(Dpi))
             {

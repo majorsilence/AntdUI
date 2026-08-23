@@ -6,7 +6,8 @@
 
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
 
 namespace AntdUI
 {
@@ -227,7 +228,7 @@ namespace AntdUI
                                 else _color = FillDanger;
                                 g2.Fill(_color, path_pain);
                                 var _w = rect.Width * (_value / 100F);
-                                g2.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                                g2.CompositingMode = Majorsilence.Forms.Drawing.Drawing2D.CompositingMode.SourceCopy;
                                 g2.Fill(Brushes.Transparent, new RectangleF(rect.X + _w, 0, rect.Width, bmp.Height));
                             }
                             g.Image(bmp, e.Rect);

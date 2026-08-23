@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,17 +29,17 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             alert14 = new AntdUI.Alert();
             alert13 = new AntdUI.Alert();
             divider3 = new AntdUI.Divider();
-            panel3 = new System.Windows.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             alert12 = new AntdUI.Alert();
             alert11 = new AntdUI.Alert();
             alert10 = new AntdUI.Alert();
             alert9 = new AntdUI.Alert();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             alert8 = new AntdUI.Alert();
             alert7 = new AntdUI.Alert();
             alert6 = new AntdUI.Alert();
@@ -312,7 +313,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Alert alert4;
         private AntdUI.Alert alert3;
         private AntdUI.Alert alert2;
@@ -324,13 +325,13 @@ namespace Demo.Controls
         private AntdUI.Alert alert5;
         private AntdUI.Alert alert13;
         private AntdUI.Divider divider3;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Alert alert9;
         private AntdUI.Alert alert12;
         private AntdUI.Alert alert10;
         private AntdUI.Alert alert11;
         private AntdUI.Divider divider2;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Alert alert14;
     }
 }

@@ -5,7 +5,7 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace BallTest
 {

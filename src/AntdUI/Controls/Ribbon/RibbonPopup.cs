@@ -6,7 +6,7 @@
 
 using System;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -60,7 +60,7 @@ namespace AntdUI
             Application.AddMessageFilter(this);
         }
 
-        bool IMessageFilter.PreFilterMessage(ref System.Windows.Forms.Message m)
+        bool IMessageFilter.PreFilterMessage(ref Majorsilence.Forms.Message m)
         {
             if (m.Msg != WM_LBUTTONDOWN && m.Msg != WM_RBUTTONDOWN && m.Msg != WM_MBUTTONDOWN
                 && m.Msg != WM_NCLBUTTONDOWN && m.Msg != WM_NCRBUTTONDOWN && m.Msg != WM_NCMBUTTONDOWN) return false;

@@ -8,8 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -213,7 +214,7 @@ namespace AntdUI
 
         #region Width animation
 
-        System.Windows.Forms.Timer? animTimer;
+        Majorsilence.Forms.Timer? animTimer;
         int animStartWidth;
         int animTargetWidth;
         long animStartTicks;
@@ -231,7 +232,7 @@ namespace AntdUI
             }
             if (animTimer == null)
             {
-                animTimer = new System.Windows.Forms.Timer { Interval = 16 };
+                animTimer = new Majorsilence.Forms.Timer { Interval = 16 };
                 animTimer.Tick += OnAnimTick;
             }
             animTimer.Stop(); // guard against overlapping starts while a prior animation is still ticking

@@ -4,8 +4,8 @@
 // GITHUB: https://github.com/svg-net/SVG
 
 using AntdUI.Svg.Transforms;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
 
 namespace AntdUI.Svg
 {

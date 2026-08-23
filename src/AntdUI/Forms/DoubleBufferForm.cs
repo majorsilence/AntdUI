@@ -5,7 +5,7 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -35,7 +35,7 @@ namespace AntdUI
 
         protected override bool ShowWithoutActivation => UFocus;
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             if (UFocus && m.Msg == 0x21)
             {

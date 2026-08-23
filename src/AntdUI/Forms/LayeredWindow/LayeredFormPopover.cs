@@ -7,9 +7,10 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
 using System.Threading;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {

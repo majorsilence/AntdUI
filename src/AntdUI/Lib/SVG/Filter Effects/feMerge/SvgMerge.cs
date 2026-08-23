@@ -4,6 +4,7 @@
 // GITHUB: https://github.com/svg-net/SVG
 
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.Linq;
 
 namespace AntdUI.Svg.FilterEffects

@@ -4,7 +4,7 @@
 // GitHub: https://github.com/AntdUI/AntdUI
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
-using System.Drawing.Text;
+using Majorsilence.Forms.Drawing.Text;
 
 namespace FontTest
 {

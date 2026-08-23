@@ -8,10 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing.Imaging;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -1742,7 +1743,7 @@ namespace AntdUI
         /// <summary>
         /// 文本
         /// </summary>
-        [Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(UITypeEditor))]
+        [Editor(typeof(Majorsilence.Forms.Design.MultilineStringEditor), typeof(UITypeEditor))]
         [Description("文本"), Category(nameof(CategoryAttribute.Appearance)), DefaultValue(null)]
         public string? Text
         {

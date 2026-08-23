@@ -5,7 +5,8 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
 
 namespace AntdUI
 {

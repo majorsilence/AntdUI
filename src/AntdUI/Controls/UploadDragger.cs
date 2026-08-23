@@ -8,11 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -568,7 +569,7 @@ namespace AntdUI
             Application.AddMessageFilter(this);
         }
 
-        public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+        public bool PreFilterMessage(ref Majorsilence.Forms.Message m)
         {
             if (ContainerControl == null || ContainerControl.IsDisposed) return false;
             if (m.Msg == Win32.User32.WM_DROPFILES)

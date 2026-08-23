@@ -6,7 +6,9 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
 
 namespace AntdUI
 {

@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -31,7 +32,7 @@ namespace Demo.Controls
             AntdUI.SegmentedItem segmentedItem2 = new AntdUI.SegmentedItem();
             header1 = new AntdUI.PageHeader();
             segmented1 = new AntdUI.Segmented();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             txt_search = new AntdUI.Input();
             vpanel = new AntdUI.VirtualPanel();
             panel1.SuspendLayout();
@@ -123,7 +124,7 @@ namespace Demo.Controls
 
         private AntdUI.PageHeader header1;
         private AntdUI.Segmented segmented1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Input txt_search;
         private AntdUI.VirtualPanel vpanel;
     }

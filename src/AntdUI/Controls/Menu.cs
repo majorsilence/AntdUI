@@ -8,8 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -1167,7 +1168,7 @@ namespace AntdUI
                         if (IsModeNeedDropDown) PaintBack(g, back_active, it.rect, radius);
                         using (var pen = new Pen(fore_active, Dpi * 2))
                         {
-                            pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                            pen.StartCap = pen.EndCap = Majorsilence.Forms.Drawing.Drawing2D.LineCap.Round;
                             g.DrawLines(pen, it.arrow_rect.TriangleLinesVertical(it.GetArrowProg(), .4F));
                         }
                     }
@@ -1177,7 +1178,7 @@ namespace AntdUI
                 {
                     using (var pen = new Pen(fore_enabled, Dpi * 2))
                     {
-                        pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                        pen.StartCap = pen.EndCap = Majorsilence.Forms.Drawing.Drawing2D.LineCap.Round;
                         g.DrawLines(pen, it.arrow_rect.TriangleLinesVertical(it.GetArrowProg(), .4F));
                     }
                 }
@@ -1293,7 +1294,7 @@ namespace AntdUI
                 {
                     using (var pen = new Pen(fore, Dpi * 2))
                     {
-                        pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                        pen.StartCap = pen.EndCap = Majorsilence.Forms.Drawing.Drawing2D.LineCap.Round;
                         g.DrawLines(pen, it.arrow_rect.TriangleLinesVertical(it.GetArrowProg(), .4F));
                     }
                 }
@@ -1301,7 +1302,7 @@ namespace AntdUI
                 {
                     using (var pen = new Pen(fore, Dpi * 2))
                     {
-                        pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                        pen.StartCap = pen.EndCap = Majorsilence.Forms.Drawing.Drawing2D.LineCap.Round;
                         g.DrawLines(pen, TAlignMini.Right.TriangleLines(it.arrow_rect, .4F));
                     }
                 }
@@ -1309,7 +1310,7 @@ namespace AntdUI
                 {
                     using (var pen = new Pen(fore, Dpi * 2))
                     {
-                        pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                        pen.StartCap = pen.EndCap = Majorsilence.Forms.Drawing.Drawing2D.LineCap.Round;
                         g.DrawLines(pen, it.arrow_rect.TriangleLinesVertical(-1, .4F));
                     }
                 }
@@ -1795,7 +1796,7 @@ namespace AntdUI
 
         #region 键盘
 
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             var r = base.ProcessCmdKey(ref msg, keyData);
             switch (keyData)

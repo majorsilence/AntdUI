@@ -9,9 +9,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
 using System.Threading;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -75,7 +76,7 @@ namespace AntdUI
         ConcurrentDictionary<Control, string> dic = new ConcurrentDictionary<Control, string>();
 
         [Description("设置是否提示"), DefaultValue(null)]
-        [Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(UITypeEditor))]
+        [Editor(typeof(Majorsilence.Forms.Design.MultilineStringEditor), typeof(UITypeEditor))]
         [Localizable(true)]
         public string? GetTip(Control item)
         {

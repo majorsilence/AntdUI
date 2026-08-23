@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,8 +29,8 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel_main = new System.Windows.Forms.Panel();
-            panel5 = new System.Windows.Forms.Panel();
+            panel_main = new Majorsilence.Forms.Panel();
+            panel5 = new Majorsilence.Forms.Panel();
             button1 = new AntdUI.Button();
             button2 = new AntdUI.Button();
             button7 = new AntdUI.Button();
@@ -215,8 +216,8 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel_main;
-        private System.Windows.Forms.Panel panel5;
+        private Majorsilence.Forms.Panel panel_main;
+        private Majorsilence.Forms.Panel panel5;
         private AntdUI.Button button1;
         private AntdUI.Button button2;
         private AntdUI.Button button3;

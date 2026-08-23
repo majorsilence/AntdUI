@@ -6,7 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace Demo
 {
@@ -27,7 +27,7 @@ namespace Demo
             if (lang.StartsWith("en")) AntdUI.Localization.Provider = new Localizer();
             AntdUI.Config.Theme().Dark("#000", "#fff").Light("#fff", "#000").FormBorderColor();
             AntdUI.Config.TextRenderingHighQuality = true;
-            AntdUI.Config.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            AntdUI.Config.TextRenderingHint = Majorsilence.Forms.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             AntdUI.Config.SetEmptyImageSvg(Properties.Resources.icon_empty, Properties.Resources.icon_empty_dark);
             AntdUI.SvgDb.Emoji = AntdUI.FluentFlat.Emoji;
             Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI
 {
@@ -1080,11 +1081,11 @@ namespace AntdUI
                                 }
                             }
                         }
-                        if (t_count == check_count) checkColumn.CheckState = System.Windows.Forms.CheckState.Checked;
-                        else if (check_count > 0) checkColumn.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-                        else checkColumn.CheckState = System.Windows.Forms.CheckState.Unchecked;
+                        if (t_count == check_count) checkColumn.CheckState = Majorsilence.Forms.CheckState.Checked;
+                        else if (check_count > 0) checkColumn.CheckState = Majorsilence.Forms.CheckState.Indeterminate;
+                        else checkColumn.CheckState = Majorsilence.Forms.CheckState.Unchecked;
                     }
-                    else checkColumn.CheckState = System.Windows.Forms.CheckState.Unchecked;
+                    else checkColumn.CheckState = Majorsilence.Forms.CheckState.Unchecked;
                 }
                 it.SetROW(row);
             }
@@ -1409,8 +1410,8 @@ namespace AntdUI
             pauseLayoutByCheckAll = false;
             if (t_count > 0)
             {
-                if (value) columnCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-                else columnCheck.CheckState = System.Windows.Forms.CheckState.Unchecked;
+                if (value) columnCheck.CheckState = Majorsilence.Forms.CheckState.Checked;
+                else columnCheck.CheckState = Majorsilence.Forms.CheckState.Unchecked;
             }
         }
         internal void IsCheckAll(int cel, ColumnCheck column)
@@ -1441,9 +1442,9 @@ namespace AntdUI
                     }
                 }
             }
-            if (t_count == check_count) column.CheckState = System.Windows.Forms.CheckState.Checked;
-            else if (check_count > 0) column.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            else column.CheckState = System.Windows.Forms.CheckState.Unchecked;
+            if (t_count == check_count) column.CheckState = Majorsilence.Forms.CheckState.Checked;
+            else if (check_count > 0) column.CheckState = Majorsilence.Forms.CheckState.Indeterminate;
+            else column.CheckState = Majorsilence.Forms.CheckState.Unchecked;
         }
 
         void SetValueCheckRow(RowTemplate row)

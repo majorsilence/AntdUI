@@ -8,9 +8,11 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing.Imaging;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -44,7 +46,7 @@ namespace AntdUI
             // 处理文本截断方式
             if (flags.HasFlag(FormatFlags.EllipsisCharacter)) sf.Trimming = StringTrimming.EllipsisCharacter;
 
-            if (flags.HasFlag(FormatFlags.HotkeyPrefixShow)) sf.HotkeyPrefix |= System.Drawing.Text.HotkeyPrefix.Show;
+            if (flags.HasFlag(FormatFlags.HotkeyPrefixShow)) sf.HotkeyPrefix |= Majorsilence.Forms.Drawing.Text.HotkeyPrefix.Show;
 
             if (flags.HasFlag(FormatFlags.DirectionVertical)) sf.FormatFlags |= StringFormatFlags.DirectionVertical;
 
@@ -529,7 +531,7 @@ namespace AntdUI
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            if (text) g.TextRenderingHint = Config.TextRenderingHint ?? System.Drawing.Text.TextRenderingHint.AntiAlias;
+            if (text) g.TextRenderingHint = Config.TextRenderingHint ?? Majorsilence.Forms.Drawing.Text.TextRenderingHint.AntiAlias;
             return new Core.CanvasGDI(g, dpi);
         }
 
@@ -538,7 +540,7 @@ namespace AntdUI
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            if (text) g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            if (text) g.TextRenderingHint = Majorsilence.Forms.Drawing.Text.TextRenderingHint.AntiAlias;
             return new Core.CanvasGDI(g);
         }
 

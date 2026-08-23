@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -103,7 +103,7 @@ namespace AntdUI
 
         #region Drag tracking — show navigator, detect zone
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             switch ((Win32.User32.WindowMessage)m.Msg)
             {

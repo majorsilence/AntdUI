@@ -3,7 +3,7 @@
 // COPYRIGHT (C) svg-net. ALL RIGHTS RESERVED.
 // GITHUB: https://github.com/svg-net/SVG
 
-using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI.Svg.FilterEffects
 {

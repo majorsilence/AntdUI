@@ -1,4 +1,5 @@
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace Demo.Controls
 {
@@ -60,13 +61,13 @@ namespace Demo.Controls
             // header1
             // 
             header1.Description = "展示设备电量。";
-            header1.Dock = System.Windows.Forms.DockStyle.Top;
+            header1.Dock = Majorsilence.Forms.DockStyle.Top;
             header1.Font = new Font("Microsoft YaHei UI", 12F);
             header1.LocalizationDescription = "Battery.Description";
             header1.LocalizationText = "Battery";
             header1.Location = new Point(0, 0);
             header1.Name = "header1";
-            header1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            header1.Padding = new Majorsilence.Forms.Padding(0, 0, 0, 10);
             header1.Size = new Size(596, 74);
             header1.TabIndex = 0;
             header1.Text = "Battery 电量";
@@ -122,7 +123,7 @@ namespace Demo.Controls
             // 
             // divider1
             // 
-            divider1.Dock = System.Windows.Forms.DockStyle.Top;
+            divider1.Dock = Majorsilence.Forms.DockStyle.Top;
             divider1.Font = new Font("Microsoft YaHei UI", 10F);
             divider1.LocalizationText = "Battery.{id}";
             divider1.Location = new Point(0, 74);
@@ -139,7 +140,7 @@ namespace Demo.Controls
             stackPanel1.Controls.Add(battery4);
             stackPanel1.Controls.Add(battery1);
             stackPanel1.Controls.Add(battery5);
-            stackPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel1.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel1.Location = new Point(0, 102);
             stackPanel1.Name = "stackPanel1";
             stackPanel1.Size = new Size(596, 36);
@@ -168,7 +169,7 @@ namespace Demo.Controls
             stackPanel2.Controls.Add(battery8);
             stackPanel2.Controls.Add(battery9);
             stackPanel2.Controls.Add(battery10);
-            stackPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel2.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel2.Location = new Point(0, 166);
             stackPanel2.Name = "stackPanel2";
             stackPanel2.Size = new Size(596, 36);
@@ -221,7 +222,7 @@ namespace Demo.Controls
             // 
             // divider2
             // 
-            divider2.Dock = System.Windows.Forms.DockStyle.Top;
+            divider2.Dock = Majorsilence.Forms.DockStyle.Top;
             divider2.Font = new Font("Microsoft YaHei UI", 10F);
             divider2.LocalizationText = "Battery.{id}";
             divider2.Location = new Point(0, 138);
@@ -238,7 +239,7 @@ namespace Demo.Controls
             stackPanel3.Controls.Add(battery13);
             stackPanel3.Controls.Add(battery14);
             stackPanel3.Controls.Add(battery15);
-            stackPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel3.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel3.Location = new Point(0, 230);
             stackPanel3.Name = "stackPanel3";
             stackPanel3.Size = new Size(596, 36);
@@ -290,7 +291,7 @@ namespace Demo.Controls
             // 
             // divider3
             // 
-            divider3.Dock = System.Windows.Forms.DockStyle.Top;
+            divider3.Dock = Majorsilence.Forms.DockStyle.Top;
             divider3.Font = new Font("Microsoft YaHei UI", 10F);
             divider3.LocalizationText = "Battery.{id}";
             divider3.Location = new Point(0, 202);
@@ -304,10 +305,10 @@ namespace Demo.Controls
             // 
             stackPanel4.Controls.Add(button2);
             stackPanel4.Controls.Add(button1);
-            stackPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel4.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel4.Location = new Point(0, 266);
             stackPanel4.Name = "stackPanel4";
-            stackPanel4.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            stackPanel4.Padding = new Majorsilence.Forms.Padding(0, 4, 0, 0);
             stackPanel4.Size = new Size(596, 48);
             stackPanel4.TabIndex = 10;
             // 

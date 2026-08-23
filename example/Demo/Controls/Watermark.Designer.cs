@@ -34,7 +34,7 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             panel2 = new AntdUI.Panel();
             btnClear = new AntdUI.Button();
             btnPanel = new AntdUI.Button();
@@ -65,13 +65,13 @@ namespace Demo.Controls
             // header1
             // 
             header1.Description = "给页面的某个区域加上水印。";
-            header1.Dock = System.Windows.Forms.DockStyle.Top;
-            header1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            header1.Dock = Majorsilence.Forms.DockStyle.Top;
+            header1.Font = new Majorsilence.Forms.Drawing.Font("Microsoft YaHei UI", 12F);
             header1.LocalizationDescription = "Watermark.Description";
             header1.LocalizationText = "Watermark";
             header1.Location = new System.Drawing.Point(0, 0);
             header1.Name = "header1";
-            header1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            header1.Padding = new Majorsilence.Forms.Padding(0, 0, 0, 10);
             header1.Size = new System.Drawing.Size(835, 74);
             header1.TabIndex = 1;
             header1.Text = "Watermark 水印";
@@ -96,7 +96,7 @@ namespace Demo.Controls
             panel1.Controls.Add(inputContent);
             panel1.Controls.Add(lblContent);
             panel1.Controls.Add(colorPicker);
-            panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel1.Dock = Majorsilence.Forms.DockStyle.Fill;
             panel1.Location = new System.Drawing.Point(0, 74);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(835, 560);
@@ -116,8 +116,8 @@ namespace Demo.Controls
             // btnClear
             // 
             btnClear.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnClear.Dock = System.Windows.Forms.DockStyle.Left;
-            btnClear.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            btnClear.Dock = Majorsilence.Forms.DockStyle.Left;
+            btnClear.Font = new Majorsilence.Forms.Drawing.Font("Microsoft YaHei UI", 12F);
             btnClear.LocalizationText = "Watermark.{id}";
             btnClear.Location = new System.Drawing.Point(186, 0);
             btnClear.Name = "btnClear";
@@ -130,8 +130,8 @@ namespace Demo.Controls
             // btnPanel
             // 
             btnPanel.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            btnPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            btnPanel.Dock = Majorsilence.Forms.DockStyle.Left;
+            btnPanel.Font = new Majorsilence.Forms.Drawing.Font("Microsoft YaHei UI", 12F);
             btnPanel.LocalizationText = "Watermark.{id}";
             btnPanel.Location = new System.Drawing.Point(93, 0);
             btnPanel.Name = "btnPanel";
@@ -144,8 +144,8 @@ namespace Demo.Controls
             // btnForm
             // 
             btnForm.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnForm.Dock = System.Windows.Forms.DockStyle.Left;
-            btnForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            btnForm.Dock = Majorsilence.Forms.DockStyle.Left;
+            btnForm.Font = new Majorsilence.Forms.Drawing.Font("Microsoft YaHei UI", 12F);
             btnForm.LocalizationText = "Watermark.{id}";
             btnForm.Location = new System.Drawing.Point(0, 0);
             btnForm.Name = "btnForm";
@@ -173,9 +173,9 @@ namespace Demo.Controls
             // divider1
             // 
             divider1.BackColor = System.Drawing.Color.Transparent;
-            divider1.Dock = System.Windows.Forms.DockStyle.Top;
+            divider1.Dock = Majorsilence.Forms.DockStyle.Top;
             divider1.Location = new System.Drawing.Point(24, 72);
-            divider1.Margin = new System.Windows.Forms.Padding(10);
+            divider1.Margin = new Majorsilence.Forms.Padding(10);
             divider1.Name = "divider1";
             divider1.Size = new System.Drawing.Size(403, 1);
             divider1.TabIndex = 0;
@@ -183,12 +183,12 @@ namespace Demo.Controls
             // label1
             // 
             label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Dock = System.Windows.Forms.DockStyle.Top;
-            label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold);
+            label1.Dock = Majorsilence.Forms.DockStyle.Top;
+            label1.Font = new Majorsilence.Forms.Drawing.Font("Microsoft YaHei UI", 15.75F, Majorsilence.Forms.Drawing.FontStyle.Bold);
             label1.LocalizationText = "Watermark.btnPanel";
             label1.Location = new System.Drawing.Point(24, 24);
             label1.Name = "label1";
-            label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            label1.Padding = new Majorsilence.Forms.Padding(20, 0, 0, 0);
             label1.Size = new System.Drawing.Size(403, 48);
             label1.TabIndex = 0;
             label1.Text = "面板水印";
@@ -201,7 +201,7 @@ namespace Demo.Controls
             lblGap.Size = new System.Drawing.Size(98, 26);
             lblGap.TabIndex = 0;
             lblGap.Text = "间距：";
-            lblGap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblGap.TextAlign = Majorsilence.Forms.ContentAlignment.MiddleRight;
             // 
             // trackGap
             // 
@@ -223,7 +223,7 @@ namespace Demo.Controls
             lblRotate.Size = new System.Drawing.Size(98, 26);
             lblRotate.TabIndex = 0;
             lblRotate.Text = "旋转角度：";
-            lblRotate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblRotate.TextAlign = Majorsilence.Forms.ContentAlignment.MiddleRight;
             // 
             // trackRotate
             // 
@@ -245,7 +245,7 @@ namespace Demo.Controls
             lblOpacity.Size = new System.Drawing.Size(98, 26);
             lblOpacity.TabIndex = 0;
             lblOpacity.Text = "透明度：";
-            lblOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblOpacity.TextAlign = Majorsilence.Forms.ContentAlignment.MiddleRight;
             // 
             // trackOpacity
             // 
@@ -290,7 +290,7 @@ namespace Demo.Controls
             lblForeColor.Size = new System.Drawing.Size(98, 26);
             lblForeColor.TabIndex = 0;
             lblForeColor.Text = "水印颜色：";
-            lblForeColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblForeColor.TextAlign = Majorsilence.Forms.ContentAlignment.MiddleRight;
             // 
             // inputContent2
             // 
@@ -307,7 +307,7 @@ namespace Demo.Controls
             lblSub.Size = new System.Drawing.Size(98, 26);
             lblSub.TabIndex = 0;
             lblSub.Text = "副内容：";
-            lblSub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblSub.TextAlign = Majorsilence.Forms.ContentAlignment.MiddleRight;
             // 
             // inputContent
             // 
@@ -325,7 +325,7 @@ namespace Demo.Controls
             lblContent.Size = new System.Drawing.Size(98, 26);
             lblContent.TabIndex = 0;
             lblContent.Text = "水印内容：";
-            lblContent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblContent.TextAlign = Majorsilence.Forms.ContentAlignment.MiddleRight;
             // 
             // colorPicker
             // 
@@ -341,7 +341,7 @@ namespace Demo.Controls
             // 
             Controls.Add(panel1);
             Controls.Add(header1);
-            Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            Font = new Majorsilence.Forms.Drawing.Font("Microsoft YaHei UI", 12F);
             Name = "Watermark";
             Size = new System.Drawing.Size(835, 634);
             panel1.ResumeLayout(false);
@@ -355,7 +355,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Button btnForm;
         private AntdUI.ColorPicker colorPicker;
         private AntdUI.Label lblContent;

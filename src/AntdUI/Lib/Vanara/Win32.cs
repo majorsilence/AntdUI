@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -596,7 +596,7 @@ namespace AntdUI
                 set = scrollableControl.AutoScroll;
                 return true;
             }
-            if (control is System.Windows.Forms.Panel panel)
+            if (control is Majorsilence.Forms.Panel panel)
             {
                 set = panel.AutoScroll;
                 return true;

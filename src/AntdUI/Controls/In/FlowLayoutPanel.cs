@@ -7,7 +7,8 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace AntdUI.In
 {
@@ -225,7 +226,7 @@ namespace AntdUI.In
 
         #region 布局
 
-        internal class FlowLayoutPanelCore : System.Windows.Forms.FlowLayoutPanel
+        internal class FlowLayoutPanelCore : Majorsilence.Forms.FlowLayoutPanel
         {
             public FlowLayoutPanelCore()
             {

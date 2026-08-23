@@ -6,7 +6,7 @@
 
 using System;
 using System.Threading;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace Demo
 {

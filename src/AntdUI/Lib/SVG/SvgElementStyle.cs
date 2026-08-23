@@ -1,11 +1,11 @@
-﻿// THIS FILE IS PART OF SVG PROJECT
+// THIS FILE IS PART OF SVG PROJECT
 // THE SVG PROJECT IS AN OPENSOURCE LIBRARY LICENSED UNDER THE MS-PL License.
 // COPYRIGHT (C) svg-net. ALL RIGHTS RESERVED.
 // GITHUB: https://github.com/svg-net/SVG
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.Linq;
 
 namespace AntdUI.Svg
@@ -372,7 +372,7 @@ namespace AntdUI.Svg
 
             if (sFaces == null)
             {
-                var fontStyle = System.Drawing.FontStyle.Regular;
+                var fontStyle = Majorsilence.Forms.Drawing.FontStyle.Regular;
 
                 // Get the font-weight
                 switch (FontWeight)
@@ -383,7 +383,7 @@ namespace AntdUI.Svg
                     case SvgFontWeight.W700:
                     case SvgFontWeight.W800:
                     case SvgFontWeight.W900:
-                        fontStyle |= System.Drawing.FontStyle.Bold;
+                        fontStyle |= Majorsilence.Forms.Drawing.FontStyle.Bold;
                         break;
                 }
 
@@ -392,7 +392,7 @@ namespace AntdUI.Svg
                 {
                     case SvgFontStyle.Italic:
                     case SvgFontStyle.Oblique:
-                        fontStyle |= System.Drawing.FontStyle.Italic;
+                        fontStyle |= Majorsilence.Forms.Drawing.FontStyle.Italic;
                         break;
                 }
 
@@ -400,10 +400,10 @@ namespace AntdUI.Svg
                 switch (TextDecoration)
                 {
                     case SvgTextDecoration.LineThrough:
-                        fontStyle |= System.Drawing.FontStyle.Strikeout;
+                        fontStyle |= Majorsilence.Forms.Drawing.FontStyle.Strikeout;
                         break;
                     case SvgTextDecoration.Underline:
-                        fontStyle |= System.Drawing.FontStyle.Underline;
+                        fontStyle |= Majorsilence.Forms.Drawing.FontStyle.Underline;
                         break;
                 }
 
@@ -414,7 +414,7 @@ namespace AntdUI.Svg
                 }
 
                 // Get the font-family
-                return new GdiFontDefn(new System.Drawing.Font(ff, fontSize, fontStyle, System.Drawing.GraphicsUnit.Pixel));
+                return new GdiFontDefn(new Majorsilence.Forms.Drawing.Font(ff, fontSize, fontStyle, Majorsilence.Forms.Drawing.GraphicsUnit.Pixel));
             }
             else
             {
@@ -444,16 +444,16 @@ namespace AntdUI.Svg
                 switch (f.ToLower())
                 {
                     case "serif":
-                        return System.Drawing.FontFamily.GenericSerif;
+                        return Majorsilence.Forms.Drawing.FontFamily.GenericSerif;
                     case "sans-serif":
-                        return System.Drawing.FontFamily.GenericSansSerif;
+                        return Majorsilence.Forms.Drawing.FontFamily.GenericSansSerif;
                     case "monospace":
-                        return System.Drawing.FontFamily.GenericMonospace;
+                        return Majorsilence.Forms.Drawing.FontFamily.GenericMonospace;
                 }
             }
 
             // No valid font family found from the list requested.
-            return System.Drawing.FontFamily.GenericSansSerif;
+            return Majorsilence.Forms.Drawing.FontFamily.GenericSansSerif;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,7 +29,7 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel_main = new System.Windows.Forms.Panel();
+            panel_main = new Majorsilence.Forms.Panel();
             SuspendLayout();
             // 
             // header1
@@ -66,6 +67,6 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel_main;
+        private Majorsilence.Forms.Panel panel_main;
     }
 }

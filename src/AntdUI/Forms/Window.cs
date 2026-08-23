@@ -8,7 +8,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -159,7 +159,7 @@ namespace AntdUI
             Win32.User32.SetWindowPos(Handle, Win32.HWND.NULL, 0, 0, 0, 0, Win32.User32.SetWindowPosFlags.SWP_FRAMECHANGED | Win32.User32.SetWindowPosFlags.SWP_NOACTIVATE | Win32.User32.SetWindowPosFlags.SWP_NOCOPYBITS | Win32.User32.SetWindowPosFlags.SWP_NOMOVE | Win32.User32.SetWindowPosFlags.SWP_NOOWNERZORDER | Win32.User32.SetWindowPosFlags.SWP_NOREPOSITION | Win32.User32.SetWindowPosFlags.SWP_NOSIZE | Win32.User32.SetWindowPosFlags.SWP_NOZORDER);
         }
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             switch ((Win32.User32.WindowMessage)m.Msg)
             {
@@ -192,7 +192,7 @@ namespace AntdUI
         }
 
         static IntPtr TRUE = new IntPtr(1), FALSE = new IntPtr(0);
-        bool WmGhostingHandler(System.Windows.Forms.Message m)
+        bool WmGhostingHandler(Majorsilence.Forms.Message m)
         {
             switch (m.Msg)
             {
@@ -429,7 +429,7 @@ namespace AntdUI
         public override bool IsMax => winState == WState.Maximize;
 
         public static bool CanHandMessage = true;
-        public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+        public bool PreFilterMessage(ref Majorsilence.Forms.Message m)
         {
             if (is_resizable) return OnPreFilterMessage(m);
             if (CanHandMessage && ReadMessage)
@@ -455,7 +455,7 @@ namespace AntdUI
             return OnPreFilterMessage(m);
         }
 
-        protected virtual bool OnPreFilterMessage(System.Windows.Forms.Message m) => false;
+        protected virtual bool OnPreFilterMessage(Majorsilence.Forms.Message m) => false;
 
         bool isMe(IntPtr intPtr)
         {
@@ -487,7 +487,7 @@ namespace AntdUI
         const nint SIZE_RESTORED = 0;
         const nint SIZE_MINIMIZED = 1;
         const nint SIZE_MAXIMIZED = 2;
-        void WmSize(ref System.Windows.Forms.Message m)
+        void WmSize(ref Majorsilence.Forms.Message m)
         {
             if (m.WParam == SIZE_MINIMIZED) WinState = WState.Minimize;
             else if (m.WParam == SIZE_MAXIMIZED)
@@ -505,7 +505,7 @@ namespace AntdUI
             }
         }
 
-        bool WmNCCalcSize(ref System.Windows.Forms.Message m)
+        bool WmNCCalcSize(ref Majorsilence.Forms.Message m)
         {
             if (FormBorderStyle == FormBorderStyle.None) return false;
             if (ISZoomed())

@@ -4,13 +4,13 @@
 // GitHub: https://github.com/AntdUI/AntdUI
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
     partial class Table
     {
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             switch (keyData)
             {

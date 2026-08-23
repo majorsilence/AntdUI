@@ -24,7 +24,7 @@ namespace Demo {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class res_light {
         
-        private static global::System.Resources.ResourceManager resourceMan;
+        private static global::Majorsilence.Forms.ComponentResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
@@ -36,10 +36,10 @@ namespace Demo {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::Majorsilence.Forms.ComponentResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Demo.res_light", typeof(res_light).Assembly);
+                    global::Majorsilence.Forms.ComponentResourceManager temp = new global::Majorsilence.Forms.ComponentResourceManager("Demo.res_light", typeof(res_light).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

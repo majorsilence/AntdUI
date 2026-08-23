@@ -1,4 +1,5 @@
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace Demo.Controls
 {
@@ -35,20 +36,20 @@ namespace Demo.Controls
             shield6 = new AntdUI.Shield();
             shield7 = new AntdUI.Shield();
             shield8 = new AntdUI.Shield();
-            flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            flowLayoutPanel1 = new Majorsilence.Forms.FlowLayoutPanel();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // header1
             // 
             header1.Description = "展示徽章图标。";
-            header1.Dock = System.Windows.Forms.DockStyle.Top;
+            header1.Dock = Majorsilence.Forms.DockStyle.Top;
             header1.Font = new Font("Microsoft YaHei UI", 12F);
             header1.LocalizationDescription = "Shield.Description";
             header1.LocalizationText = "Shield";
             header1.Location = new Point(0, 0);
             header1.Name = "header1";
-            header1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            header1.Padding = new Majorsilence.Forms.Padding(0, 0, 0, 10);
             header1.Size = new Size(740, 74);
             header1.TabIndex = 4;
             header1.Text = "Shield 徽章";
@@ -60,7 +61,7 @@ namespace Demo.Controls
             shield1.Color = Color.FromArgb(0, 126, 198);
             shield1.Label = "AntdUI";
             shield1.Location = new Point(0, 0);
-            shield1.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            shield1.Margin = new Majorsilence.Forms.Padding(0, 0, 10, 0);
             shield1.Name = "shield1";
             shield1.Radius = 0;
             shield1.Size = new Size(108, 28);
@@ -75,7 +76,7 @@ namespace Demo.Controls
             shield2.LocalizationLabel = "Shield.qq";
             shield2.Location = new Point(118, 0);
             shield2.LogoSvg = "QqOutlined";
-            shield2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            shield2.Margin = new Majorsilence.Forms.Padding(0, 0, 10, 0);
             shield2.Name = "shield2";
             shield2.Radius = 0;
             shield2.Size = new Size(157, 28);
@@ -87,7 +88,7 @@ namespace Demo.Controls
             shield3.AutoSizeMode = AntdUI.TAutoSize.Auto;
             shield3.Label = "downloads";
             shield3.Location = new Point(582, 0);
-            shield3.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            shield3.Margin = new Majorsilence.Forms.Padding(0, 0, 10, 0);
             shield3.Name = "shield3";
             shield3.Radius = 0;
             shield3.Size = new Size(119, 28);
@@ -101,7 +102,7 @@ namespace Demo.Controls
             shield4.Label = "AntDesign";
             shield4.Location = new Point(436, 0);
             shield4.LogoSvg = "AntDesignOutlined";
-            shield4.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            shield4.Margin = new Majorsilence.Forms.Padding(0, 0, 10, 0);
             shield4.Name = "shield4";
             shield4.Radius = 0;
             shield4.Size = new Size(136, 28);
@@ -114,7 +115,7 @@ namespace Demo.Controls
             shield5.Color = Color.FromArgb(78, 177, 186);
             shield5.Label = "license";
             shield5.Location = new Point(285, 0);
-            shield5.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            shield5.Margin = new Majorsilence.Forms.Padding(0, 0, 10, 0);
             shield5.Name = "shield5";
             shield5.Radius = 0;
             shield5.Size = new Size(141, 28);
@@ -161,7 +162,7 @@ namespace Demo.Controls
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            flowLayoutPanel1.Anchor = Majorsilence.Forms.AnchorStyles.Top | Majorsilence.Forms.AnchorStyles.Left | Majorsilence.Forms.AnchorStyles.Right;
             flowLayoutPanel1.Controls.Add(shield1);
             flowLayoutPanel1.Controls.Add(shield2);
             flowLayoutPanel1.Controls.Add(shield5);
@@ -199,6 +200,6 @@ namespace Demo.Controls
         private AntdUI.Shield shield6;
         private AntdUI.Shield shield7;
         private AntdUI.Shield shield8;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Majorsilence.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

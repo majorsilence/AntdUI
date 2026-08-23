@@ -8,10 +8,11 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -682,7 +683,7 @@ namespace AntdUI
         const int WM_POINTERDOWN = 0x0246, WM_POINTERUP = 0x0247;
         const int WM_LBUTTONDOWN = 0x0201, WM_LBUTTONUP = 0x0202;
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             if (OS.Win7OrLower && m.Msg == WM_LBUTTONDOWN)
             {

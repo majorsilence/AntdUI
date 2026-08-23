@@ -7,7 +7,9 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
 
 namespace AntdUI
 {

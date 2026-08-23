@@ -7,7 +7,8 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -135,7 +136,7 @@ namespace AntdUI
             base.Dispose(disposing);
         }
 
-        bool IMessageFilter.PreFilterMessage(ref System.Windows.Forms.Message m)
+        bool IMessageFilter.PreFilterMessage(ref Majorsilence.Forms.Message m)
         {
             if ((m.Msg == WM_KEYUP || m.Msg == WM_SYSKEYUP) && ((int)m.WParam) == VK_CONTROL)
             {
@@ -148,8 +149,8 @@ namespace AntdUI
         protected override void OnPaint(PaintEventArgs e)
         {
             var g = e.Graphics;
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            g.SmoothingMode = Majorsilence.Forms.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            g.TextRenderingHint = Majorsilence.Forms.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 
             float dpi = panel.IsHandleCreated ? panel.Dpi : 1f;
             int rowH = (int)(26 * dpi);

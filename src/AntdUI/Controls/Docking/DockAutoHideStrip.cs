@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -31,7 +31,7 @@ namespace AntdUI
         DockFlyoutOverlay? flyout;
 
         // Hover-open timer: starts on OnMouseMove, fires after 300ms unless cursor leaves.
-        readonly System.Windows.Forms.Timer hoverOpenTimer;
+        readonly Majorsilence.Forms.Timer hoverOpenTimer;
         int pendingOpenIndex = -1;
 
         public DockAutoHideStrip(DockPanel owner, DockPosition edge)
@@ -43,7 +43,7 @@ namespace AntdUI
             Visible = false;
             itemsReadOnly = items.AsReadOnly();
 
-            hoverOpenTimer = new System.Windows.Forms.Timer { Interval = 300 };
+            hoverOpenTimer = new Majorsilence.Forms.Timer { Interval = 300 };
             hoverOpenTimer.Tick += HoverOpenTimer_Tick;
         }
 
@@ -289,14 +289,14 @@ namespace AntdUI
             Rectangle startBounds;
 
             // Slide animation
-            readonly System.Windows.Forms.Timer animTimer;
+            readonly Majorsilence.Forms.Timer animTimer;
             long animStartTicks;
             const int AnimDurationMs = 150;
             bool animating;
             bool animClosing; // true = sliding out
 
             // Hover-close timer (500 ms after mouse leaves the flyout)
-            readonly System.Windows.Forms.Timer closeTimer;
+            readonly Majorsilence.Forms.Timer closeTimer;
 
             public event Action? Closed;
 
@@ -316,9 +316,9 @@ namespace AntdUI
                 pane.MouseEnter += OnPaneMouseEnter;
                 pane.MouseLeave += OnPaneMouseLeave;
 
-                animTimer = new System.Windows.Forms.Timer { Interval = 16 };
+                animTimer = new Majorsilence.Forms.Timer { Interval = 16 };
                 animTimer.Tick += OnAnimTick;
-                closeTimer = new System.Windows.Forms.Timer { Interval = 500 };
+                closeTimer = new Majorsilence.Forms.Timer { Interval = 500 };
                 closeTimer.Tick += (s, e) => { closeTimer.Stop(); if (!pinned) dockPanel.BeginInvoke(new Action(Close)); };
             }
 
@@ -483,7 +483,7 @@ namespace AntdUI
                 }
             }
 
-            public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+            public bool PreFilterMessage(ref Majorsilence.Forms.Message m)
             {
                 if (closing) return false;
                 var wm = (Win32.User32.WindowMessage)m.Msg;

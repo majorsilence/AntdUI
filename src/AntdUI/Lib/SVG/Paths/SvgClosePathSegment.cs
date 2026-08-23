@@ -7,7 +7,7 @@ namespace AntdUI.Svg.Pathing
 {
     public sealed class SvgClosePathSegment : SvgPathSegment
     {
-        public override void AddToPath(System.Drawing.Drawing2D.GraphicsPath graphicsPath)
+        public override void AddToPath(Majorsilence.Forms.Drawing.Drawing2D.GraphicsPath graphicsPath)
         {
             var pathData = graphicsPath.PathData;
 

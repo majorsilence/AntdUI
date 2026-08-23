@@ -6,7 +6,8 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Imaging;
 
 namespace AntdUI
 {

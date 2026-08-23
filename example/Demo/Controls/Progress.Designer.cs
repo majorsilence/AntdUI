@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -29,7 +30,7 @@ namespace Demo.Controls
         {
             header1 = new AntdUI.PageHeader();
             progress1 = new AntdUI.Progress();
-            panel_l = new System.Windows.Forms.Panel();
+            panel_l = new Majorsilence.Forms.Panel();
             progress8 = new AntdUI.Progress();
             progress9 = new AntdUI.Progress();
             progress10 = new AntdUI.Progress();
@@ -42,7 +43,7 @@ namespace Demo.Controls
             divider3 = new AntdUI.Divider();
             divider2 = new AntdUI.Divider();
             panel_main = new TableLayoutPanel();
-            panel_r = new System.Windows.Forms.Panel();
+            panel_r = new Majorsilence.Forms.Panel();
             progress15 = new AntdUI.Progress();
             progress16 = new AntdUI.Progress();
             progress17 = new AntdUI.Progress();
@@ -458,12 +459,12 @@ namespace Demo.Controls
 
         private AntdUI.PageHeader header1;
         private AntdUI.Progress progress1;
-        private System.Windows.Forms.Panel panel_l;
+        private Majorsilence.Forms.Panel panel_l;
         private AntdUI.Divider divider1;
         private AntdUI.Divider divider3;
         private AntdUI.Divider divider2;
         private TableLayoutPanel panel_main;
-        private System.Windows.Forms.Panel panel_r;
+        private Majorsilence.Forms.Panel panel_r;
         private AntdUI.Progress progress2;
         private AntdUI.Progress progress3;
         private AntdUI.Progress progress4;

@@ -8,10 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms.Drawing.Drawing2D;
 using System.Linq;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -158,7 +159,7 @@ namespace AntdUI
         /// 数据
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor", typeof(UITypeEditor))]
+        [Editor("Majorsilence.Forms.Design.ListControlStringCollectionEditor", typeof(UITypeEditor))]
         [Description("集合"), Category(nameof(CategoryAttribute.Data))]
         public BaseCollection Items
         {
@@ -751,7 +752,7 @@ namespace AntdUI
             }
         }
 
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             var r = base.ProcessCmdKey(ref msg, keyData);
             switch (keyData)

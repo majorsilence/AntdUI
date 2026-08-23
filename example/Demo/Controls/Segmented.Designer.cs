@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -46,7 +47,7 @@ namespace Demo.Controls
             AntdUI.SegmentedItem segmentedItem17 = new AntdUI.SegmentedItem();
             AntdUI.SegmentedItem segmentedItem18 = new AntdUI.SegmentedItem();
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             segmented5 = new AntdUI.Segmented();
             divider4 = new AntdUI.Divider();
             segmented4 = new AntdUI.Segmented();
@@ -232,7 +233,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Segmented segmented2;
         private AntdUI.Segmented segmented1;
         private AntdUI.Segmented segmented3;

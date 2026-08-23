@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,20 +29,20 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel4 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel4 = new Majorsilence.Forms.Panel();
             select8 = new AntdUI.Select();
             selectMultiple1 = new AntdUI.SelectMultiple();
             divider3 = new AntdUI.Divider();
-            panel3 = new System.Windows.Forms.Panel();
-            panel5 = new System.Windows.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
+            panel5 = new Majorsilence.Forms.Panel();
             select7 = new AntdUI.Select();
             button1 = new AntdUI.Button();
-            panel8 = new System.Windows.Forms.Panel();
+            panel8 = new Majorsilence.Forms.Panel();
             select6 = new AntdUI.Select();
             button4 = new AntdUI.Button();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             select2 = new AntdUI.Select();
             select4 = new AntdUI.Select();
             select3 = new AntdUI.Select();
@@ -329,22 +330,22 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Divider divider1;
         private AntdUI.Select select1;
         private AntdUI.Select select2;
         private AntdUI.Select select4;
         private AntdUI.Select select3;
         private AntdUI.Select select5;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Divider divider2;
-        private System.Windows.Forms.Panel panel4;
+        private Majorsilence.Forms.Panel panel4;
         private AntdUI.Divider divider3;
-        private System.Windows.Forms.Panel panel5;
+        private Majorsilence.Forms.Panel panel5;
         private AntdUI.Select select7;
         private AntdUI.Button button1;
-        private System.Windows.Forms.Panel panel8;
+        private Majorsilence.Forms.Panel panel8;
         private AntdUI.Select select6;
         private AntdUI.Button button4;
         private AntdUI.Select select8;

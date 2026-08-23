@@ -39,7 +39,7 @@ namespace ExtendedTest
             // 
             // bar
             // 
-            bar.Dock = System.Windows.Forms.DockStyle.Left;
+            bar.Dock = Majorsilence.Forms.DockStyle.Left;
             bar.Location = new System.Drawing.Point(0, 0);
             bar.Name = "bar";
             bar.Size = new System.Drawing.Size(240, 150);

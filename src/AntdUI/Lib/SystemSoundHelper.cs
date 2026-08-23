@@ -4,7 +4,7 @@
 // GitHub: https://github.com/AntdUI/AntdUI
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
-using System.Media;
+using Majorsilence.Forms.Media;
 using System.Runtime.InteropServices;
 
 namespace AntdUI

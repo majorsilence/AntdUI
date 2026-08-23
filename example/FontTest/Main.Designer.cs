@@ -28,14 +28,14 @@ namespace FontTest
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            flowLayoutPanel1 = new Majorsilence.Forms.FlowLayoutPanel();
             button1 = new AntdUI.Button();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            flowLayoutPanel1.Dock = Majorsilence.Forms.DockStyle.Fill;
             flowLayoutPanel1.Location = new System.Drawing.Point(0, 35);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new System.Drawing.Size(954, 500);
@@ -43,7 +43,7 @@ namespace FontTest
             // 
             // button1
             // 
-            button1.Dock = System.Windows.Forms.DockStyle.Top;
+            button1.Dock = Majorsilence.Forms.DockStyle.Top;
             button1.Location = new System.Drawing.Point(0, 0);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(954, 35);
@@ -59,14 +59,14 @@ namespace FontTest
             Controls.Add(flowLayoutPanel1);
             Controls.Add(button1);
             Name = "FontTest";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            StartPosition = Majorsilence.Forms.FormStartPosition.CenterScreen;
             Text = "字体测试";
             ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Majorsilence.Forms.FlowLayoutPanel flowLayoutPanel1;
         private AntdUI.Button button1;
     }
 }

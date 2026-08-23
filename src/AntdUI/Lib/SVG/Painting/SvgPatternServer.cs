@@ -6,7 +6,8 @@
 using AntdUI.Svg.Transforms;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
 using System.Linq;
 
 namespace AntdUI.Svg

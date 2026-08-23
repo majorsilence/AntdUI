@@ -7,8 +7,9 @@
 using System;
 using System.Collections.Concurrent;
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.Linq;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {

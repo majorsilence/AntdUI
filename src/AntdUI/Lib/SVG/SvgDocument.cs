@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.IO;
 using System.Linq;
 using System.Xml;

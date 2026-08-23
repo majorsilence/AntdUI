@@ -8,7 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -476,7 +477,7 @@ namespace AntdUI
 
         DateTime old_now;
         int count = 0;
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             if (m.Msg == 0xa0 || m.Msg == 0x200) count = 0;
             else if (config.MaskClosable && isclose && !IsLoad && m.Msg == 134)
@@ -709,7 +710,7 @@ namespace AntdUI
             }
         }
 
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             if (!config.ButtonArrowNavigation) return base.ProcessCmdKey(ref msg, keyData);
 

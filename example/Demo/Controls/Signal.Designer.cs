@@ -1,4 +1,5 @@
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace Demo.Controls
 {
@@ -59,13 +60,13 @@ namespace Demo.Controls
             // header1
             // 
             header1.Description = "展示设备信号。";
-            header1.Dock = System.Windows.Forms.DockStyle.Top;
+            header1.Dock = Majorsilence.Forms.DockStyle.Top;
             header1.Font = new Font("Microsoft YaHei UI", 12F);
             header1.LocalizationDescription = "Signal.Description";
             header1.LocalizationText = "Signal";
             header1.Location = new Point(0, 0);
             header1.Name = "header1";
-            header1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            header1.Padding = new Majorsilence.Forms.Padding(0, 0, 0, 10);
             header1.Size = new Size(596, 74);
             header1.TabIndex = 0;
             header1.Text = "Signal 信号强度";
@@ -126,7 +127,7 @@ namespace Demo.Controls
             stackPanel1.Controls.Add(signal3);
             stackPanel1.Controls.Add(signal2);
             stackPanel1.Controls.Add(signal1);
-            stackPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel1.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel1.Location = new Point(0, 102);
             stackPanel1.Name = "stackPanel1";
             stackPanel1.Size = new Size(596, 48);
@@ -150,7 +151,7 @@ namespace Demo.Controls
             // 
             // divider1
             // 
-            divider1.Dock = System.Windows.Forms.DockStyle.Top;
+            divider1.Dock = Majorsilence.Forms.DockStyle.Top;
             divider1.Font = new Font("Microsoft YaHei UI", 10F);
             divider1.LocalizationText = "Signal.{id}";
             divider1.Location = new Point(0, 74);
@@ -167,7 +168,7 @@ namespace Demo.Controls
             stackPanel2.Controls.Add(signal8);
             stackPanel2.Controls.Add(signal9);
             stackPanel2.Controls.Add(signal10);
-            stackPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel2.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel2.Location = new Point(0, 178);
             stackPanel2.Name = "stackPanel2";
             stackPanel2.Size = new Size(596, 48);
@@ -177,7 +178,7 @@ namespace Demo.Controls
             // 
             signal6.Location = new Point(323, 3);
             signal6.Name = "signal6";
-            signal6.Padding = new System.Windows.Forms.Padding(24, 0, 24, 0);
+            signal6.Padding = new Majorsilence.Forms.Padding(24, 0, 24, 0);
             signal6.Size = new Size(74, 42);
             signal6.StyleLine = true;
             signal6.TabIndex = 4;
@@ -187,7 +188,7 @@ namespace Demo.Controls
             // 
             signal7.Location = new Point(243, 3);
             signal7.Name = "signal7";
-            signal7.Padding = new System.Windows.Forms.Padding(24, 0, 24, 0);
+            signal7.Padding = new Majorsilence.Forms.Padding(24, 0, 24, 0);
             signal7.Size = new Size(74, 42);
             signal7.StyleLine = true;
             signal7.TabIndex = 3;
@@ -197,7 +198,7 @@ namespace Demo.Controls
             // 
             signal8.Location = new Point(163, 3);
             signal8.Name = "signal8";
-            signal8.Padding = new System.Windows.Forms.Padding(24, 0, 24, 0);
+            signal8.Padding = new Majorsilence.Forms.Padding(24, 0, 24, 0);
             signal8.Size = new Size(74, 42);
             signal8.StyleLine = true;
             signal8.TabIndex = 2;
@@ -207,7 +208,7 @@ namespace Demo.Controls
             // 
             signal9.Location = new Point(83, 3);
             signal9.Name = "signal9";
-            signal9.Padding = new System.Windows.Forms.Padding(24, 0, 24, 0);
+            signal9.Padding = new Majorsilence.Forms.Padding(24, 0, 24, 0);
             signal9.Size = new Size(74, 42);
             signal9.StyleLine = true;
             signal9.TabIndex = 1;
@@ -217,7 +218,7 @@ namespace Demo.Controls
             // 
             signal10.Location = new Point(3, 3);
             signal10.Name = "signal10";
-            signal10.Padding = new System.Windows.Forms.Padding(24, 0, 24, 0);
+            signal10.Padding = new Majorsilence.Forms.Padding(24, 0, 24, 0);
             signal10.Size = new Size(74, 42);
             signal10.StyleLine = true;
             signal10.TabIndex = 0;
@@ -225,7 +226,7 @@ namespace Demo.Controls
             // 
             // divider2
             // 
-            divider2.Dock = System.Windows.Forms.DockStyle.Top;
+            divider2.Dock = Majorsilence.Forms.DockStyle.Top;
             divider2.Font = new Font("Microsoft YaHei UI", 10F);
             divider2.LocalizationText = "Signal.{id}";
             divider2.Location = new Point(0, 150);
@@ -241,7 +242,7 @@ namespace Demo.Controls
             stackPanel3.Controls.Add(signal13);
             stackPanel3.Controls.Add(signal14);
             stackPanel3.Controls.Add(signal15);
-            stackPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel3.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel3.Location = new Point(0, 254);
             stackPanel3.Name = "stackPanel3";
             stackPanel3.Size = new Size(596, 48);
@@ -253,7 +254,7 @@ namespace Demo.Controls
             signal12.Loading = true;
             signal12.Location = new Point(243, 3);
             signal12.Name = "signal12";
-            signal12.Padding = new System.Windows.Forms.Padding(24, 0, 24, 0);
+            signal12.Padding = new Majorsilence.Forms.Padding(24, 0, 24, 0);
             signal12.Size = new Size(74, 42);
             signal12.StyleLine = true;
             signal12.TabIndex = 3;
@@ -272,7 +273,7 @@ namespace Demo.Controls
             signal14.Loading = true;
             signal14.Location = new Point(83, 3);
             signal14.Name = "signal14";
-            signal14.Padding = new System.Windows.Forms.Padding(24, 0, 24, 0);
+            signal14.Padding = new Majorsilence.Forms.Padding(24, 0, 24, 0);
             signal14.Size = new Size(74, 42);
             signal14.StyleLine = true;
             signal14.TabIndex = 1;
@@ -287,7 +288,7 @@ namespace Demo.Controls
             // 
             // divider3
             // 
-            divider3.Dock = System.Windows.Forms.DockStyle.Top;
+            divider3.Dock = Majorsilence.Forms.DockStyle.Top;
             divider3.Font = new Font("Microsoft YaHei UI", 10F);
             divider3.LocalizationText = "Signal.{id}";
             divider3.Location = new Point(0, 226);
@@ -301,10 +302,10 @@ namespace Demo.Controls
             // 
             stackPanel4.Controls.Add(button2);
             stackPanel4.Controls.Add(button1);
-            stackPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            stackPanel4.Dock = Majorsilence.Forms.DockStyle.Top;
             stackPanel4.Location = new Point(0, 302);
             stackPanel4.Name = "stackPanel4";
-            stackPanel4.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            stackPanel4.Padding = new Majorsilence.Forms.Padding(0, 4, 0, 0);
             stackPanel4.Size = new Size(596, 48);
             stackPanel4.TabIndex = 10;
             // 

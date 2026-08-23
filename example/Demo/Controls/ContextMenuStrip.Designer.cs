@@ -1,4 +1,5 @@
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace Demo.Controls
 {
@@ -29,20 +30,20 @@ namespace Demo.Controls
             components = new System.ComponentModel.Container();
             header1 = new AntdUI.PageHeader();
             button1 = new AntdUI.Button();
-            notifyIcon1 = new System.Windows.Forms.NotifyIcon(components);
+            notifyIcon1 = new Majorsilence.Forms.NotifyIcon(components);
             button2 = new AntdUI.Button();
             SuspendLayout();
             // 
             // header1
             // 
             header1.Description = "任意点击当前页面的右键";
-            header1.Dock = System.Windows.Forms.DockStyle.Top;
+            header1.Dock = Majorsilence.Forms.DockStyle.Top;
             header1.Font = new Font("Microsoft YaHei UI", 12F);
             header1.LocalizationDescription = "ContextMenuStrip.Description";
             header1.LocalizationText = "ContextMenuStrip";
             header1.Location = new Point(0, 0);
             header1.Name = "header1";
-            header1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            header1.Padding = new Majorsilence.Forms.Padding(0, 0, 0, 10);
             header1.Size = new Size(596, 74);
             header1.TabIndex = 1;
             header1.Text = "ContextMenuStrip 右键菜单";
@@ -93,7 +94,7 @@ namespace Demo.Controls
 
         private AntdUI.PageHeader header1;
         private AntdUI.Button button1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private Majorsilence.Forms.NotifyIcon notifyIcon1;
         private AntdUI.Button button2;
     }
 }

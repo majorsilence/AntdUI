@@ -3,7 +3,7 @@
 // COPYRIGHT (C) svg-net. ALL RIGHTS RESERVED.
 // GITHUB: https://github.com/svg-net/SVG
 
-using System.Drawing.Drawing2D;
+using Majorsilence.Forms.Drawing.Drawing2D;
 
 namespace AntdUI.Svg
 {

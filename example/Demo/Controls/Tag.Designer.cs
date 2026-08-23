@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,11 +29,11 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel5 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel5 = new Majorsilence.Forms.Panel();
             tag16 = new AntdUI.Tag();
             divider3 = new AntdUI.Divider();
-            panel4 = new System.Windows.Forms.Panel();
+            panel4 = new Majorsilence.Forms.Panel();
             tag15 = new AntdUI.Tag();
             tag10 = new AntdUI.Tag();
             tag14 = new AntdUI.Tag();
@@ -44,8 +45,8 @@ namespace Demo.Controls
             tag11 = new AntdUI.Tag();
             tag6 = new AntdUI.Tag();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
-            panel3 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             tag5 = new AntdUI.Tag();
             tag4 = new AntdUI.Tag();
             tag3 = new AntdUI.Tag();
@@ -363,16 +364,16 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Divider divider1;
         private AntdUI.Tag tag1;
         private AntdUI.Tag tag2;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Tag tag5;
         private AntdUI.Tag tag4;
         private AntdUI.Tag tag3;
-        private System.Windows.Forms.Panel panel4;
+        private Majorsilence.Forms.Panel panel4;
         private AntdUI.Tag tag15;
         private AntdUI.Tag tag10;
         private AntdUI.Tag tag14;
@@ -384,7 +385,7 @@ namespace Demo.Controls
         private AntdUI.Tag tag11;
         private AntdUI.Tag tag6;
         private AntdUI.Divider divider2;
-        private System.Windows.Forms.Panel panel5;
+        private Majorsilence.Forms.Panel panel5;
         private AntdUI.Tag tag16;
         private AntdUI.Divider divider3;
     }

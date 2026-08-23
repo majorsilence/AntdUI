@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,8 +29,8 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel3 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             button9 = new AntdUI.Button();
             button6 = new AntdUI.Button();
             button8 = new AntdUI.Button();
@@ -43,7 +44,7 @@ namespace Demo.Controls
             button10 = new AntdUI.Button();
             button1 = new AntdUI.Button();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             tooltip1 = new AntdUI.Tooltip();
             label4 = new AntdUI.Label();
             divider1 = new AntdUI.Divider();
@@ -368,12 +369,12 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Label label4;
         private AntdUI.TooltipComponent tooltipComponent1;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Divider divider2;
         private AntdUI.Button button2;
         private AntdUI.Button button4;

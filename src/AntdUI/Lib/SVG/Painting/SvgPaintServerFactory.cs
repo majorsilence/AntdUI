@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using SystemColors = Majorsilence.Forms.SystemColors;
 using System.Linq;
 
 namespace AntdUI.Svg

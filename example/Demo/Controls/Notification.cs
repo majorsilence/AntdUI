@@ -5,8 +5,8 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System;
-using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {

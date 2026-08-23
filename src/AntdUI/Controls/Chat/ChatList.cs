@@ -9,9 +9,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI.Chat
 {
@@ -293,7 +294,7 @@ namespace AntdUI.Chat
                         g.DrawEllipse(Colour.Fill.Get(name, Name), size, rect_prog);
                         using (var brush = new Pen(Colour.Primary.Get(name, Name), size))
                         {
-                            brush.StartCap = brush.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                            brush.StartCap = brush.EndCap = Majorsilence.Forms.Drawing.Drawing2D.LineCap.Round;
                             //if (config.Value.HasValue)
                             //{
                             //    g.DrawArc(brush, rect_prog, LineAngle, config.Value.Value * 360F);
@@ -739,7 +740,7 @@ namespace AntdUI.Chat
 
         #region 键盘
 
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             switch (keyData)
             {

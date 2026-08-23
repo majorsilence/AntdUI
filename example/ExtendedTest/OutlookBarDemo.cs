@@ -5,7 +5,8 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System.Drawing;
-using System.Windows.Forms;
+using SystemColors = Majorsilence.Forms.SystemColors;
+using Majorsilence.Forms;
 
 namespace ExtendedTest
 {

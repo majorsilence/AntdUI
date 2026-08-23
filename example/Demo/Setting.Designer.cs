@@ -24,7 +24,7 @@ namespace Demo
 
         private void InitializeComponent()
         {
-            tablePanel = new System.Windows.Forms.TableLayoutPanel();
+            tablePanel = new Majorsilence.Forms.TableLayoutPanel();
             label1 = new AntdUI.Label();
             label2 = new AntdUI.Label();
             label3 = new AntdUI.Label();
@@ -41,8 +41,8 @@ namespace Demo
             // tablePanel
             // 
             tablePanel.ColumnCount = 2;
-            tablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            tablePanel.ColumnStyles.Add(new Majorsilence.Forms.ColumnStyle(Majorsilence.Forms.SizeType.Percent, 100F));
+            tablePanel.ColumnStyles.Add(new Majorsilence.Forms.ColumnStyle(Majorsilence.Forms.SizeType.Absolute, 60F));
             tablePanel.Controls.Add(label1, 0, 0);
             tablePanel.Controls.Add(label2, 0, 1);
             tablePanel.Controls.Add(label3, 0, 2);
@@ -53,22 +53,22 @@ namespace Demo
             tablePanel.Controls.Add(switch3, 1, 2);
             tablePanel.Controls.Add(switch4, 1, 3);
             tablePanel.Controls.Add(switch5, 1, 4);
-            tablePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            tablePanel.Dock = Majorsilence.Forms.DockStyle.Top;
             tablePanel.Location = new System.Drawing.Point(0, 0);
             tablePanel.Name = "tablePanel";
             tablePanel.RowCount = 6;
-            tablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            tablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            tablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            tablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            tablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            tablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tablePanel.RowStyles.Add(new Majorsilence.Forms.RowStyle(Majorsilence.Forms.SizeType.Absolute, 46F));
+            tablePanel.RowStyles.Add(new Majorsilence.Forms.RowStyle(Majorsilence.Forms.SizeType.Absolute, 46F));
+            tablePanel.RowStyles.Add(new Majorsilence.Forms.RowStyle(Majorsilence.Forms.SizeType.Absolute, 46F));
+            tablePanel.RowStyles.Add(new Majorsilence.Forms.RowStyle(Majorsilence.Forms.SizeType.Absolute, 46F));
+            tablePanel.RowStyles.Add(new Majorsilence.Forms.RowStyle(Majorsilence.Forms.SizeType.Absolute, 46F));
+            tablePanel.RowStyles.Add(new Majorsilence.Forms.RowStyle(Majorsilence.Forms.SizeType.Absolute, 20F));
             tablePanel.Size = new System.Drawing.Size(246, 258);
             tablePanel.TabIndex = 0;
             // 
             // label1
             // 
-            label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            label1.Dock = Majorsilence.Forms.DockStyle.Fill;
             label1.LocalizationText = "AnimationEnabled";
             label1.Location = new System.Drawing.Point(3, 3);
             label1.Name = "label1";
@@ -78,7 +78,7 @@ namespace Demo
             // 
             // label2
             // 
-            label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            label2.Dock = Majorsilence.Forms.DockStyle.Fill;
             label2.LocalizationText = "ShadowEnabled";
             label2.Location = new System.Drawing.Point(3, 49);
             label2.Name = "label2";
@@ -88,7 +88,7 @@ namespace Demo
             // 
             // label3
             // 
-            label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            label3.Dock = Majorsilence.Forms.DockStyle.Fill;
             label3.LocalizationText = "PopupWindow";
             label3.Location = new System.Drawing.Point(3, 95);
             label3.Name = "label3";
@@ -98,7 +98,7 @@ namespace Demo
             // 
             // label4
             // 
-            label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            label4.Dock = Majorsilence.Forms.DockStyle.Fill;
             label4.LocalizationText = "ScrollBarHidden";
             label4.Location = new System.Drawing.Point(3, 141);
             label4.Name = "label4";
@@ -108,7 +108,7 @@ namespace Demo
             // 
             // label5
             // 
-            label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            label5.Dock = Majorsilence.Forms.DockStyle.Fill;
             label5.LocalizationText = "TextRenderingHighQuality";
             label5.Location = new System.Drawing.Point(3, 187);
             label5.Name = "label5";
@@ -118,7 +118,7 @@ namespace Demo
             // 
             // switch1
             // 
-            switch1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            switch1.Anchor = Majorsilence.Forms.AnchorStyles.None;
             switch1.Location = new System.Drawing.Point(191, 8);
             switch1.Name = "switch1";
             switch1.Size = new System.Drawing.Size(50, 30);
@@ -126,7 +126,7 @@ namespace Demo
             // 
             // switch2
             // 
-            switch2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            switch2.Anchor = Majorsilence.Forms.AnchorStyles.None;
             switch2.Location = new System.Drawing.Point(191, 54);
             switch2.Name = "switch2";
             switch2.Size = new System.Drawing.Size(50, 30);
@@ -134,7 +134,7 @@ namespace Demo
             // 
             // switch3
             // 
-            switch3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            switch3.Anchor = Majorsilence.Forms.AnchorStyles.None;
             switch3.Location = new System.Drawing.Point(191, 100);
             switch3.Name = "switch3";
             switch3.Size = new System.Drawing.Size(50, 30);
@@ -142,7 +142,7 @@ namespace Demo
             // 
             // switch4
             // 
-            switch4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            switch4.Anchor = Majorsilence.Forms.AnchorStyles.None;
             switch4.Location = new System.Drawing.Point(191, 146);
             switch4.Name = "switch4";
             switch4.Size = new System.Drawing.Size(50, 30);
@@ -150,7 +150,7 @@ namespace Demo
             // 
             // switch5
             // 
-            switch5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            switch5.Anchor = Majorsilence.Forms.AnchorStyles.None;
             switch5.Location = new System.Drawing.Point(191, 192);
             switch5.Name = "switch5";
             switch5.Size = new System.Drawing.Size(50, 30);
@@ -167,7 +167,7 @@ namespace Demo
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tablePanel;
+        private Majorsilence.Forms.TableLayoutPanel tablePanel;
         private AntdUI.Label label1;
         private AntdUI.Label label2;
         private AntdUI.Label label3;

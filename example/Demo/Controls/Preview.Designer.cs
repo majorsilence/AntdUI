@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -166,7 +167,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.FlowLayoutPanel panel1;
+        private Majorsilence.Forms.FlowLayoutPanel panel1;
         private AntdUI.Divider divider1;
         private AntdUI.Button button1;
         private AntdUI.Button button2;

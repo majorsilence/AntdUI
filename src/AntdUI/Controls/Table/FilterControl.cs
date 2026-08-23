@@ -7,7 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -24,7 +24,7 @@ namespace AntdUI
 
         IList<object>? CustomSource;
         bool realTime = false, is_virtual = false;
-        public FilterControl(Table table, System.Drawing.Font font, Column currentColumn, IList<object>? customSource)
+        public FilterControl(Table table, Majorsilence.Forms.Drawing.Font font, Column currentColumn, IList<object>? customSource)
         {
             InitializeComponent();
             Font = font;

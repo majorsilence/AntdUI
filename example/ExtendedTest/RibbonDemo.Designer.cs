@@ -39,7 +39,7 @@ namespace ExtendedTest
             // 
             // ribbon
             // 
-            ribbon.Dock = System.Windows.Forms.DockStyle.Top;
+            ribbon.Dock = Majorsilence.Forms.DockStyle.Top;
             ribbon.Location = new System.Drawing.Point(0, 0);
             ribbon.Name = "ribbon";
             ribbon.Size = new System.Drawing.Size(150, 122);

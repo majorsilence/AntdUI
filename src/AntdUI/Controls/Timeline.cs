@@ -8,8 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -435,7 +436,7 @@ namespace AntdUI
         /// 文本
         /// </summary>
         [Description("文本"), Category(nameof(CategoryAttribute.Appearance)), DefaultValue(null)]
-        [Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(UITypeEditor))]
+        [Editor(typeof(Majorsilence.Forms.Design.MultilineStringEditor), typeof(UITypeEditor))]
         public string? Text
         {
             get => Localization.GetLangI(LocalizationText, text, new string?[] { "{id}", ID });
@@ -455,7 +456,7 @@ namespace AntdUI
         /// 描述，可选
         /// </summary>
         [Description("描述，可选"), Category(nameof(CategoryAttribute.Appearance)), DefaultValue(null)]
-        [Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(UITypeEditor))]
+        [Editor(typeof(Majorsilence.Forms.Design.MultilineStringEditor), typeof(UITypeEditor))]
         public string? Description
         {
             get => Localization.GetLangI(LocalizationDescription, description, new string?[] { "{id}", ID });

@@ -5,7 +5,7 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -92,7 +92,7 @@ namespace AntdUI
         /// <summary>
         /// 消息过滤实现
         /// </summary>
-        public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+        public bool PreFilterMessage(ref Majorsilence.Forms.Message m)
         {
             switch (m.Msg)
             {

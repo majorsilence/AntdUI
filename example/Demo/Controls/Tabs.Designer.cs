@@ -1,5 +1,7 @@
 using System.Drawing;
-using System.Windows.Forms;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -31,7 +33,7 @@ namespace Demo.Controls
             AntdUI.Tabs.StyleCard styleCard1 = new AntdUI.Tabs.StyleCard();
             AntdUI.Tabs.StyleLine styleLine2 = new AntdUI.Tabs.StyleLine();
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             tabs3 = new AntdUI.Tabs();
             tabPage16 = new AntdUI.TabPage();
             tabPage17 = new AntdUI.TabPage();
@@ -577,7 +579,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider1;
         private AntdUI.Tabs tabs1;
         private AntdUI.Divider divider2;

@@ -7,7 +7,9 @@
 using AntdUI;
 using System;
 using System.Drawing;
-using System.Windows.Forms;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -763,10 +765,10 @@ namespace Demo.Controls
                         if (saveDialog.ShowDialog() == DialogResult.OK)
                         {
                             // 根据文件扩展名选择保存格式
-                            var format = System.Drawing.Imaging.ImageFormat.Png;
+                            var format = Majorsilence.Forms.Drawing.Imaging.ImageFormat.Png;
                             if (saveDialog.FileName.ToLower().EndsWith(".jpg") || saveDialog.FileName.ToLower().EndsWith(".jpeg"))
                             {
-                                format = System.Drawing.Imaging.ImageFormat.Jpeg;
+                                format = Majorsilence.Forms.Drawing.Imaging.ImageFormat.Jpeg;
                             }
 
                             // 保存图片

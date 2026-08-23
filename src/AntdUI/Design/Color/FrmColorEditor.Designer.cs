@@ -39,7 +39,7 @@ namespace AntdUI.Design
             // 
             // input1
             // 
-            input1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            input1.Anchor = Majorsilence.Forms.AnchorStyles.None;
             input1.Location = new System.Drawing.Point(43, 174);
             input1.Name = "input1";
             input1.Size = new System.Drawing.Size(144, 50);

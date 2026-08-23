@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -47,7 +48,7 @@ namespace Demo.Controls
             label2 = new Label();
             collapseItem3 = new AntdUI.CollapseItem();
             label3 = new Label();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             collapse2 = new AntdUI.Collapse();
             collapseItem4 = new AntdUI.CollapseItem();
             label4 = new Label();
@@ -354,7 +355,7 @@ namespace Demo.Controls
         private Label label1;
         private Label label2;
         private Label label3;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider1;
         private AntdUI.Collapse collapse2;
         private AntdUI.CollapseItem collapseItem4;

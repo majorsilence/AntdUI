@@ -5,6 +5,7 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI
 {
@@ -39,7 +40,7 @@ namespace AntdUI
                     if (AnimationCheck)
                     {
                         var alpha = 255 * AnimationCheckValue;
-                        if (checkState == System.Windows.Forms.CheckState.Indeterminate || (checkStateOld == System.Windows.Forms.CheckState.Indeterminate && !_checked))
+                        if (checkState == Majorsilence.Forms.CheckState.Indeterminate || (checkStateOld == Majorsilence.Forms.CheckState.Indeterminate && !_checked))
                         {
                             g.Draw(Colour.BorderColor.Get(ColorScheme, nameof(Checkbox), PARENT.PARENT.Name), bor2, path);
                             g.Fill(Helper.ToColor(alpha, Colour.Primary.Get(ColorScheme, nameof(Checkbox), PARENT.PARENT.Name)), Checkbox.PaintBlock(icon_rect));
@@ -63,7 +64,7 @@ namespace AntdUI
                             g.Draw(color, bor2, path);
                         }
                     }
-                    else if (checkState == System.Windows.Forms.CheckState.Indeterminate)
+                    else if (checkState == Majorsilence.Forms.CheckState.Indeterminate)
                     {
                         g.Draw(Colour.BorderColor.Get(ColorScheme, nameof(Checkbox), PARENT.PARENT.Name), bor2, path);
                         g.Fill(Colour.Primary.Get(ColorScheme, nameof(Checkbox), PARENT.PARENT.Name), Checkbox.PaintBlock(icon_rect));

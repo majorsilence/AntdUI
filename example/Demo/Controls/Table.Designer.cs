@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -30,7 +31,7 @@ namespace Demo.Controls
             header1 = new AntdUI.PageHeader();
             pagination1 = new AntdUI.Pagination();
             table1 = new AntdUI.Table();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             checkboxSummaryCustomize = new AntdUI.Checkbox();
             checkboxFocusNavigation = new AntdUI.Checkbox();
             selectFocusedStyle = new AntdUI.Select();
@@ -359,7 +360,7 @@ namespace Demo.Controls
         private AntdUI.PageHeader header1;
         private AntdUI.Table table1;
         private AntdUI.Pagination pagination1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Checkbox checkFixedHeader;
         private AntdUI.Checkbox checkEnableHeaderResizing;
         private AntdUI.Checkbox checkColumnDragSort;

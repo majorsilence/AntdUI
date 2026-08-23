@@ -1,4 +1,6 @@
 using System.Drawing;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
 
 namespace Demo.Controls
 {
@@ -44,13 +46,13 @@ namespace Demo.Controls
             // header1
             // 
             header1.Description = "双栏穿梭选择框，用于在两个区域之间移动元素。";
-            header1.Dock = System.Windows.Forms.DockStyle.Top;
+            header1.Dock = Majorsilence.Forms.DockStyle.Top;
             header1.Font = new Font("Microsoft YaHei UI", 12F);
             header1.LocalizationDescription = "Transfer.Description";
             header1.LocalizationText = "Transfer";
             header1.Location = new Point(0, 0);
             header1.Name = "header1";
-            header1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            header1.Padding = new Majorsilence.Forms.Padding(0, 0, 0, 10);
             header1.Size = new Size(800, 74);
             header1.TabIndex = 0;
             header1.Text = "Transfer 穿梭框";
@@ -63,7 +65,7 @@ namespace Demo.Controls
             panel1.Controls.Add(switch_oneWay);
             panel1.Controls.Add(btn_reload);
             panel1.Controls.Add(label1);
-            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Dock = Majorsilence.Forms.DockStyle.Top;
             panel1.Location = new Point(0, 74);
             panel1.Name = "panel1";
             panel1.Radius = 0;
@@ -74,11 +76,11 @@ namespace Demo.Controls
             // 
             label_target.AutoSizeMode = AntdUI.TAutoSize.Width;
             label_target.BackColor = Color.Transparent;
-            label_target.Dock = System.Windows.Forms.DockStyle.Right;
+            label_target.Dock = Majorsilence.Forms.DockStyle.Right;
             label_target.LocalizationText = "Transfer.TargetT";
             label_target.Location = new Point(614, 0);
             label_target.Name = "label_target";
-            label_target.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_target.Padding = new Majorsilence.Forms.Padding(4, 0, 4, 0);
             label_target.Size = new Size(63, 36);
             label_target.TabIndex = 5;
             label_target.Text = "目标列表: ";
@@ -88,11 +90,11 @@ namespace Demo.Controls
             // 
             label_source.AutoSizeMode = AntdUI.TAutoSize.Width;
             label_source.BackColor = Color.Transparent;
-            label_source.Dock = System.Windows.Forms.DockStyle.Right;
+            label_source.Dock = Majorsilence.Forms.DockStyle.Right;
             label_source.LocalizationText = "Transfer.SourceT";
             label_source.Location = new Point(677, 0);
             label_source.Name = "label_source";
-            label_source.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_source.Padding = new Majorsilence.Forms.Padding(4, 0, 4, 0);
             label_source.Size = new Size(51, 36);
             label_source.TabIndex = 4;
             label_source.Text = "源列表: ";
@@ -101,10 +103,10 @@ namespace Demo.Controls
             // switch_oneWay
             // 
             switch_oneWay.BackColor = Color.Transparent;
-            switch_oneWay.Dock = System.Windows.Forms.DockStyle.Left;
+            switch_oneWay.Dock = Majorsilence.Forms.DockStyle.Left;
             switch_oneWay.Location = new Point(59, 0);
             switch_oneWay.Name = "switch_oneWay";
-            switch_oneWay.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            switch_oneWay.Padding = new Majorsilence.Forms.Padding(0, 4, 0, 4);
             switch_oneWay.Size = new Size(40, 36);
             switch_oneWay.TabIndex = 0;
             // 
@@ -112,7 +114,7 @@ namespace Demo.Controls
             // 
             btn_reload.AutoSizeMode = AntdUI.TAutoSize.Width;
             btn_reload.BorderWidth = 1F;
-            btn_reload.Dock = System.Windows.Forms.DockStyle.Right;
+            btn_reload.Dock = Majorsilence.Forms.DockStyle.Right;
             btn_reload.LocalizationText = "Transfer.Reload";
             btn_reload.Location = new Point(728, 0);
             btn_reload.Name = "btn_reload";
@@ -125,24 +127,24 @@ namespace Demo.Controls
             // 
             label1.AutoSizeMode = AntdUI.TAutoSize.Width;
             label1.BackColor = Color.Transparent;
-            label1.Dock = System.Windows.Forms.DockStyle.Left;
+            label1.Dock = Majorsilence.Forms.DockStyle.Left;
             label1.LocalizationText = "Transfer.One";
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Padding = new Majorsilence.Forms.Padding(4, 0, 4, 0);
             label1.Size = new Size(59, 36);
             label1.TabIndex = 1;
             label1.Text = "单向模式:";
             // 
             // transfer1
             // 
-            transfer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            transfer1.Dock = Majorsilence.Forms.DockStyle.Fill;
             transfer1.LocalizationSearchPlaceholderSource = "Transfer.search";
             transfer1.LocalizationSearchPlaceholderTarget = "Transfer.search";
             transfer1.Location = new Point(0, 110);
             transfer1.MinimumSize = new Size(300, 200);
             transfer1.Name = "transfer1";
-            transfer1.Padding = new System.Windows.Forms.Padding(8);
+            transfer1.Padding = new Majorsilence.Forms.Padding(8);
             transfer1.SearchPlaceholderSource = "请输入搜索内容";
             transfer1.SearchPlaceholderTarget = "请输入搜索内容";
             transfer1.ShowSearch = true;

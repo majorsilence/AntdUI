@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.Runtime.InteropServices;
 
 namespace AntdUI
@@ -30,7 +31,7 @@ namespace AntdUI
 
             public static RenderResult SetBits(IntPtr memDc, Bitmap? bmp, Rectangle rect, IntPtr intPtr, byte alpha, out IntPtr hBitmap, out IntPtr oldBits)
             {
-                if (bmp == null || bmp.PixelFormat == System.Drawing.Imaging.PixelFormat.DontCare)
+                if (bmp == null || bmp.PixelFormat == Majorsilence.Forms.Drawing.Imaging.PixelFormat.DontCare)
                 {
                     hBitmap = oldBits = IntPtr.Zero;
                     return RenderResult.Invalid;

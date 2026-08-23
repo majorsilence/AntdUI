@@ -28,7 +28,7 @@ namespace SVGView
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            Majorsilence.Forms.ComponentResourceManager resources = new Majorsilence.Forms.ComponentResourceManager(typeof(Main));
             windowBar1 = new AntdUI.PageHeader();
             button2 = new AntdUI.Button();
             button1 = new AntdUI.Button();

@@ -8,8 +8,8 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
-using System.Windows.Forms;
-using System.Windows.Forms.Design;
+using Majorsilence.Forms;
+using Majorsilence.Forms.Design;
 
 namespace AntdUI
 {

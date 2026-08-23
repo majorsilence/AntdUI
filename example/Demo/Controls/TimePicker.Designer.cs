@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,8 +29,8 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel2 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             datePicker3 = new AntdUI.TimePicker();
             datePicker2 = new AntdUI.TimePicker();
             datePicker1 = new AntdUI.TimePicker();
@@ -132,9 +133,9 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.TimePicker datePicker2;
         private AntdUI.TimePicker datePicker1;
         private AntdUI.TimePicker datePicker3;

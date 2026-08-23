@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -41,7 +41,7 @@ namespace AntdUI
 
         // Notification flash: a sine-wave pulse blended into the title background while an inactive pane
         // has a new notification. Auto-stops when the pane becomes active (user saw it) or duration elapses.
-        System.Windows.Forms.Timer? flashTimer;
+        Majorsilence.Forms.Timer? flashTimer;
         long flashStartTicks;
         int flashDurationMs;
         float flashAmplitude; // 0..1 — sampled each tick; combined with palette in OnDraw.
@@ -344,7 +344,7 @@ namespace AntdUI
             flashStartTicks = Environment.TickCount;
             if (flashTimer == null)
             {
-                flashTimer = new System.Windows.Forms.Timer { Interval = 16 };
+                flashTimer = new Majorsilence.Forms.Timer { Interval = 16 };
                 flashTimer.Tick += OnFlashTick;
             }
             flashTimer.Start();

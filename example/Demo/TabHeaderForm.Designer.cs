@@ -38,7 +38,7 @@ namespace Demo
             tabHeader1.BackActive = System.Drawing.Color.White;
             tabHeader1.BackColor = System.Drawing.Color.FromArgb(232, 232, 232);
             tabHeader1.BorderWidth = 1F;
-            tabHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            tabHeader1.Dock = Majorsilence.Forms.DockStyle.Top;
             tabHeader1.DragSort = true;
             tabHeader1.IconSvg = "ChromeFilled";
             tagTabItem1.IconSvg = "WeiboSquareFilled";
@@ -75,7 +75,7 @@ namespace Demo
             Controls.Add(tabHeader1);
             Icon = Properties.Resources.icon;
             Name = "TabHeaderForm";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            StartPosition = Majorsilence.Forms.FormStartPosition.CenterScreen;
             Text = "TabHeader";
             ResumeLayout(false);
         }

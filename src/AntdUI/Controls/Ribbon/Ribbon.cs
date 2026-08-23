@@ -8,8 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -169,7 +170,7 @@ namespace AntdUI
 
         // Collapse animation progress: 1 = fully expanded content, 0 = collapsed (tabs only).
         float collapseProg = 1f;
-        System.Windows.Forms.Timer? collapseTimer;
+        Majorsilence.Forms.Timer? collapseTimer;
         float collapseStart;
         float collapseTarget;
         long collapseStartTicks;
@@ -186,7 +187,7 @@ namespace AntdUI
             }
             if (collapseTimer == null)
             {
-                collapseTimer = new System.Windows.Forms.Timer { Interval = 16 };
+                collapseTimer = new Majorsilence.Forms.Timer { Interval = 16 };
                 collapseTimer.Tick += OnCollapseTick;
             }
             // Stop first so a mid-flight toggle resets its start-ticks cleanly — the ease-out origin

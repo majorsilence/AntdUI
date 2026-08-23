@@ -7,8 +7,7 @@
 using System;
 using System.Collections;
 using System.ComponentModel;
-using System.Drawing.Design;
-using System.Windows.Forms.Design;
+using Majorsilence.Forms.Design;
 
 namespace AntdUI.Design
 {
@@ -23,7 +22,7 @@ namespace AntdUI.Design
             {
                 if (value is IList list)
                 {
-                    var collectionEditor = new System.ComponentModel.Design.CollectionEditor(list.GetType());
+                    var collectionEditor = new Majorsilence.Forms.Design.CollectionEditor(list.GetType());
                     return collectionEditor.EditValue(context, provider, value);
                 }
             }

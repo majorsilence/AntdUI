@@ -1,6 +1,6 @@
 using Demo.Properties;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {

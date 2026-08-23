@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -29,7 +30,7 @@ namespace Demo.Controls
         {
             header1 = new AntdUI.PageHeader();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             divider2 = new AntdUI.Divider();
             label2 = new Label();
             divider1 = new AntdUI.Divider();
@@ -141,7 +142,7 @@ namespace Demo.Controls
         private AntdUI.PageHeader header1;
         private FlowLayoutPanel flowLayoutPanel1;
         private AntdUI.Divider divider1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider2;
         private Label label2;
         private Label label1;

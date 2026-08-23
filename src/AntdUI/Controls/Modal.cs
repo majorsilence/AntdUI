@@ -6,7 +6,8 @@
 
 using System;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -650,7 +651,7 @@ namespace AntdUI
                 Layered.BeginInvoke(Layered.Close);
             }
 
-            public void DialogResult(DialogResult result = System.Windows.Forms.DialogResult.OK)
+            public void DialogResult(DialogResult result = Majorsilence.Forms.DialogResult.OK)
             {
                 if (Layered == null) return;
                 Layered.BeginInvoke(() => Layered.DialogResult = result);
@@ -1116,7 +1117,7 @@ namespace AntdUI
             #endregion
         }
 
-        public class UserControl : System.Windows.Forms.UserControl
+        public class UserControl : Majorsilence.Forms.UserControl
         {
             internal LayeredFormModal? Layered;
 

@@ -5,6 +5,7 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI
 {

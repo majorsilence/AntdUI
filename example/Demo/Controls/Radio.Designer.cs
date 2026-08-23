@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -28,20 +29,20 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel4 = new System.Windows.Forms.Panel();
-            panel5 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel4 = new Majorsilence.Forms.Panel();
+            panel5 = new Majorsilence.Forms.Panel();
             button2 = new AntdUI.Button();
             button1 = new AntdUI.Button();
             radio9 = new AntdUI.Radio();
             divider3 = new AntdUI.Divider();
-            panel3 = new System.Windows.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             radio8 = new AntdUI.Radio();
             radio7 = new AntdUI.Radio();
             radio6 = new AntdUI.Radio();
             radio5 = new AntdUI.Radio();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             radio4 = new AntdUI.Radio();
             radio3 = new AntdUI.Radio();
             radio2 = new AntdUI.Radio();
@@ -308,9 +309,9 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Radio radio4;
         private AntdUI.Radio radio3;
         private AntdUI.Radio radio2;
@@ -321,8 +322,8 @@ namespace Demo.Controls
         private AntdUI.Radio radio5;
         private AntdUI.Divider divider2;
         private AntdUI.Divider divider1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
+        private Majorsilence.Forms.Panel panel4;
+        private Majorsilence.Forms.Panel panel5;
         private AntdUI.Button button2;
         private AntdUI.Button button1;
         private AntdUI.Radio radio9;

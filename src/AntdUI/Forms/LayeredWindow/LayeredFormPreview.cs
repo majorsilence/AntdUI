@@ -8,8 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
 using System.Threading;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {

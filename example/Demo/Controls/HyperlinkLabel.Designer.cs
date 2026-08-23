@@ -1,4 +1,6 @@
 using System.Drawing;
+using ContentAlignment = Majorsilence.Forms.ContentAlignment;
+using Majorsilence.Forms.Drawing;
 
 namespace Demo.Controls
 {
@@ -31,7 +33,7 @@ namespace Demo.Controls
         private void InitializeComponent()
         {
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             hyperlinkLabel5 = new AntdUI.HyperlinkLabel();
             divider5 = new AntdUI.Divider();
             hyperlinkLabel4 = new AntdUI.HyperlinkLabel();
@@ -48,13 +50,13 @@ namespace Demo.Controls
             // header1
             // 
             header1.Description = "超链接文本 <a>";
-            header1.Dock = System.Windows.Forms.DockStyle.Top;
+            header1.Dock = Majorsilence.Forms.DockStyle.Top;
             header1.Font = new Font("Microsoft YaHei UI", 12F);
             header1.LocalizationDescription = "HyperlinkLabel.Description";
             header1.LocalizationText = "HyperlinkLabel";
             header1.Location = new Point(0, 0);
             header1.Name = "header1";
-            header1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            header1.Padding = new Majorsilence.Forms.Padding(0, 0, 0, 10);
             header1.Size = new Size(592, 74);
             header1.TabIndex = 1;
             header1.Text = "HyperlinkLabel 超链接文本";
@@ -73,7 +75,7 @@ namespace Demo.Controls
             panel1.Controls.Add(divider2);
             panel1.Controls.Add(hyperlinkLabel1);
             panel1.Controls.Add(divider1);
-            panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel1.Dock = Majorsilence.Forms.DockStyle.Fill;
             panel1.Location = new Point(0, 74);
             panel1.Name = "panel1";
             panel1.Size = new Size(592, 402);
@@ -81,10 +83,10 @@ namespace Demo.Controls
             // 
             // hyperlinkLabel5
             // 
-            hyperlinkLabel5.Dock = System.Windows.Forms.DockStyle.Top;
+            hyperlinkLabel5.Dock = Majorsilence.Forms.DockStyle.Top;
             hyperlinkLabel5.Location = new Point(0, 260);
             hyperlinkLabel5.Name = "hyperlinkLabel5";
-            hyperlinkLabel5.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            hyperlinkLabel5.Padding = new Majorsilence.Forms.Padding(30, 0, 30, 0);
             hyperlinkLabel5.Size = new Size(592, 30);
             hyperlinkLabel5.TabIndex = 5;
             hyperlinkLabel5.Text = "多个链接: <a href=one>链接1</a> 和 <a href=two>链接2</a>";
@@ -92,7 +94,7 @@ namespace Demo.Controls
             // 
             // divider5
             // 
-            divider5.Dock = System.Windows.Forms.DockStyle.Top;
+            divider5.Dock = Majorsilence.Forms.DockStyle.Top;
             divider5.Font = new Font("Microsoft YaHei UI", 10F);
             divider5.LocalizationText = "HyperlinkLabel.{id}";
             divider5.Location = new Point(0, 232);
@@ -105,10 +107,10 @@ namespace Demo.Controls
             // 
             // hyperlinkLabel4
             // 
-            hyperlinkLabel4.Dock = System.Windows.Forms.DockStyle.Top;
+            hyperlinkLabel4.Dock = Majorsilence.Forms.DockStyle.Top;
             hyperlinkLabel4.Location = new Point(0, 202);
             hyperlinkLabel4.Name = "hyperlinkLabel4";
-            hyperlinkLabel4.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            hyperlinkLabel4.Padding = new Majorsilence.Forms.Padding(30, 0, 30, 0);
             hyperlinkLabel4.Size = new Size(592, 30);
             hyperlinkLabel4.TabIndex = 4;
             hyperlinkLabel4.Text = "自定义样式 <a href=none>链接</a>";
@@ -116,7 +118,7 @@ namespace Demo.Controls
             // 
             // divider4
             // 
-            divider4.Dock = System.Windows.Forms.DockStyle.Top;
+            divider4.Dock = Majorsilence.Forms.DockStyle.Top;
             divider4.Font = new Font("Microsoft YaHei UI", 10F);
             divider4.LocalizationText = "HyperlinkLabel.{id}";
             divider4.Location = new Point(0, 174);
@@ -131,10 +133,10 @@ namespace Demo.Controls
             // 
             hyperlinkLabel3.Badge = "New";
             hyperlinkLabel3.BadgeAlign = AntdUI.TAlign.RT;
-            hyperlinkLabel3.Dock = System.Windows.Forms.DockStyle.Top;
+            hyperlinkLabel3.Dock = Majorsilence.Forms.DockStyle.Top;
             hyperlinkLabel3.Location = new Point(0, 144);
             hyperlinkLabel3.Name = "hyperlinkLabel3";
-            hyperlinkLabel3.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            hyperlinkLabel3.Padding = new Majorsilence.Forms.Padding(30, 0, 30, 0);
             hyperlinkLabel3.Size = new Size(592, 30);
             hyperlinkLabel3.TabIndex = 3;
             hyperlinkLabel3.Text = "带徽章的 <a href=none>超链接</a>";
@@ -142,7 +144,7 @@ namespace Demo.Controls
             // 
             // divider3
             // 
-            divider3.Dock = System.Windows.Forms.DockStyle.Top;
+            divider3.Dock = Majorsilence.Forms.DockStyle.Top;
             divider3.Font = new Font("Microsoft YaHei UI", 10F);
             divider3.LocalizationText = "HyperlinkLabel.{id}";
             divider3.Location = new Point(0, 116);
@@ -155,7 +157,7 @@ namespace Demo.Controls
             // 
             // hyperlinkLabel2
             // 
-            hyperlinkLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            hyperlinkLabel2.Dock = Majorsilence.Forms.DockStyle.Top;
             hyperlinkLabel2.Location = new Point(0, 86);
             hyperlinkLabel2.Name = "hyperlinkLabel2";
             hyperlinkLabel2.Size = new Size(592, 30);
@@ -166,7 +168,7 @@ namespace Demo.Controls
             // 
             // divider2
             // 
-            divider2.Dock = System.Windows.Forms.DockStyle.Top;
+            divider2.Dock = Majorsilence.Forms.DockStyle.Top;
             divider2.Font = new Font("Microsoft YaHei UI", 10F);
             divider2.LocalizationText = "HyperlinkLabel.{id}";
             divider2.Location = new Point(0, 58);
@@ -179,10 +181,10 @@ namespace Demo.Controls
             // 
             // hyperlinkLabel1
             // 
-            hyperlinkLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            hyperlinkLabel1.Dock = Majorsilence.Forms.DockStyle.Top;
             hyperlinkLabel1.Location = new Point(0, 28);
             hyperlinkLabel1.Name = "hyperlinkLabel1";
-            hyperlinkLabel1.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            hyperlinkLabel1.Padding = new Majorsilence.Forms.Padding(30, 0, 30, 0);
             hyperlinkLabel1.Size = new Size(592, 30);
             hyperlinkLabel1.TabIndex = 1;
             hyperlinkLabel1.Text = "这是一个 <a href=none>超链接</a> 测试";
@@ -190,7 +192,7 @@ namespace Demo.Controls
             // 
             // divider1
             // 
-            divider1.Dock = System.Windows.Forms.DockStyle.Top;
+            divider1.Dock = Majorsilence.Forms.DockStyle.Top;
             divider1.Font = new Font("Microsoft YaHei UI", 10F);
             divider1.LocalizationText = "HyperlinkLabel.{id}";
             divider1.Location = new Point(0, 0);
@@ -215,7 +217,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.HyperlinkLabel hyperlinkLabel1;
         private AntdUI.HyperlinkLabel hyperlinkLabel2;
         private AntdUI.HyperlinkLabel hyperlinkLabel3;

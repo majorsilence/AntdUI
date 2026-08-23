@@ -4,6 +4,7 @@
 // GITHUB: https://github.com/svg-net/SVG
 
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI.Svg.FilterEffects
 {
@@ -15,7 +16,7 @@ namespace AntdUI.Svg.FilterEffects
         public override string ClassName { get => "feOffset"; }
 
         /// <summary>
-        /// The amount to offset the input graphic along the x-axis. The offset amount is expressed in the coordinate system established by attribute ‘primitiveUnits?on the ‘filter?element.
+        /// The amount to offset the input graphic along the x-axis. The offset amount is expressed in the coordinate system established by attribute ï¿½primitiveUnits?on the ï¿½filter?element.
         /// If the attribute is not specified, then the effect is as if a value of 0 were specified.
         /// Note: this is not used in calculations to bitmap - used only to allow for svg xml output
         /// </summary>
@@ -23,7 +24,7 @@ namespace AntdUI.Svg.FilterEffects
         public SvgUnit Dx { get; set; }
 
         /// <summary>
-        /// The amount to offset the input graphic along the y-axis. The offset amount is expressed in the coordinate system established by attribute ‘primitiveUnits?on the ‘filter?element.
+        /// The amount to offset the input graphic along the y-axis. The offset amount is expressed in the coordinate system established by attribute ï¿½primitiveUnits?on the ï¿½filter?element.
         /// If the attribute is not specified, then the effect is as if a value of 0 were specified.
         /// Note: this is not used in calculations to bitmap - used only to allow for svg xml output
         /// </summary>

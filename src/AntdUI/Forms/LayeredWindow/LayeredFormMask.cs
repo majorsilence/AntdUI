@@ -6,8 +6,9 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -58,7 +59,7 @@ namespace AntdUI
         public override string name => "Mask";
         Func<GraphicsPath>? RenderRegion;
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             // 关闭动画期间，让鼠标点击穿透到下方窗口
             if (isClosing && m.Msg == 0x84) // WM_NCHITTEST

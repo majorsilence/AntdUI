@@ -8,8 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -767,7 +768,7 @@ namespace AntdUI
         /// 文本
         /// </summary>
         [Description("文本"), Category(nameof(CategoryAttribute.Appearance)), DefaultValue("")]
-        [Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(UITypeEditor))]
+        [Editor(typeof(Majorsilence.Forms.Design.MultilineStringEditor), typeof(UITypeEditor))]
         public override string Text
         {
             get => this.GetLangIN(LocalizationText, _text);
@@ -795,7 +796,7 @@ namespace AntdUI
         /// 多行文本集合
         /// </summary>
         [Description("多行文本集合"), Category(nameof(CategoryAttribute.Appearance)), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        [Editor("System.Windows.Forms.Design.StringArrayEditor", typeof(UITypeEditor))]
+        [Editor("Majorsilence.Forms.Design.StringArrayEditor", typeof(UITypeEditor))]
         public string[] Lines
         {
             get => _text.Split(new string[] { "\n", Environment.NewLine }, StringSplitOptions.None);
@@ -2035,7 +2036,7 @@ namespace AntdUI
         #region 系统消息
 
         IntPtr m_hIMC;
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             switch (m.Msg)
             {

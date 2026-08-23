@@ -47,7 +47,7 @@ namespace ExtendedTest
             // 
             // dock
             // 
-            dock.Dock = System.Windows.Forms.DockStyle.Fill;
+            dock.Dock = Majorsilence.Forms.DockStyle.Fill;
             dock.Location = new System.Drawing.Point(0, 44);
             dock.Name = "dock";
             dock.Size = new System.Drawing.Size(831, 309);
@@ -61,17 +61,17 @@ namespace ExtendedTest
             toolbar.Controls.Add(btnRestore);
             toolbar.Controls.Add(btnAutoHide);
             toolbar.Controls.Add(btnFloat);
-            toolbar.Dock = System.Windows.Forms.DockStyle.Top;
+            toolbar.Dock = Majorsilence.Forms.DockStyle.Top;
             toolbar.Location = new System.Drawing.Point(0, 0);
             toolbar.Name = "toolbar";
-            toolbar.Padding = new System.Windows.Forms.Padding(8);
+            toolbar.Padding = new Majorsilence.Forms.Padding(8);
             toolbar.Size = new System.Drawing.Size(831, 44);
             toolbar.TabIndex = 1;
             // 
             // label1
             // 
             label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            label1.Dock = Majorsilence.Forms.DockStyle.Fill;
             label1.Location = new System.Drawing.Point(498, 8);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(325, 28);
@@ -81,7 +81,7 @@ namespace ExtendedTest
             // btnLoad
             // 
             btnLoad.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnLoad.Dock = System.Windows.Forms.DockStyle.Left;
+            btnLoad.Dock = Majorsilence.Forms.DockStyle.Left;
             btnLoad.Location = new System.Drawing.Point(403, 8);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new System.Drawing.Size(95, 28);
@@ -92,7 +92,7 @@ namespace ExtendedTest
             // btnSave
             // 
             btnSave.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnSave.Dock = System.Windows.Forms.DockStyle.Left;
+            btnSave.Dock = Majorsilence.Forms.DockStyle.Left;
             btnSave.Location = new System.Drawing.Point(310, 8);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(93, 28);
@@ -103,7 +103,7 @@ namespace ExtendedTest
             // btnRestore
             // 
             btnRestore.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnRestore.Dock = System.Windows.Forms.DockStyle.Left;
+            btnRestore.Dock = Majorsilence.Forms.DockStyle.Left;
             btnRestore.Location = new System.Drawing.Point(223, 8);
             btnRestore.Name = "btnRestore";
             btnRestore.Size = new System.Drawing.Size(87, 28);
@@ -114,7 +114,7 @@ namespace ExtendedTest
             // btnAutoHide
             // 
             btnAutoHide.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnAutoHide.Dock = System.Windows.Forms.DockStyle.Left;
+            btnAutoHide.Dock = Majorsilence.Forms.DockStyle.Left;
             btnAutoHide.Location = new System.Drawing.Point(100, 8);
             btnAutoHide.Name = "btnAutoHide";
             btnAutoHide.Size = new System.Drawing.Size(123, 28);
@@ -125,7 +125,7 @@ namespace ExtendedTest
             // btnFloat
             // 
             btnFloat.AutoSizeMode = AntdUI.TAutoSize.Width;
-            btnFloat.Dock = System.Windows.Forms.DockStyle.Left;
+            btnFloat.Dock = Majorsilence.Forms.DockStyle.Left;
             btnFloat.Location = new System.Drawing.Point(8, 8);
             btnFloat.Name = "btnFloat";
             btnFloat.Size = new System.Drawing.Size(92, 28);

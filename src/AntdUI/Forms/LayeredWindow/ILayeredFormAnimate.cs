@@ -8,8 +8,9 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.Threading;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {

@@ -5,7 +5,7 @@
 // GitCode: https://gitcode.com/AntdUI/AntdUI
 
 using System;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace ExtendedTest
 {
@@ -16,7 +16,7 @@ namespace ExtendedTest
         {
             AntdUI.Config.Theme().Dark("#000", "#fff").Light("#fff", "#000").Header("f3f3f3", "111111").FormBorderColor();
             AntdUI.Config.TextRenderingHighQuality = true;
-            AntdUI.Config.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            AntdUI.Config.TextRenderingHint = Majorsilence.Forms.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -6,8 +6,9 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Drawing2D;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -474,7 +475,7 @@ namespace AntdUI
             if (config.IsScreen)
             {
                 visible = true;
-                Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
+                Majorsilence.Forms.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
             }
             else
             {
@@ -574,7 +575,7 @@ namespace AntdUI
         protected override void Dispose(bool disposing)
         {
             // 移除事件监听
-            if (config.IsScreen) Microsoft.Win32.SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
+            if (config.IsScreen) Majorsilence.Forms.SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
             else
             {
                 config.Target.VisibleChanged -= Parent_VisibleChanged;

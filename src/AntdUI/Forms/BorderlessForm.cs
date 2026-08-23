@@ -7,7 +7,8 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -210,7 +211,7 @@ namespace AntdUI
 
         readonly IntPtr TRUE = new IntPtr(1);
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             var msg = (Win32.User32.WindowMessage)m.Msg;
             switch (msg)
@@ -264,7 +265,7 @@ namespace AntdUI
         const nint SIZE_RESTORED = 0;
         const nint SIZE_MINIMIZED = 1;
         const nint SIZE_MAXIMIZED = 2;
-        void WmSize(ref System.Windows.Forms.Message m)
+        void WmSize(ref Majorsilence.Forms.Message m)
         {
             if (m.WParam == SIZE_MINIMIZED) WinState = WState.Minimize;
             else if (m.WParam == SIZE_MAXIMIZED) WinState = WState.Maximize;
@@ -477,7 +478,7 @@ namespace AntdUI
 
         #region 鼠标
 
-        public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+        public bool PreFilterMessage(ref Majorsilence.Forms.Message m)
         {
             if (is_resizable) return OnPreFilterMessage(m);
             if (Window.CanHandMessage && ReadMessage)
@@ -503,7 +504,7 @@ namespace AntdUI
             return OnPreFilterMessage(m);
         }
 
-        protected virtual bool OnPreFilterMessage(System.Windows.Forms.Message m) => false;
+        protected virtual bool OnPreFilterMessage(Majorsilence.Forms.Message m) => false;
 
         bool isMe(IntPtr intPtr)
         {

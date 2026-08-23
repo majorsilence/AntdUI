@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -76,11 +77,11 @@ namespace Demo.Controls
             divider2 = new AntdUI.Divider();
             menu2 = new AntdUI.Menu();
             tableLayoutPanel1 = new TableLayoutPanel();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             switch4 = new AntdUI.Switch();
             menu3 = new AntdUI.Menu();
             switch3 = new AntdUI.Switch();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             switch5 = new AntdUI.Switch();
             switch2 = new AntdUI.Switch();
             switch1 = new AntdUI.Switch();
@@ -409,8 +410,8 @@ namespace Demo.Controls
         private TableLayoutPanel tableLayoutPanel1;
         private AntdUI.Divider divider3;
         private AntdUI.Menu menu3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Switch switch1;
         private AntdUI.Switch switch2;
         private AntdUI.Switch switch4;

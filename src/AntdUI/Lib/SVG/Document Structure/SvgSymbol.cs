@@ -1,4 +1,4 @@
-﻿// THIS FILE IS PART OF SVG PROJECT
+// THIS FILE IS PART OF SVG PROJECT
 // THE SVG PROJECT IS AN OPENSOURCE LIBRARY LICENSED UNDER THE MS-PL License.
 // COPYRIGHT (C) svg-net. ALL RIGHTS RESERVED.
 // GITHUB: https://github.com/svg-net/SVG
@@ -38,10 +38,10 @@ namespace AntdUI.Svg.Document_Structure
         }
 
         /// <summary>
-        /// Gets the <see cref="System.Drawing.Drawing2D.GraphicsPath"/> for this element.
+        /// Gets the <see cref="Majorsilence.Forms.Drawing.Drawing2D.GraphicsPath"/> for this element.
         /// </summary>
         /// <value></value>
-        public override System.Drawing.Drawing2D.GraphicsPath Path(ISvgRenderer renderer)
+        public override Majorsilence.Forms.Drawing.Drawing2D.GraphicsPath Path(ISvgRenderer renderer)
         {
             return GetPaths(this, renderer);
         }

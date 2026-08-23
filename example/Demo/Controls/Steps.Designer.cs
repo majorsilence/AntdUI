@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -53,7 +54,7 @@ namespace Demo.Controls
             AntdUI.StepsItem stepsItem24 = new AntdUI.StepsItem();
             AntdUI.StepsItem stepsItem25 = new AntdUI.StepsItem();
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             switch1 = new AntdUI.Switch();
             steps6 = new AntdUI.Steps();
             steps5 = new AntdUI.Steps();
@@ -301,7 +302,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Steps steps1;
         private AntdUI.Steps steps2;
         private AntdUI.Steps steps6;

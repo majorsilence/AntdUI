@@ -7,8 +7,9 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -342,7 +343,7 @@ namespace AntdUI
         {
             using (var pen = new Pen(color, 2F))
             {
-                pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                pen.StartCap = pen.EndCap = Majorsilence.Forms.Drawing.Drawing2D.LineCap.Round;
                 if (item.ExpandThread) g.DrawLines(pen, item.arr_rect.TriangleLinesVertical(-(1F - (2F * item.ExpandProg)), .4F));
                 else if (item.Expand) g.DrawLines(pen, item.arr_rect.TriangleLinesVertical(1, .4F));
                 else g.DrawLines(pen, item.arr_rect.TriangleLinesVertical(-1, .4F));

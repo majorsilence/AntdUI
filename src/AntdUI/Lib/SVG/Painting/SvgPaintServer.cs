@@ -4,7 +4,7 @@
 // GITHUB: https://github.com/svg-net/SVG
 
 using System;
-using System.Drawing;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI.Svg
 {

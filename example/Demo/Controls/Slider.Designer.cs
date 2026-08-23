@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -72,8 +73,8 @@ namespace Demo.Controls
             AntdUI.SliderMarkItem sliderMarkItem43 = new AntdUI.SliderMarkItem();
             AntdUI.SliderMarkItem sliderMarkItem44 = new AntdUI.SliderMarkItem();
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel3 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             slider9 = new AntdUI.Slider();
             slider8 = new AntdUI.Slider();
             slider6 = new AntdUI.Slider();
@@ -81,7 +82,7 @@ namespace Demo.Controls
             slider4 = new AntdUI.Slider();
             slider7 = new AntdUI.Slider();
             divider2 = new AntdUI.Divider();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             slider2 = new AntdUI.Slider();
             slider3 = new AntdUI.Slider();
             slider1 = new AntdUI.Slider();
@@ -429,11 +430,11 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider1;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Divider divider2;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Slider slider1;
         private AntdUI.Slider slider2;
         private AntdUI.Slider slider3;

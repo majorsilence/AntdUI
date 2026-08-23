@@ -4,8 +4,9 @@
 // GITHUB: https://github.com/svg-net/SVG
 
 using System.Collections.Generic;
-using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.Linq;
+using SystemFonts = Majorsilence.Forms.SystemFonts;
 
 namespace AntdUI.Svg
 {

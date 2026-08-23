@@ -6,7 +6,7 @@
 
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -27,7 +27,7 @@ namespace AntdUI
 
         /// <summary>Image icon for the panel header / footer.</summary>
         [Description("Image"), Category("Appearance"), DefaultValue(null)]
-        public System.Drawing.Image? Image { get; set; }
+        public Majorsilence.Forms.Drawing.Image? Image { get; set; }
 
         /// <summary>Navigation items within this panel (shown in the body when selected).</summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]

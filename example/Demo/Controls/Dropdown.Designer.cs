@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -29,8 +30,8 @@ namespace Demo.Controls
         {
             header1 = new AntdUI.PageHeader();
             button7 = new AntdUI.Dropdown();
-            panel3 = new System.Windows.Forms.Panel();
-            panel1 = new System.Windows.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             button4 = new AntdUI.Dropdown();
             button6 = new AntdUI.Dropdown();
             button2 = new AntdUI.Dropdown();
@@ -279,12 +280,12 @@ namespace Demo.Controls
 
         private AntdUI.PageHeader header1;
         private AntdUI.Dropdown button7;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Divider divider1;
         private FlowLayoutPanel panel4;
         private AntdUI.Dropdown button19;
         private AntdUI.Dropdown button17;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider2;
         private AntdUI.Dropdown button4;
         private AntdUI.Dropdown button6;

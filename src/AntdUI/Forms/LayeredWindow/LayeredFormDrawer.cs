@@ -7,8 +7,9 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Imaging;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {

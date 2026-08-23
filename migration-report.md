@@ -1,0 +1,564 @@
+# Majorsilence.Forms migration report
+
+- **Input:** `/home/peter/source/repos/AntdUI/AntdUI.sln`
+- **Output:** _(in place)_
+- **Backend:** Avalonia
+- **Reference mode:** Package
+- **Target framework:** net10.0
+- **Mode:** write
+
+## Summary
+
+- Files scanned: **706**
+- Files changed: **518**
+- Manual-review items: **21**
+
+## Changed files (518)
+
+- `[proj]` src/AntdUI/AntdUI.csproj
+- `[proj]` example/Demo/Demo.csproj
+- `[proj]` example/SVGView/SVGView.csproj
+- `[proj]` example/ChatUI/ChatUI.csproj
+- `[proj]` example/FontTest/FontTest.csproj
+- `[proj]` src/AntdUI.EmojiFluentFlat/AntdUI.EmojiFluentFlat.csproj
+- `[proj]` test/GraphemeSplitterTest/GraphemeSplitterTest.csproj
+- `[proj]` example/BallTest/BallTest.csproj
+- `[proj]` example/ExtendedTest/ExtendedTest.csproj
+- `[src]` src/AntdUI/Localization/Localization.cs
+- `[src]` src/AntdUI/Properties/Resources.Designer.cs
+- `[src]` src/AntdUI/Design/CollectionEditor.cs
+- `[src]` src/AntdUI/Controls/Alert.cs
+- `[src]` src/AntdUI/Controls/Battery.cs
+- `[src]` src/AntdUI/Controls/Tag.cs
+- `[src]` src/AntdUI/Controls/Steps.cs
+- `[src]` src/AntdUI/Controls/Image3D.cs
+- `[src]` src/AntdUI/Controls/Watermark.cs
+- `[src]` src/AntdUI/Controls/Badge.cs
+- `[src]` src/AntdUI/Controls/Switch.cs
+- `[src]` src/AntdUI/Controls/Signal.cs
+- `[src]` src/AntdUI/Controls/Preview.cs
+- `[src]` src/AntdUI/Controls/DatePicker.cs
+- `[src]` src/AntdUI/Controls/CollapseGroup.cs
+- `[src]` src/AntdUI/Controls/TimePicker.cs
+- `[src]` src/AntdUI/Controls/Tree.cs
+- `[src]` src/AntdUI/Controls/Label.cs
+- `[src]` src/AntdUI/Controls/Collapse.cs
+- `[src]` src/AntdUI/Controls/Pagination.cs
+- `[src]` src/AntdUI/Controls/SelectMultiple.cs
+- `[src]` src/AntdUI/Controls/Slider.cs
+- `[src]` src/AntdUI/Controls/Avatar.cs
+- `[src]` src/AntdUI/Controls/Shield.cs
+- `[src]` src/AntdUI/Controls/Transfer.cs
+- `[src]` src/AntdUI/Controls/ContextMenuStrip.cs
+- `[src]` src/AntdUI/Controls/Menu.cs
+- `[src]` src/AntdUI/Controls/Spin.cs
+- `[src]` src/AntdUI/Controls/SelectNumber.cs
+- `[src]` src/AntdUI/Controls/Rate.cs
+- `[src]` src/AntdUI/Controls/HyperlinkCheckbox.cs
+- `[src]` src/AntdUI/Controls/Segmented.cs
+- `[src]` src/AntdUI/Controls/Message.cs
+- `[src]` src/AntdUI/Controls/ImagePreview.cs
+- `[src]` src/AntdUI/Controls/HyperlinkLabel.cs
+- `[src]` src/AntdUI/Controls/LabelTime.cs
+- `[src]` src/AntdUI/Controls/Progress.cs
+- `[src]` src/AntdUI/Controls/Button.cs
+- `[src]` src/AntdUI/Controls/TabHeader.cs
+- `[src]` src/AntdUI/Controls/Popover.cs
+- `[src]` src/AntdUI/Controls/Breadcrumb.cs
+- `[src]` src/AntdUI/Controls/LabelLed.cs
+- `[src]` src/AntdUI/Controls/DatePickerRange.cs
+- `[src]` src/AntdUI/Controls/IconState.cs
+- `[src]` src/AntdUI/Controls/FloatButton.cs
+- `[src]` src/AntdUI/Controls/Divider.cs
+- `[src]` src/AntdUI/Controls/Dropdown.cs
+- `[src]` src/AntdUI/Controls/IControl.cs
+- `[src]` src/AntdUI/Controls/Checkbox.cs
+- `[src]` src/AntdUI/Controls/ButtonShadow.cs
+- `[src]` src/AntdUI/Controls/Tour.cs
+- `[src]` src/AntdUI/Controls/InputNumber.cs
+- `[src]` src/AntdUI/Controls/Statistic.cs
+- `[src]` src/AntdUI/Controls/Splitter.cs
+- `[src]` src/AntdUI/Controls/Notification.cs
+- `[src]` src/AntdUI/Controls/Carousel.cs
+- `[src]` src/AntdUI/Controls/Modal.cs
+- `[src]` src/AntdUI/Controls/Timeline.cs
+- `[src]` src/AntdUI/Controls/Radio.cs
+- `[src]` src/AntdUI/Controls/PageHeader.cs
+- `[src]` src/AntdUI/Controls/Select.cs
+- `[src]` src/AntdUI/Controls/Calendar.cs
+- `[src]` src/AntdUI/Controls/Panel.cs
+- `[src]` src/AntdUI/Controls/Drawer.cs
+- `[src]` src/AntdUI/Controls/SliderRange.cs
+- `[src]` src/AntdUI/Controls/UploadDragger.cs
+- `[src]` src/AntdUI/Events/BaseEvent.cs
+- `[src]` src/AntdUI/Lib/CalculateCoordinate.cs
+- `[src]` src/AntdUI/Lib/CorrectionTextRendering.cs
+- `[src]` src/AntdUI/Lib/FolderBrowserDialog.cs
+- `[src]` src/AntdUI/Lib/SvgExtend.cs
+- `[src]` src/AntdUI/Lib/Target.cs
+- `[src]` src/AntdUI/Lib/ITaskOpacity.cs
+- `[src]` src/AntdUI/Lib/ITask.cs
+- `[src]` src/AntdUI/Lib/AnimationTask.cs
+- `[src]` src/AntdUI/Lib/SystemSoundHelper.cs
+- `[src]` src/AntdUI/Lib/Config.cs
+- `[src]` src/AntdUI/Forms/DoubleBufferForm.cs
+- `[src]` src/AntdUI/Forms/BorderlessForm.cs
+- `[src]` src/AntdUI/Forms/Window.cs
+- `[src]` src/AntdUI/Forms/BaseForm.cs
+- `[src]` src/AntdUI/Forms/BorderlessFormShadow.cs
+- `[src]` src/AntdUI/Design/Color/FrmColorEditor.cs
+- `[src]` src/AntdUI/Design/Color/ColorEditor.cs
+- `[src]` src/AntdUI/Design/Color/FrmColorEditor.Designer.cs
+- `[src]` src/AntdUI/Controls/Tabs/Tabs.cs
+- `[src]` src/AntdUI/Controls/Tabs/Tabs.Design.cs
+- `[src]` src/AntdUI/Controls/OutlookBar/OutlookItem.cs
+- `[src]` src/AntdUI/Controls/OutlookBar/OutlookFlyoutPanel.cs
+- `[src]` src/AntdUI/Controls/OutlookBar/OutlookBar.cs
+- `[src]` src/AntdUI/Controls/OutlookBar/OutlookPanel.cs
+- `[src]` src/AntdUI/Controls/Input/Input.Mouse.cs
+- `[src]` src/AntdUI/Controls/Input/Input.Keyboard.cs
+- `[src]` src/AntdUI/Controls/Input/TFixFont.cs
+- `[src]` src/AntdUI/Controls/Input/Input.Layout.cs
+- `[src]` src/AntdUI/Controls/Input/Input.cs
+- `[src]` src/AntdUI/Controls/Input/Input.Render.cs
+- `[src]` src/AntdUI/Controls/ColorPicker/ColorPicker.cs
+- `[src]` src/AntdUI/Controls/ColorPicker/ColorPicker.Static.cs
+- `[src]` src/AntdUI/Controls/Tooltip/Tooltip.cs
+- `[src]` src/AntdUI/Controls/Tooltip/TooltipComponent.cs
+- `[src]` src/AntdUI/Controls/Tooltip/Tooltip.Form.cs
+- `[src]` src/AntdUI/Controls/Tooltip/Tooltip.Static.cs
+- `[src]` src/AntdUI/Controls/Tooltip/Tooltip.Core.cs
+- `[src]` src/AntdUI/Controls/Captcha/PuzzleCaptcha.cs
+- `[src]` src/AntdUI/Controls/Core/CanvasGDI.cs
+- `[src]` src/AntdUI/Controls/Core/Canvas.cs
+- `[src]` src/AntdUI/Controls/Ribbon/RibbonItem.cs
+- `[src]` src/AntdUI/Controls/Ribbon/Ribbon.cs
+- `[src]` src/AntdUI/Controls/Ribbon/RibbonPopup.cs
+- `[src]` src/AntdUI/Controls/Layout/ContainerPanel.cs
+- `[src]` src/AntdUI/Controls/Layout/StackPanel.cs
+- `[src]` src/AntdUI/Controls/Layout/GridPanel.cs
+- `[src]` src/AntdUI/Controls/Layout/FlowPanel.cs
+- `[src]` src/AntdUI/Controls/Layout/VirtualPanel.cs
+- `[src]` src/AntdUI/Controls/Chart/ChartDataset.cs
+- `[src]` src/AntdUI/Controls/Chart/Chart.cs
+- `[src]` src/AntdUI/Controls/In/FlowLayoutPanel.cs
+- `[src]` src/AntdUI/Controls/In/Panel.cs
+- `[src]` src/AntdUI/Controls/Docking/DockFloatWindow.cs
+- `[src]` src/AntdUI/Controls/Docking/DockPanel.cs
+- `[src]` src/AntdUI/Controls/Docking/DockCycleSwitcher.cs
+- `[src]` src/AntdUI/Controls/Docking/DockAutoHideStrip.cs
+- `[src]` src/AntdUI/Controls/Docking/DockNavigator.cs
+- `[src]` src/AntdUI/Controls/Docking/IDocking.cs
+- `[src]` src/AntdUI/Controls/Docking/DockForm.cs
+- `[src]` src/AntdUI/Controls/Docking/DockPane.cs
+- `[src]` src/AntdUI/Controls/Scroll/XScrollBar.cs
+- `[src]` src/AntdUI/Controls/Scroll/YScrollBar.cs
+- `[src]` src/AntdUI/Controls/Scroll/ScrollBar.cs
+- `[src]` src/AntdUI/Controls/Table/FilterControl.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Keyboard.cs
+- `[src]` src/AntdUI/Controls/Table/Table.EditMode.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Event.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Summary.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Layout.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Template.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Render.Button.cs
+- `[src]` src/AntdUI/Controls/Table/FilterControl.Designer.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Data.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Mouse.cs
+- `[src]` src/AntdUI/Controls/Table/Table.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Table.cs
+- `[src]` src/AntdUI/Controls/Chat/ChatList.cs
+- `[src]` src/AntdUI/Controls/Chat/MsgList.cs
+- `[src]` src/AntdUI/Events/Controls/Steps.cs
+- `[src]` src/AntdUI/Events/Controls/Tabs.cs
+- `[src]` src/AntdUI/Events/Controls/Tree.cs
+- `[src]` src/AntdUI/Events/Controls/Chat.cs
+- `[src]` src/AntdUI/Events/Controls/Menu.cs
+- `[src]` src/AntdUI/Events/Controls/Segmented.cs
+- `[src]` src/AntdUI/Events/Controls/Input.cs
+- `[src]` src/AntdUI/Events/Controls/Breadcrumb.cs
+- `[src]` src/AntdUI/Events/Controls/VirtualPanel.cs
+- `[src]` src/AntdUI/Events/Controls/Timeline.cs
+- `[src]` src/AntdUI/Events/Controls/Calendar.cs
+- `[src]` src/AntdUI/Events/Controls/Table.cs
+- `[src]` src/AntdUI/Lib/MouseMonitor/MessageHandler.cs
+- `[src]` src/AntdUI/Lib/MouseMonitor/IMessage.cs
+- `[src]` src/AntdUI/Lib/MouseMonitor/MessageHookManager.cs
+- `[src]` src/AntdUI/Lib/Transform/Cube.cs
+- `[src]` src/AntdUI/Lib/Transform/ImageData.cs
+- `[src]` src/AntdUI/Lib/Helper/Helper.cs
+- `[src]` src/AntdUI/Lib/Helper/Helper.RECT.cs
+- `[src]` src/AntdUI/Lib/Helper/Helper.Mask.cs
+- `[src]` src/AntdUI/Lib/Helper/Helper.GDI.cs
+- `[src]` src/AntdUI/Lib/Helper/Helper.DPI.cs
+- `[src]` src/AntdUI/Lib/Helper/Helper.GIF.cs
+- `[src]` src/AntdUI/Lib/Vanara/Win32.cs
+- `[src]` src/AntdUI/Lib/Vanara/Render.cs
+- `[src]` src/AntdUI/Lib/Image/UnsafeBitmap.cs
+- `[src]` src/AntdUI/Lib/Image/AsyncShadow.cs
+- `[src]` src/AntdUI/Lib/Image/SafeBitmap.cs
+- `[src]` src/AntdUI/Lib/SVG/SvgFontManager.cs
+- `[src]` src/AntdUI/Lib/SVG/SvgDocument.cs
+- `[src]` src/AntdUI/Lib/SVG/SvgElementStyle.cs
+- `[src]` src/AntdUI/Lib/SVG/SvgElement.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/ILayeredFormOpacity.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormPopover.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/ILayeredFormOpacityDown.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormDatePickerRangeTime.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/AnimateConfig.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormFloatButton.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/ILayeredFormAnimate.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormMenuDown.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormDrawer.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormSelectMultipleCheck.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormPreview.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormMask.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormSelectDown.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormContextMenuStrip.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/ILayeredForm.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/ILayeredShadowForm.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormModal.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormSelectMultiple.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormColorPicker.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormDatePickerRange.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormTimePicker.cs
+- `[src]` src/AntdUI/Forms/LayeredWindow/LayeredFormDatePicker.cs
+- `[src]` src/AntdUI/Controls/Tabs/Style/Tabs.Style.Card2.cs
+- `[src]` src/AntdUI/Controls/Tabs/Style/Tabs.Style.Line.cs
+- `[src]` src/AntdUI/Controls/Tabs/Style/Tabs.Style.Card.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/ICell.cs
+- `[src]` src/AntdUI/Lib/SVG/Document Structure/SvgSwitch.cs
+- `[src]` src/AntdUI/Lib/SVG/Document Structure/SvgSymbol.cs
+- `[src]` src/AntdUI/Lib/SVG/Document Structure/SvgFragment.cs
+- `[src]` src/AntdUI/Lib/SVG/Document Structure/SvgUse.cs
+- `[src]` src/AntdUI/Lib/SVG/Document Structure/SvgGroup.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgPolygon.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgLine.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgVisualElement.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgPathBasedElement.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgRectangle.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgPolyline.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgEllipse.cs
+- `[src]` src/AntdUI/Lib/SVG/Basic Shapes/SvgCircle.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgQuadraticCurveSegment.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgPathSegment.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgCubicCurveSegment.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgPath.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgClosePathSegment.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgArcSegment.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgLineSegment.cs
+- `[src]` src/AntdUI/Lib/SVG/Paths/SvgMoveToSegment.cs
+- `[src]` src/AntdUI/Lib/SVG/Filter Effects/ImageBuffer.cs
+- `[src]` src/AntdUI/Lib/SVG/Filter Effects/SvgFilter.cs
+- `[src]` src/AntdUI/Lib/SVG/Clipping and Masking/SvgClipPath.cs
+- `[src]` src/AntdUI/Lib/SVG/Extensibility/SvgForeignObject.cs
+- `[src]` src/AntdUI/Lib/SVG/Rendering/SvgRenderer.cs
+- `[src]` src/AntdUI/Lib/SVG/Rendering/ISvgRenderer.cs
+- `[src]` src/AntdUI/Lib/SVG/DataTypes/SvgViewBox.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgPatternServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgLinearGradientServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgColourServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgRadialGradientServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgPaintServerFactory.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgDeferredPaintServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgMarker.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgPaintServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/ISvgStylable.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgGradientServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Painting/SvgFallbackPaintServer.cs
+- `[src]` src/AntdUI/Lib/SVG/Text/SvgTextPath.cs
+- `[src]` src/AntdUI/Lib/SVG/Text/SvgGlyph.cs
+- `[src]` src/AntdUI/Lib/SVG/Text/IFontDefn.cs
+- `[src]` src/AntdUI/Lib/SVG/Text/SvgFontDefn.cs
+- `[src]` src/AntdUI/Lib/SVG/Text/GdiFontDefn.cs
+- `[src]` src/AntdUI/Lib/SVG/Text/PathStatistics.cs
+- `[src]` src/AntdUI/Lib/SVG/Text/SvgTextBase.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgTransform.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgRotate.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgSkew.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgScale.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgMatrix.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgShear.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgTransformCollection.cs
+- `[src]` src/AntdUI/Lib/SVG/Transforms/SvgTranslate.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Radio/Radio.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Radio/Radio.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Switch/Switch.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Switch/Switch.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Tag/Tag.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Badge/Badge.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Link/Link.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Link/Link.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Progress/Progress.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Button/Button.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Button/Button.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Text/Text.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Text/Text.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Divider/Divider.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Checkbox/Checkbox.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Checkbox/Checkbox.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Image/Image.Render.cs
+- `[src]` src/AntdUI/Controls/Table/Cell/Image/Image.cs
+- `[src]` src/AntdUI/Lib/SVG/Filter Effects/feMerge/SvgMerge.cs
+- `[src]` src/AntdUI/Lib/SVG/Filter Effects/feOffset/SvgOffset.cs
+- `[src]` src/AntdUI/Lib/SVG/Filter Effects/feColourMatrix/SvgColourMatrix.cs
+- `[src]` src/AntdUI/Lib/SVG/Filter Effects/feGaussianBlur/SvgGaussianBlur.cs
+- `[src]` src/AntdUI/Lib/SVG/Filter Effects/feGaussianBlur/RawBitmap.cs
+- `[src]` example/Demo/Helper.cs
+- `[src]` example/Demo/Program.cs
+- `[src]` example/Demo/res_dark.Designer.cs
+- `[src]` example/Demo/Overview.Designer.cs
+- `[src]` example/Demo/TabHeaderForm.Designer.cs
+- `[src]` example/Demo/Overview.cs
+- `[src]` example/Demo/Main.cs
+- `[src]` example/Demo/Setting.Designer.cs
+- `[src]` example/Demo/res_light.Designer.cs
+- `[src]` example/Demo/Colors.Designer.cs
+- `[src]` example/Demo/Setting.cs
+- `[src]` example/Demo/Colors.cs
+- `[src]` example/Demo/Main.Designer.cs
+- `[src]` example/Demo/Properties/Resources.Designer.cs
+- `[src]` example/Demo/UI/VIItem.cs
+- `[src]` example/Demo/UI/TItem.cs
+- `[src]` example/Demo/UI/EItem.cs
+- `[src]` example/Demo/Controls/Alert.cs
+- `[src]` example/Demo/Controls/Transfer.Designer.cs
+- `[src]` example/Demo/Controls/TableAOT.cs
+- `[src]` example/Demo/Controls/Rate.Designer.cs
+- `[src]` example/Demo/Controls/Splitter.Designer.cs
+- `[src]` example/Demo/Controls/Panel.Designer.cs
+- `[src]` example/Demo/Controls/HyperlinkLabel.Designer.cs
+- `[src]` example/Demo/Controls/Radio.Designer.cs
+- `[src]` example/Demo/Controls/Battery.cs
+- `[src]` example/Demo/Controls/Tag.cs
+- `[src]` example/Demo/Controls/Alert.Designer.cs
+- `[src]` example/Demo/Controls/Icon.Designer.cs
+- `[src]` example/Demo/Controls/Drawer.Designer.cs
+- `[src]` example/Demo/Controls/Steps.cs
+- `[src]` example/Demo/Controls/Table.Designer.cs
+- `[src]` example/Demo/Controls/TableAOT.Designer.cs
+- `[src]` example/Demo/Controls/Menu.Designer.cs
+- `[src]` example/Demo/Controls/Watermark.cs
+- `[src]` example/Demo/Controls/TourPopover.cs
+- `[src]` example/Demo/Controls/Badge.cs
+- `[src]` example/Demo/Controls/Tabs.cs
+- `[src]` example/Demo/Controls/Switch.cs
+- `[src]` example/Demo/Controls/Notification.Designer.cs
+- `[src]` example/Demo/Controls/Popover.Designer.cs
+- `[src]` example/Demo/Controls/Signal.cs
+- `[src]` example/Demo/Controls/InputNumber.Designer.cs
+- `[src]` example/Demo/Controls/Tooltip.cs
+- `[src]` example/Demo/Controls/Switch.Designer.cs
+- `[src]` example/Demo/Controls/Preview.cs
+- `[src]` example/Demo/Controls/Pagination.Designer.cs
+- `[src]` example/Demo/Controls/DatePicker.cs
+- `[src]` example/Demo/Controls/Result.Designer.cs
+- `[src]` example/Demo/Controls/Calendar.Designer.cs
+- `[src]` example/Demo/Controls/TourPopover.Designer.cs
+- `[src]` example/Demo/Controls/TimePicker.cs
+- `[src]` example/Demo/Controls/Tree.cs
+- `[src]` example/Demo/Controls/Tree.Designer.cs
+- `[src]` example/Demo/Controls/Collapse.cs
+- `[src]` example/Demo/Controls/Avatar.Designer.cs
+- `[src]` example/Demo/Controls/Dropdown.Designer.cs
+- `[src]` example/Demo/Controls/Pagination.cs
+- `[src]` example/Demo/Controls/Slider.cs
+- `[src]` example/Demo/Controls/Avatar.cs
+- `[src]` example/Demo/Controls/TimePicker.Designer.cs
+- `[src]` example/Demo/Controls/Shield.cs
+- `[src]` example/Demo/Controls/Transfer.cs
+- `[src]` example/Demo/Controls/ContextMenuStrip.cs
+- `[src]` example/Demo/Controls/GridPanel.cs
+- `[src]` example/Demo/Controls/ColorPicker.Designer.cs
+- `[src]` example/Demo/Controls/Menu.cs
+- `[src]` example/Demo/Controls/Spin.Designer.cs
+- `[src]` example/Demo/Controls/Spin.cs
+- `[src]` example/Demo/Controls/Tooltip.Designer.cs
+- `[src]` example/Demo/Controls/Rate.cs
+- `[src]` example/Demo/Controls/Segmented.cs
+- `[src]` example/Demo/Controls/Message.cs
+- `[src]` example/Demo/Controls/Select.Designer.cs
+- `[src]` example/Demo/Controls/HyperlinkLabel.cs
+- `[src]` example/Demo/Controls/Shield.Designer.cs
+- `[src]` example/Demo/Controls/Tag.Designer.cs
+- `[src]` example/Demo/Controls/Steps.Designer.cs
+- `[src]` example/Demo/Controls/Modal.Designer.cs
+- `[src]` example/Demo/Controls/Collapse.Designer.cs
+- `[src]` example/Demo/Controls/Checkbox.Designer.cs
+- `[src]` example/Demo/Controls/DatePicker.Designer.cs
+- `[src]` example/Demo/Controls/Progress.cs
+- `[src]` example/Demo/Controls/Preview.Designer.cs
+- `[src]` example/Demo/Controls/Divider.Designer.cs
+- `[src]` example/Demo/Controls/GridPanel.Designer.cs
+- `[src]` example/Demo/Controls/VirtualPanel.Designer.cs
+- `[src]` example/Demo/Controls/Input.cs
+- `[src]` example/Demo/Controls/Chart.Designer.cs
+- `[src]` example/Demo/Controls/Popover.cs
+- `[src]` example/Demo/Controls/Icon.cs
+- `[src]` example/Demo/Controls/Breadcrumb.cs
+- `[src]` example/Demo/Controls/Result.cs
+- `[src]` example/Demo/Controls/ColorPicker.cs
+- `[src]` example/Demo/Controls/Badge.Designer.cs
+- `[src]` example/Demo/Controls/Divider.cs
+- `[src]` example/Demo/Controls/Progress.Designer.cs
+- `[src]` example/Demo/Controls/Dropdown.cs
+- `[src]` example/Demo/Controls/Tabs.Designer.cs
+- `[src]` example/Demo/Controls/Checkbox.cs
+- `[src]` example/Demo/Controls/Timeline.Designer.cs
+- `[src]` example/Demo/Controls/Tour.Designer.cs
+- `[src]` example/Demo/Controls/PageHeader.Designer.cs
+- `[src]` example/Demo/Controls/Tour.cs
+- `[src]` example/Demo/Controls/Watermark.Designer.cs
+- `[src]` example/Demo/Controls/Signal.Designer.cs
+- `[src]` example/Demo/Controls/InputNumber.cs
+- `[src]` example/Demo/Controls/ContextMenuStrip.Designer.cs
+- `[src]` example/Demo/Controls/Splitter.cs
+- `[src]` example/Demo/Controls/VirtualPanel.cs
+- `[src]` example/Demo/Controls/Slider.Designer.cs
+- `[src]` example/Demo/Controls/Notification.cs
+- `[src]` example/Demo/Controls/Carousel.cs
+- `[src]` example/Demo/Controls/Modal.cs
+- `[src]` example/Demo/Controls/Breadcrumb.Designer.cs
+- `[src]` example/Demo/Controls/Battery.Designer.cs
+- `[src]` example/Demo/Controls/Input.Designer.cs
+- `[src]` example/Demo/Controls/Timeline.cs
+- `[src]` example/Demo/Controls/Radio.cs
+- `[src]` example/Demo/Controls/PageHeader.cs
+- `[src]` example/Demo/Controls/Select.cs
+- `[src]` example/Demo/Controls/Segmented.Designer.cs
+- `[src]` example/Demo/Controls/Calendar.cs
+- `[src]` example/Demo/Controls/Panel.cs
+- `[src]` example/Demo/Controls/Drawer.cs
+- `[src]` example/Demo/Controls/Table.cs
+- `[src]` example/Demo/Controls/Carousel.Designer.cs
+- `[src]` example/Demo/Controls/Chart.cs
+- `[src]` example/Demo/Controls/Message.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button4.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button8.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button8.cs
+- `[src]` example/Demo/Controls/Button/Button7.cs
+- `[src]` example/Demo/Controls/Button/Button3.cs
+- `[src]` example/Demo/Controls/Button/Button7.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button2.cs
+- `[src]` example/Demo/Controls/Button/Button6.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button6.cs
+- `[src]` example/Demo/Controls/Button/Button4.cs
+- `[src]` example/Demo/Controls/Button/Button9.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button1.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button9.cs
+- `[src]` example/Demo/Controls/Button/Button5.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button2.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button1.cs
+- `[src]` example/Demo/Controls/Button/Button3.Designer.cs
+- `[src]` example/Demo/Controls/Button/Button5.cs
+- `[src]` example/Demo/Controls/Base/ColorPanel.cs
+- `[src]` example/Demo/Controls/Base/ColorPanelLeft.cs
+- `[src]` example/SVGView/Main.Designer.cs
+- `[src]` example/ChatUI/Properties/Resources.Designer.cs
+- `[src]` example/FontTest/UserControl1.cs
+- `[src]` example/FontTest/Main.cs
+- `[src]` example/FontTest/Main.Designer.cs
+- `[src]` src/AntdUI.EmojiFluentFlat/Properties/Resources.Designer.cs
+- `[src]` example/BallTest/Program.cs
+- `[src]` example/BallTest/BallLayeredForm.cs
+- `[src]` example/ExtendedTest/DockDemo.Designer.cs
+- `[src]` example/ExtendedTest/Program.cs
+- `[src]` example/ExtendedTest/MainForm.Designer.cs
+- `[src]` example/ExtendedTest/DockDemo.cs
+- `[src]` example/ExtendedTest/OutlookBarDemo.cs
+- `[src]` example/ExtendedTest/OutlookBarDemo.Designer.cs
+- `[src]` example/ExtendedTest/RibbonDemo.Designer.cs
+- `[src]` example/ExtendedTest/RibbonDemo.cs
+- `[src]` example/ExtendedTest/MainForm.cs
+- `[resx]` src/AntdUI/Properties/Resources.resx
+- `[resx]` example/Demo/res_dark.resx
+- `[resx]` example/Demo/res_light.resx
+- `[resx]` example/Demo/Properties/Resources.resx
+- `[resx]` example/Demo/Controls/Collapse.resx
+- `[resx]` example/Demo/Controls/Calendar.resx
+- `[resx]` example/Demo/Controls/Tour.resx
+- `[resx]` example/Demo/Controls/Result.resx
+- `[resx]` example/Demo/Controls/GridPanel.resx
+- `[resx]` example/Demo/Controls/Chart.resx
+- `[resx]` example/Demo/Controls/PageHeader.resx
+- `[resx]` example/Demo/Controls/Segmented.resx
+- `[resx]` example/Demo/Controls/Tree.resx
+- `[resx]` example/Demo/Controls/Shield.resx
+- `[resx]` example/Demo/Controls/Splitter.resx
+- `[resx]` example/Demo/Controls/Battery.resx
+- `[resx]` example/Demo/Controls/TimePicker.resx
+- `[resx]` example/Demo/Controls/Progress.resx
+- `[resx]` example/Demo/Controls/InputNumber.resx
+- `[resx]` example/Demo/Controls/Tabs.resx
+- `[resx]` example/Demo/Controls/Avatar.resx
+- `[resx]` example/Demo/Controls/Notification.resx
+- `[resx]` example/Demo/Controls/Icon.resx
+- `[resx]` example/Demo/Controls/Modal.resx
+- `[resx]` example/Demo/Controls/Spin.resx
+- `[resx]` example/Demo/Controls/Preview.resx
+- `[resx]` example/Demo/Controls/DatePicker.resx
+- `[resx]` example/Demo/Controls/Signal.resx
+- `[resx]` example/Demo/Controls/Watermark.resx
+- `[resx]` example/Demo/Controls/Tag.resx
+- `[resx]` example/Demo/Controls/ColorPicker.resx
+- `[resx]` example/Demo/Controls/Select.resx
+- `[resx]` example/Demo/Controls/Timeline.resx
+- `[resx]` example/Demo/Controls/Pagination.resx
+- `[resx]` example/Demo/Controls/Radio.resx
+- `[resx]` example/Demo/Controls/Slider.resx
+- `[resx]` example/Demo/Controls/Breadcrumb.resx
+- `[resx]` example/Demo/Controls/Tooltip.resx
+- `[resx]` example/Demo/Controls/Switch.resx
+- `[resx]` example/Demo/Controls/TableAOT.resx
+- `[resx]` example/Demo/Controls/Badge.resx
+- `[resx]` example/Demo/Controls/Steps.resx
+- `[resx]` example/Demo/Controls/Panel.resx
+- `[resx]` example/Demo/Controls/Divider.resx
+- `[resx]` example/Demo/Controls/ContextMenuStrip.resx
+- `[resx]` example/Demo/Controls/Table.resx
+- `[resx]` example/Demo/Controls/Popover.resx
+- `[resx]` example/Demo/Controls/Alert.resx
+- `[resx]` example/Demo/Controls/Dropdown.resx
+- `[resx]` example/Demo/Controls/Carousel.resx
+- `[resx]` example/Demo/Controls/Input.resx
+- `[resx]` example/Demo/Controls/Rate.resx
+- `[resx]` example/Demo/Controls/Checkbox.resx
+- `[resx]` example/Demo/Controls/Menu.resx
+- `[resx]` example/Demo/Controls/TourPopover.resx
+- `[resx]` example/Demo/Controls/Message.resx
+- `[resx]` example/Demo/Controls/VirtualPanel.resx
+- `[resx]` example/Demo/Controls/Drawer.resx
+- `[resx]` example/Demo/Controls/Transfer.resx
+- `[resx]` example/Demo/Controls/HyperlinkLabel.resx
+- `[resx]` example/SVGView/Main.resx
+- `[resx]` example/ChatUI/Properties/Resources.resx
+- `[resx]` src/AntdUI.EmojiFluentFlat/Properties/Resources.resx
+
+## Manual review (21)
+
+These could not be converted automatically and need a human:
+
+- src/AntdUI/Controls/Progress.cs: declares a P/Invoke into 'ole32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/FolderBrowserDialog.cs: declares a P/Invoke into 'shell32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/SystemSoundHelper.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/MouseMonitor/MessageHookManager.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/MouseMonitor/MessageHookManager.cs: declares a P/Invoke into 'kernel32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Helper/OS.cs: declares a P/Invoke into 'ntdll' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/Imm32.cs: declares a P/Invoke into 'imm32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/Shell32.cs: declares a P/Invoke into 'shell32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/DwmApi.cs: declares a P/Invoke into 'dwmapi' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/DwmApi.cs: declares a P/Invoke into 'uxtheme' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/Render.cs: declares a P/Invoke into 'gdi32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/Render.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/WinUser.Message.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/WinUser.Cursor.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/Scroll.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/Clipboard.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/Clipboard.cs: declares a P/Invoke into 'kernel32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/WinUser.Window.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/Dpi.cs: declares a P/Invoke into 'shcore' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/Dpi.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+- src/AntdUI/Lib/Vanara/User32/WinUser.WindowMessage.cs: declares a P/Invoke into 'user32' (Windows system library) — it compiles anywhere but throws DllNotFoundException on the first call off Windows; review manually
+
+---
+_Generated by majorsilence-migrate. Review the changes and build before committing._

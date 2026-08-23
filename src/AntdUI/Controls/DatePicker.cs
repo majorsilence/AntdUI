@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
+using Majorsilence.Forms.Design;
 using System.Globalization;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -87,7 +87,7 @@ namespace AntdUI
         /// 预置
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor", typeof(UITypeEditor))]
+        [Editor("Majorsilence.Forms.Design.ListControlStringCollectionEditor", typeof(UITypeEditor))]
         [Description("预置"), Category(nameof(CategoryAttribute.Data)), DefaultValue(null)]
         public BaseCollection Presets
         {
@@ -324,7 +324,7 @@ namespace AntdUI
             else Focus();
         }
 
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape) ExpandDrop = false;
             else if (keyData == Keys.Down) ExpandDrop = true;

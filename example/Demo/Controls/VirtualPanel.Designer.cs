@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -29,12 +30,12 @@ namespace Demo.Controls
         {
             header1 = new AntdUI.PageHeader();
             vpanel = new AntdUI.VirtualPanel();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             checkbox1 = new AntdUI.Checkbox();
             select3 = new AntdUI.Select();
             select2 = new AntdUI.Select();
             select1 = new AntdUI.Select();
-            button1 = new System.Windows.Forms.Button();
+            button1 = new Majorsilence.Forms.Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,11 +140,11 @@ namespace Demo.Controls
 
         private AntdUI.PageHeader header1;
         private AntdUI.VirtualPanel vpanel;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Select select1;
         private AntdUI.Select select3;
         private AntdUI.Select select2;
-        private System.Windows.Forms.Button button1;
+        private Majorsilence.Forms.Button button1;
         private AntdUI.Checkbox checkbox1;
     }
 }

@@ -7,7 +7,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -260,7 +260,7 @@ namespace AntdUI
 
         public void AutoDpi(float dpi, Control control) => Helper.DpiAuto(dpi, control);
 
-        protected override void WndProc(ref System.Windows.Forms.Message m)
+        protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             if (m.Msg == 0x02E0)
             {

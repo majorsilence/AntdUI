@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -46,7 +47,7 @@ namespace Demo.Controls
             flowLayoutPanel1 = new FlowLayoutPanel();
             carousel2 = new AntdUI.Carousel();
             carousel3 = new AntdUI.Carousel();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             carousel1 = new AntdUI.Carousel();
             slider1 = new AntdUI.Slider();
             image3d1 = new AntdUI.Image3D();
@@ -206,7 +207,7 @@ namespace Demo.Controls
         private AntdUI.Carousel carousel2;
         private AntdUI.Carousel carousel1;
         private AntdUI.Slider slider1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Carousel carousel3;
         private AntdUI.Image3D image3d2;
         private AntdUI.Image3D image3d1;

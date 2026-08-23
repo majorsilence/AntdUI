@@ -10,8 +10,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -755,7 +756,7 @@ namespace AntdUI
         /// 选中多行
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor", typeof(UITypeEditor))]
+        [Editor("Majorsilence.Forms.Design.ListControlStringCollectionEditor", typeof(UITypeEditor))]
         [Browsable(false), Description("选中多行"), Category(nameof(CategoryAttribute.Data))]
         public int[] SelectedIndexs
         {

@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -29,8 +30,8 @@ namespace Demo.Controls
         {
             input1 = new AntdUI.Input();
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
-            panel3 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
+            panel3 = new Majorsilence.Forms.Panel();
             label1 = new AntdUI.Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             ic4 = new AntdUI.Input();
@@ -40,7 +41,7 @@ namespace Demo.Controls
             panel5 = new AntdUI.Panel();
             input10 = new AntdUI.Input();
             button1 = new AntdUI.Button();
-            panel6 = new System.Windows.Forms.Panel();
+            panel6 = new Majorsilence.Forms.Panel();
             input18 = new AntdUI.Input();
             button2 = new AntdUI.Button();
             panel4 = new AntdUI.Panel();
@@ -652,7 +653,7 @@ namespace Demo.Controls
 
         private AntdUI.Input input1;
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Divider divider1;
         private AntdUI.Input input7;
         private AntdUI.Input input6;
@@ -679,11 +680,11 @@ namespace Demo.Controls
         private AntdUI.Input input16;
         private AntdUI.Input input17;
         private AntdUI.Divider divider6;
-        private System.Windows.Forms.Panel panel3;
+        private Majorsilence.Forms.Panel panel3;
         private AntdUI.Panel panel5;
         private AntdUI.Input input10;
         private AntdUI.Button button1;
-        private System.Windows.Forms.Panel panel6;
+        private Majorsilence.Forms.Panel panel6;
         private AntdUI.Input input18;
         private AntdUI.Button button2;
         private AntdUI.Panel panel4;

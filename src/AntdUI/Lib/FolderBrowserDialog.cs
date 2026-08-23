@@ -7,7 +7,7 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -25,7 +25,7 @@ namespace AntdUI
         /// <summary>
         /// 向用户显示 FolderBrowser 的对话框
         /// </summary>
-        /// <param name="owner">任何实现 System.Windows.Forms.IWin32Window（表示将拥有模式对话框的顶级窗口）的对象。</param>
+        /// <param name="owner">任何实现 Majorsilence.Forms.IWin32Window（表示将拥有模式对话框的顶级窗口）的对象。</param>
         public DialogResult ShowDialog(IWin32Window? owner = null)
         {
             IntPtr hwndOwner = owner == null ? Win32.User32.GetActiveWindow() : owner.Handle;

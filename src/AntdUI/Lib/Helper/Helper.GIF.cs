@@ -6,8 +6,8 @@
 
 using System;
 using System.Collections.Concurrent;
-using System.Drawing;
-using System.Drawing.Imaging;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Drawing.Imaging;
 using System.Threading;
 using System.Threading.Tasks;
 

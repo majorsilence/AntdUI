@@ -8,9 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms.Drawing.Drawing2D;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -552,7 +553,7 @@ namespace AntdUI
         #region 离开监控
 
 
-        public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+        public bool PreFilterMessage(ref Majorsilence.Forms.Message m)
         {
             if (m.Msg == 0x2a1 || m.Msg == 0x2a3)
             {
@@ -795,7 +796,7 @@ namespace AntdUI
 
             public Action LoadScroll;
 
-            protected override void WndProc(ref System.Windows.Forms.Message m)
+            protected override void WndProc(ref Majorsilence.Forms.Message m)
             {
                 switch ((Win32.User32.WindowMessage)m.Msg)
                 {
@@ -816,7 +817,7 @@ namespace AntdUI
         #endregion
     }
 
-    internal class IControlDesigner : System.Windows.Forms.Design.ParentControlDesigner
+    internal class IControlDesigner : Majorsilence.Forms.Design.ParentControlDesigner
     {
 
     }

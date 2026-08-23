@@ -15,7 +15,7 @@ namespace AntdUI.Svg.Pathing
             End = end;
         }
 
-        public override void AddToPath(System.Drawing.Drawing2D.GraphicsPath graphicsPath)
+        public override void AddToPath(Majorsilence.Forms.Drawing.Drawing2D.GraphicsPath graphicsPath)
         {
             graphicsPath.AddLine(Start, End);
         }

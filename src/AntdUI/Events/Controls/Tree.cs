@@ -6,7 +6,7 @@
 
 using System;
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -62,7 +62,7 @@ namespace AntdUI
         public bool Value { get; private set; }
         public bool CanExpand { get; set; } = true;
 
-        #region ÉèÖÃ
+        #region ï¿½ï¿½ï¿½ï¿½
 
         public TreeExpandEventArgs SetCanExpand(bool value = false)
         {

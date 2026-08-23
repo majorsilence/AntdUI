@@ -9,8 +9,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using Majorsilence.Forms.Design;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -264,7 +264,7 @@ namespace AntdUI
         /// <summary>Ctrl+F6 / Ctrl+Tab cycles through open contents (all docked panes + all float windows).
         /// Pressed anywhere inside the DockPanel (or one of its hosted controls) this routes focus
         /// to the next content's pane and makes it active.</summary>
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             bool isCtrlF6 = keyData == (Keys.Control | Keys.F6) || keyData == (Keys.Control | Keys.Shift | Keys.F6);
             bool isCtrlTab = keyData == (Keys.Control | Keys.Tab) || keyData == (Keys.Control | Keys.Shift | Keys.Tab);

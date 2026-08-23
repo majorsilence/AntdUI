@@ -7,8 +7,9 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using Majorsilence.Forms.Drawing;
 using System.Globalization;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace AntdUI
 {
@@ -497,7 +498,7 @@ namespace AntdUI
             isdownup = isdowndown = false;
         }
 
-        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Majorsilence.Forms.Message msg, Keys keyData)
         {
             if (keyData == Keys.Enter) TryParse(Text);
             return base.ProcessCmdKey(ref msg, keyData);

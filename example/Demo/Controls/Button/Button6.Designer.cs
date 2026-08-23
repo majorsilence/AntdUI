@@ -1,5 +1,5 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -31,7 +31,7 @@ namespace Demo.Controls
             b3 = new AntdUI.Button();
             b2 = new AntdUI.Button();
             b1 = new AntdUI.Button();
-            panel2 = new System.Windows.Forms.Panel();
+            panel2 = new Majorsilence.Forms.Panel();
             b5 = new AntdUI.Button();
             b4 = new AntdUI.Button();
             panel_btns.SuspendLayout();
@@ -153,7 +153,7 @@ namespace Demo.Controls
         private AntdUI.Button b3;
         private AntdUI.Button b2;
         private AntdUI.Button b1;
-        private System.Windows.Forms.Panel panel2;
+        private Majorsilence.Forms.Panel panel2;
         private AntdUI.Button b5;
         private AntdUI.Button b4;
     }

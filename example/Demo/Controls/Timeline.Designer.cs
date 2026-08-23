@@ -1,5 +1,6 @@
 using System.Drawing;
-using System.Windows.Forms;
+using Majorsilence.Forms.Drawing;
+using Majorsilence.Forms;
 
 namespace Demo.Controls
 {
@@ -38,7 +39,7 @@ namespace Demo.Controls
             AntdUI.TimelineItem timelineItem9 = new AntdUI.TimelineItem();
             AntdUI.TimelineItem timelineItem10 = new AntdUI.TimelineItem();
             header1 = new AntdUI.PageHeader();
-            panel1 = new System.Windows.Forms.Panel();
+            panel1 = new Majorsilence.Forms.Panel();
             timeline2 = new AntdUI.Timeline();
             timeline1 = new AntdUI.Timeline();
             panel1.SuspendLayout();
@@ -131,7 +132,7 @@ namespace Demo.Controls
         #endregion
 
         private AntdUI.PageHeader header1;
-        private System.Windows.Forms.Panel panel1;
+        private Majorsilence.Forms.Panel panel1;
         private AntdUI.Timeline timeline1;
         private AntdUI.Timeline timeline2;
     }
