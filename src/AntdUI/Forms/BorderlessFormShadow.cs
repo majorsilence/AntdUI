@@ -30,13 +30,20 @@ namespace AntdUI
             Icon = form.Icon;
             ShowIcon = false;
             Text = form.Text;
-            memDc = Win32.Render.CreateCompatibleDC(Win32.Render.screenDC);
+            // No device context to composite into where the Win32 layer is unavailable, so the shadow is
+            // simply absent -- the form itself still draws normally. Attempting it threw from every one of
+            // the calls below.
+            if (Win32.Render.Available) memDc = Win32.Render.CreateCompatibleDC(Win32.Render.screenDC);
+
             ISize();
         }
 
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
+
+            if (!Win32.Render.Available) return;
+
             Win32.Render.Dispose(memDc, ref hBitmap, ref oldBits);
             if (memDc == IntPtr.Zero) return;
             Win32.Render.DeleteDC(memDc);
@@ -135,6 +142,11 @@ namespace AntdUI
         IntPtr hBitmap, oldBits;
         public void Print()
         {
+            // Without the Win32 layer there is nothing to composite into. Returning early rather than
+            // relying on the catch below: this runs on every mouse move, and throwing a
+            // DllNotFoundException per event is expensive as well as pointless.
+            if (!Win32.Render.Available) return;
+
             if (IsHandleCreated && shadow_rect.Width > 0 && shadow_rect.Height > 0)
             {
                 if (InvokeRequired)
@@ -156,6 +168,11 @@ namespace AntdUI
 
         public void PrintCache()
         {
+            // Without the Win32 layer there is nothing to composite into. Returning early rather than
+            // relying on the catch below: this runs on every mouse move, and throwing a
+            // DllNotFoundException per event is expensive as well as pointless.
+            if (!Win32.Render.Available) return;
+
             if (IsHandleCreated && shadow_rect.Width > 0 && shadow_rect.Height > 0)
             {
                 if (InvokeRequired)

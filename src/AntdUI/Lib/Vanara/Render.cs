@@ -17,14 +17,26 @@ namespace AntdUI
             #region 初始化
 
             public static IntPtr screenDC;
+
+            /// <summary>Whether this class's Win32 layered-window compositing is available at all.</summary>
+            /// <remarks>
+            /// Everything here is HDC and UpdateLayeredWindow work, which exists only on Windows. Under
+            /// Majorsilence.Forms the same code runs on macOS and Linux, where user32/gdi32 are absent and
+            /// the P/Invoke throws DllNotFoundException. Because that used to happen in the STATIC
+            /// CONSTRUCTOR, merely touching the type threw TypeInitializationException -- and it was
+            /// reached from the mouse-event path, so the app rendered fine and then died as soon as the
+            /// pointer moved over it.
+            /// </remarks>
+            public static bool Available { get; } = OperatingSystem.IsWindows();
+
             static Render()
             {
-                screenDC = GetDC(IntPtr.Zero);
+                if (Available) screenDC = GetDC(IntPtr.Zero);
             }
 
             ~Render()
             {
-                ReleaseDC(IntPtr.Zero, screenDC);
+                if (Available && screenDC != IntPtr.Zero) ReleaseDC(IntPtr.Zero, screenDC);
             }
 
             #endregion
