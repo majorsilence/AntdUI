@@ -13,7 +13,8 @@ namespace AntdUI
 {
     internal class TooltipForm : ILayeredFormOpacity, ITooltip
     {
-        Control ocontrol;
+        Control? ocontrol;
+        Form? oform;
         bool multiline = false;
         int? maxWidth;
         int arrowSize = 0, arrowX = -1;
@@ -80,6 +81,39 @@ namespace AntdUI
             ArrowAlign = align;
             SetLocation(x, y);
         }
+        /// <summary>
+        /// Anchors a tooltip to a Form (e.g. another popup window) rather than a Control. Form doesn't
+        /// derive from Control here, so this mirrors the Control, Rectangle overload above with the
+        /// Control-only calls (PointToScreen/ClientSize/Font/Width, CalculateCoordinate's Control
+        /// overload) replaced by their Form equivalents; a Form's Location is already screen-relative,
+        /// so no PointToScreen call is needed.
+        /// </summary>
+        public TooltipForm(Form oform, Rectangle rect, string txt, ITooltipConfig component, bool hasmax = false) : base(240)
+        {
+            this.oform = oform;
+            SetTopMost(oform, Handle);
+            SetDpi(oform);
+            CloseMode = CloseMode.Click;
+            Text = txt;
+            Font = component.Font ?? oform.Font;
+            ArrowSize = component.ArrowSize;
+            Radius = component.Radius;
+            ArrowAlign = component.ArrowAlign;
+            CustomWidth = component.CustomWidth;
+            Back = component.Back;
+            Fore = component.Fore;
+            _lastRect = rect;
+            var formRect = new Rectangle(oform.Location, oform.ClientSize);
+            var screen = Screen.FromPoint(oform.Location).WorkingArea;
+            maxWidth = hasmax ? oform.Width : screen.Width;
+            int gap = 0;
+            this.GDI(g => SetSize(this.RenderMeasure(g, maxWidth, out multiline, out gap, out arrowSize)));
+            var align = ArrowAlign;
+            new CalculateCoordinate(this, formRect, TargetRect, Radius, arrowSize, gap, gap * 2, rect).SetScreen(screen).Auto(ref align, gap + (int)(Radius * Dpi), out int x, out int y, out arrowX);
+            ArrowAlign = align;
+            SetLocation(x, y);
+        }
+
         public TooltipForm NoMessage()
         {
             CloseMode = CloseMode.None;
@@ -98,7 +132,10 @@ namespace AntdUI
             int gap = 0;
             this.GDI(g => SetSize(this.RenderMeasure(g, maxWidth, out multiline, out gap, out arrowSize)));
             var align = ArrowAlign;
-            new CalculateCoordinate(this, ocontrol, TargetRect, Radius, arrowSize, gap, gap * 2, rect).Auto(ref align, gap + (int)(Radius * Dpi), out int x, out int y, out arrowX);
+            var calc = ocontrol != null
+                ? new CalculateCoordinate(this, ocontrol, TargetRect, Radius, arrowSize, gap, gap * 2, rect)
+                : new CalculateCoordinate(this, new Rectangle(oform!.Location, oform.ClientSize), TargetRect, Radius, arrowSize, gap, gap * 2, rect);
+            calc.Auto(ref align, gap + (int)(Radius * Dpi), out int x, out int y, out arrowX);
             ArrowAlign = align;
             SetLocation(x, y);
             if (Print() == Win32.RenderResult.OK) return false;

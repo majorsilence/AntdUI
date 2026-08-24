@@ -395,7 +395,7 @@ namespace AntdUI
                         if (hoverStyle == null) g.DrawText(part.Text, Font, color, part.Bounds);
                         else
                         {
-                            var colorlink = hoverStyle.LinkColor ?? Style.Get(Colour.PrimaryActive, nameof(HyperlinkLabel), Name);
+                            var colorlink = hoverStyle.LinkColor ?? AntdUI.Style.Get(Colour.PrimaryActive, nameof(HyperlinkLabel), Name);
                             using (var font = new Font(Font, hoverStyle.LinkStyle))
                             {
                                 g.DrawText(part.Text, font, colorlink, part.Bounds);
@@ -408,7 +408,7 @@ namespace AntdUI
                         if (normalStyle == null) g.DrawText(part.Text, Font, color, part.Bounds);
                         else
                         {
-                            var colorlink = normalStyle.LinkColor ?? Style.Get(Colour.Primary, nameof(HyperlinkLabel), Name);
+                            var colorlink = normalStyle.LinkColor ?? AntdUI.Style.Get(Colour.Primary, nameof(HyperlinkLabel), Name);
                             using (var font = new Font(Font, normalStyle.LinkStyle & ~FontStyle.Underline))
                             {
                                 g.DrawText(part.Text, font, colorlink, part.Bounds);

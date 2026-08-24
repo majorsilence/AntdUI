@@ -15,7 +15,7 @@ namespace ChatUI
         public Main()
         {
             InitializeComponent();
-            Theme().Call(dark => msgList.BackColor = Style.Db.BgBase);
+            Theme().Call(dark => msgList.BackColor = AntdUI.Style.Db.BgBase);
             msgList.ItemClick += msgList_ItemClick;
             colorTheme.Presets = new Color[] {
                 "#f44336".ToColor(),
@@ -78,7 +78,7 @@ namespace ChatUI
                 chatList.AddToBottom(new TextChatItem("我看一般都前端做的，winform还没见过", Properties.Resources.av3, "阿枫"));
                 Thread.Sleep(700);
 
-                chatList.AddToBottom(new TipChatItem("🤖 管理员开启了全员禁言").SetFore(Style.Db.Warning));
+                chatList.AddToBottom(new TipChatItem("🤖 管理员开启了全员禁言").SetFore(AntdUI.Style.Db.Warning));
                 chatList.AddToBottom(new TextChatItem("别聊这些\r\n------------------------------", Properties.Resources.av2, "2.0T 银"));
                 Thread.Sleep(800);
 
@@ -175,7 +175,7 @@ namespace ChatUI
 
         private void colorTheme_ValueChanged(object sender, ColorEventArgs e)
         {
-            Style.SetPrimary(e.Value);
+            AntdUI.Style.SetPrimary(e.Value);
             Refresh();
         }
 

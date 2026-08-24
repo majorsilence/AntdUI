@@ -8,7 +8,7 @@
     <ProjectReference Include="..\..\src\AntdUI\AntdUI.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Majorsilence.Forms" Version="26.0.32" />
-    <PackageReference Include="Majorsilence.Forms.Avalonia" Version="26.0.32" />
+    <ProjectReference Include="../../../Majorsilence.Forms/src/Majorsilence.Forms/Majorsilence.Forms.csproj" />
+    <ProjectReference Include="../../../Majorsilence.Forms/src/Majorsilence.Forms.Avalonia/Majorsilence.Forms.Avalonia.csproj" />
   </ItemGroup>
 </Project>

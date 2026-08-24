@@ -10,6 +10,7 @@ using System.Drawing;
 using Majorsilence.Forms.Design;
 using System.Globalization;
 using Majorsilence.Forms;
+using Majorsilence.Forms.Drawing;
 
 namespace AntdUI
 {

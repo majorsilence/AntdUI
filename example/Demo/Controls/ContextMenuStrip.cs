@@ -134,7 +134,7 @@ namespace Demo.Controls
 
         private void notifyIcon1_MouseDown(object sender, MouseEventArgs e)
         {
-            AntdUI.ContextMenuStrip.open(form, notifyIcon1, it =>
+            AntdUI.ContextMenuStrip.open(this, notifyIcon1, it =>
             {
                 Debug.WriteLine("托盘点击内容：" + it.Text);
                 AntdUI.Message.info(form, "托盘点击内容：" + it.Text);

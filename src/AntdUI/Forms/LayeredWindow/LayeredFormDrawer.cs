@@ -360,24 +360,17 @@ namespace AntdUI
         {
             var rect = Ang();
             var hidelocation = Helper.OffScreenArea(rect.Width, rect.Height);
-            if (config.Content is Form form_)
+            // config.Content is always a genuine Control here (Drawer.Config's only constructor takes
+            // one); pre-migration a caller could pass an actual Form as content (Form was itself a
+            // Control), which is what the dropped "is Form" branch handled directly instead of wrapping
+            // it in a DoubleBufferForm host. See the matching comment on SpinForm's constructor.
+            form = new DoubleBufferForm(this, config.Content)
             {
-                form_.BackColor = Colour.BgElevated.Get(config.ColorScheme, nameof(Drawer));
-                form_.FormBorderStyle = FormBorderStyle.None;
-                form_.Bounds = hidelocation;
-                form_.StartPosition = FormStartPosition.Manual;
-                form = form_;
-            }
-            else
-            {
-                form = new DoubleBufferForm(this, config.Content)
-                {
-                    BackColor = Colour.BgElevated.Get(config.ColorScheme, nameof(Drawer)),
-                    FormBorderStyle = FormBorderStyle.None,
-                    StartPosition = FormStartPosition.Manual,
-                    Bounds = hidelocation
-                };
-            }
+                BackColor = Colour.BgElevated.Get(config.ColorScheme, nameof(Drawer)),
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.Manual,
+                Bounds = hidelocation
+            };
             if (!config.Dispose && config.Content.Tag is Size size)
             {
                 form.FormClosing += (a, b) =>

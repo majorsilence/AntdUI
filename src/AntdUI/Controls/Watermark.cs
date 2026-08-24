@@ -81,7 +81,7 @@ namespace AntdUI
                     if (opacity == value) return;
                     opacity = value;
                     if (lay == null) return;
-                    lay.alpha = (byte)Math.Round(255 * Style.rgbfloat(value));
+                    lay.alpha = (byte)Math.Round(255 * AntdUI.Style.rgbfloat(value));
                     lay.Print();
                 }
             }
@@ -278,7 +278,7 @@ namespace AntdUI
     {
         Watermark.Config config;
 
-        public LayeredFormWatermark(Watermark.Config _config) : base((byte)Math.Round(255 * Style.rgbfloat(_config.Opacity)))
+        public LayeredFormWatermark(Watermark.Config _config) : base((byte)Math.Round(255 * AntdUI.Style.rgbfloat(_config.Opacity)))
         {
             config = _config;
             config.lay = this;
@@ -295,18 +295,13 @@ namespace AntdUI
             {
                 SetTopMost(config.Target, Handle);
                 SetDpi(config.Target);
-                if (config.Target is Form form)
-                {
-                    SetSize(form.Size);
-                    SetLocation(form.Location);
-                    HasBor = form.FormFrame(out Radius, out Bor);
-                }
-                else
-                {
-                    SetSize(config.Target.Size);
-                    SetLocation(config.Target.PointToScreen(Point.Empty));
-                    if (config.Target is IControl icontrol) RenderRegion = () => icontrol.RenderRegion;
-                }
+                // config.Target is always a genuine Control here (the only public Watermark.open(...)
+                // overload takes one) -- see the matching comment on SpinForm's constructor for why the
+                // pre-migration "is Form" branch, reachable when a caller passed an actual Form (Form
+                // was itself a Control), is now unreachable and dropped.
+                SetSize(config.Target.Size);
+                SetLocation(config.Target.PointToScreen(Point.Empty));
+                if (config.Target is IControl icontrol) RenderRegion = () => icontrol.RenderRegion;
             }
         }
 
@@ -531,25 +526,13 @@ namespace AntdUI
             if (visible)
             {
                 var rect = TargetRect;
-                bool isPoint = true, isSize = true;
-                if (config.Target is Form form)
-                {
-                    var point = form.Location;
-                    var size = form.Size;
-                    SetLocation(point);
-                    SetSize(size);
-                    isPoint = rect.X == point.X && rect.Y == point.Y;
-                    isSize = rect.Width == size.Width && rect.Height == size.Height;
-                }
-                else
-                {
-                    var point = config.Target.PointToScreen(Point.Empty);
-                    var size = config.Target.Size;
-                    SetLocation(point);
-                    SetSize(size);
-                    isPoint = rect.X == point.X && rect.Y == point.Y;
-                    isSize = rect.Width == size.Width && rect.Height == size.Height;
-                }
+                bool isPoint, isSize;
+                var point = config.Target.PointToScreen(Point.Empty);
+                var size = config.Target.Size;
+                SetLocation(point);
+                SetSize(size);
+                isPoint = rect.X == point.X && rect.Y == point.Y;
+                isSize = rect.Width == size.Width && rect.Height == size.Height;
                 if (isPoint && isSize) return;
                 else if (isSize) PrintCache();
                 else Print();

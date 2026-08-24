@@ -509,7 +509,7 @@ namespace AntdUI
         bool isMe(IntPtr intPtr)
         {
             var frm = FromHandle(intPtr);
-            if (frm == this || GetParent(frm) == this) return true;
+            if (frm?.FindForm() == this) return true;
             return false;
         }
 

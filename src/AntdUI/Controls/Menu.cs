@@ -1081,7 +1081,7 @@ namespace AntdUI
                     }
                     else
                     {
-                        if (it.AnimationHover) PaintIcon(g, it, Style.BlendColors(fore, it.AnimationHoverValue, back_hover));
+                        if (it.AnimationHover) PaintIcon(g, it, AntdUI.Style.BlendColors(fore, it.AnimationHoverValue, back_hover));
                         else if (it.Hover) PaintIcon(g, it, back_hover);
                         else PaintIcon(g, it, fore);
                     }
@@ -1129,7 +1129,7 @@ namespace AntdUI
                     }
                     else
                     {
-                        if (it.AnimationHover) PaintTextIconExpand(g, it, Style.BlendColors(fore, it.AnimationHoverValue, back_hover));
+                        if (it.AnimationHover) PaintTextIconExpand(g, it, AntdUI.Style.BlendColors(fore, it.AnimationHoverValue, back_hover));
                         else if (it.Hover) PaintTextIconExpand(g, it, back_hover);
                         else PaintTextIconExpand(g, it, fore);
                     }
@@ -1340,7 +1340,7 @@ namespace AntdUI
             if (it.Button == null) return;
             foreach (var item in it.Button)
             {
-                if (item.AnimationHover) PaintCustomButtonIcon(g, item, Style.BlendColors(fore, item.AnimationHoverValue, fore_active));
+                if (item.AnimationHover) PaintCustomButtonIcon(g, item, AntdUI.Style.BlendColors(fore, item.AnimationHoverValue, fore_active));
                 else if (item.Hover) PaintCustomButtonIcon(g, item, fore_active);
                 else PaintCustomButtonIcon(g, item, fore);
                 item.PaintBadge(Font, item.rect, g, ColorScheme, Name);

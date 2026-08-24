@@ -69,7 +69,7 @@ namespace Demo.Controls
             ClearWatermark();
             try
             {
-                config = new AntdUI.Watermark.Config(form, inputContent.Text, inputContent2.Text);
+                config = new AntdUI.Watermark.Config(this, inputContent.Text, inputContent2.Text);
                 SetWatermark(config);
                 currentWatermark = AntdUI.Watermark.open(config);
                 if (currentWatermark == null) AntdUI.Message.error(form, AntdUI.Localization.Get("Watermark.btnFormFailed", "窗体水印创建失败"));

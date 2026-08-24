@@ -30,17 +30,36 @@ namespace AntdUI
         /// <summary>
         /// ContextMenuStrip 右键菜单
         /// </summary>
+        /// <param name="form">所属窗口</param>
+        /// <param name="call">点击回调</param>
+        /// <param name="items">内容</param>
+        public static Form? open(Form form, Action<IContextMenuStrip> call, IContextMenuStripItem[] items, int sleep = 0) => open(new Config(new Target(form), call, items, sleep));
+
+        /// <summary>
+        /// ContextMenuStrip 右键菜单
+        /// </summary>
         /// <param name="control">所属控件</param>
         /// <param name="notifyIcon">托盘</param>
         /// <param name="call">点击回调</param>
         /// <param name="items">内容</param>
         public static Form? open(Control control, NotifyIcon notifyIcon, Action<IContextMenuStrip> call, IContextMenuStripItem[] items, int sleep = 0)
+            => open(new Config(control, call, items, sleep), notifyIcon, sleep);
+
+        /// <summary>
+        /// ContextMenuStrip 右键菜单
+        /// </summary>
+        /// <param name="form">所属窗口</param>
+        /// <param name="notifyIcon">托盘</param>
+        /// <param name="call">点击回调</param>
+        /// <param name="items">内容</param>
+        public static Form? open(Form form, NotifyIcon notifyIcon, Action<IContextMenuStrip> call, IContextMenuStripItem[] items, int sleep = 0)
+            => open(new Config(new Target(form), call, items, sleep), notifyIcon, sleep);
+
+        static Form? open(Config config, NotifyIcon notifyIcon, int sleep)
         {
-            var form = open(new Config(control, call, items, sleep)
-            {
-                TopMost = true,
-                Align = TAlign.TL
-            });
+            config.TopMost = true;
+            config.Align = TAlign.TL;
+            var form = open(config);
             if (form == null) return form;
             if (dic.TryRemove(notifyIcon, out var find)) find.Close();
             dic.TryAdd(notifyIcon, form);

@@ -790,9 +790,12 @@ namespace AntdUI
         int mode = 0;
         Rectangle? rect_button;
         bool hover_button = false;
-        public void Paint(Canvas g, Rectangle rect, Spin.Config config, Control control)
+        public void Paint(Canvas g, Rectangle rect, Spin.Config config, object control)
         {
-            var font = config.Font ?? control.Font;
+            // control is a Control for the embedded Spin control's own OnPaint, or a Form for
+            // SpinForm's popup paint path -- Form doesn't derive from Control here, so this only needs
+            // whichever one actually has a Font to fall back on.
+            var font = config.Font ?? (control as Control)?.Font ?? (control as Form)?.Font;
             if (prog_size == 0) prog_size = g.MeasureText(config.Text ?? Config.NullText, font).Height;
             int cirSize = config.CirSize.HasValue ? (int)(config.CirSize.Value * g.Dpi) : (int)(prog_size * 1.6F),
                 cirWidth = config.CirWidth.HasValue ? (int)(config.CirWidth.Value * g.Dpi) : (int)(prog_size * .2F);
@@ -890,20 +893,17 @@ namespace AntdUI
             Font = _control.Font;
             SetTopMost(_control, Handle);
             SetDpi(_parent, _control);
-            if (_control is Form form)
-            {
-                SetSize(form.Size);
-                SetLocation(form.Location);
-                if (_config.Radius.HasValue) Radius = _config.Radius.Value;
-                else HasBor = form.FormFrame(out Radius, out Bor);
-            }
-            else
-            {
-                SetSize(_control.Size);
-                SetLocation(_control.PointToScreen(Point.Empty));
-                if (_config.Radius.HasValue) Radius = _config.Radius.Value;
-                else if (_control is IControl icontrol) RenderRegion = () => icontrol.RenderRegion;
-            }
+            // _control is always a genuine Control here -- every public Spin.open(...) overload only
+            // ever accepts one. Pre-migration, a caller could pass an actual Form (Form was itself a
+            // Control), which is what the dropped "_control is Form" branch handled; Form no longer
+            // derives from Control here (see Majorsilence.Forms' WindowBase), so that branch is now
+            // unreachable through this API. Spin.open(Form, ...) is not offered (yet) -- callers doing
+            // that pre-migration (e.g. the Demo app's "spin over the whole window" buttons) need a
+            // Form-accepting overload added here if that's still wanted.
+            SetSize(_control.Size);
+            SetLocation(_control.PointToScreen(Point.Empty));
+            if (_config.Radius.HasValue) Radius = _config.Radius.Value;
+            else if (_control is IControl icontrol) RenderRegion = () => icontrol.RenderRegion;
         }
 
         public override string name => nameof(Spin);
@@ -923,7 +923,8 @@ namespace AntdUI
             if (control is TabPage page) page.ShowedChanged += Parent_VisibleChanged;
             if (parent != null)
             {
-                list.Remove(parent);
+                // list (from control.FindPARENTs()) is Control-only and never contained parent (a
+                // Form) even before the migration split the two apart, so there's nothing to remove.
                 parent.VisibleChanged += Parent_VisibleChanged;
                 parent.LocationChanged += Parent_LocationChanged;
                 parent.SizeChanged += Parent_SizeChanged;
@@ -976,8 +977,7 @@ namespace AntdUI
             LoadVisible();
             if (visible)
             {
-                if (control is Form form) SetLocation(form.Location);
-                else SetLocation(control.PointToScreen(Point.Empty));
+                SetLocation(control.PointToScreen(Point.Empty));
                 PrintCache();
             }
         }
@@ -986,16 +986,8 @@ namespace AntdUI
             LoadVisible();
             if (visible)
             {
-                if (control is Form form)
-                {
-                    SetSize(form.Size);
-                    SetLocation(form.Location);
-                }
-                else
-                {
-                    SetLocation(control.PointToScreen(Point.Empty));
-                    SetSize(control.Size);
-                }
+                SetLocation(control.PointToScreen(Point.Empty));
+                SetSize(control.Size);
             }
         }
 
@@ -1010,7 +1002,7 @@ namespace AntdUI
             {
                 using (var g = Graphics.FromImage(rbmp).HighLay(Dpi))
                 {
-                    using (var brush = new SolidBrush(config.Back ?? Style.rgba(Colour.BgBase.Get(nameof(Spin)), .8F)))
+                    using (var brush = new SolidBrush(config.Back ?? AntdUI.Style.rgba(Colour.BgBase.Get(nameof(Spin)), .8F)))
                     {
                         if (RenderRegion == null)
                         {

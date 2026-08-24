@@ -40,7 +40,34 @@ namespace AntdUI
             base.OnHandleCreated(e);
         }
 
-        public Control? PARENT;
+        /// <summary>
+        /// The control or window this popup is anchored to/closes relative to. Typed <c>object?</c>
+        /// rather than <c>Control?</c> because some subclasses anchor to another popup Form instead of
+        /// a Control (a cascading ContextMenuStrip, a Popover's DoubleBufferForm host) -- Form doesn't
+        /// derive from Control here, so a single Control-typed field couldn't hold both. See
+        /// <see cref="ParentHandle"/>/<see cref="ParentHandleCreated"/>/<see cref="ParentScreenRect"/>
+        /// for the Control-or-Form reads this class needs from it.
+        /// </summary>
+        public object? PARENT;
+
+        IntPtr ParentHandle => PARENT switch {
+            Control c => c.Handle,
+            Form f => f.Handle,
+            _ => IntPtr.Zero
+        };
+
+        bool ParentHandleCreated => PARENT switch {
+            Control c => c.IsHandleCreated,
+            Form f => f.IsHandleCreated,
+            _ => false
+        };
+
+        Rectangle? ParentScreenRect => PARENT switch {
+            Control c => new Rectangle(c.PointToScreen(Point.Empty), c.Size),
+            Form f => new Rectangle(f.Location, f.Size),
+            _ => null
+        };
+
         public Func<Keys, bool>? KeyCall;
 
         MessageHandler? messageHandler;
@@ -271,7 +298,7 @@ namespace AntdUI
             {
                 var cp = base.CreateParams;
                 cp.ExStyle |= 0x00080000 | 0x08000000 | 0x00000080;
-                cp.Parent = PARENT?.Handle ?? IntPtr.Zero;
+                cp.Parent = ParentHandle;
                 return cp;
             }
         }
@@ -456,7 +483,7 @@ namespace AntdUI
                 var rect = new Rectangle(target_rect.X, target_rect.Y, target_rect.Width, target_rect.Height);
                 try
                 {
-                    if (!CloseMode.HasFlag(CloseMode.NoControl) && PARENT.IsHandleCreated) rect = Rectangle.Union(rect, new Rectangle(PARENT.PointToScreen(Point.Empty), PARENT.Size));
+                    if (!CloseMode.HasFlag(CloseMode.NoControl) && ParentHandleCreated && ParentScreenRect is Rectangle pr) rect = Rectangle.Union(rect, pr);
                 }
                 catch { }
                 if (PARENT is SubLayeredForm subForm) FunSub(subForm, ref rect);
@@ -488,7 +515,7 @@ namespace AntdUI
                 var rects = new List<Rectangle>(3) { new Rectangle(target_rect.X, target_rect.Y, target_rect.Width, target_rect.Height) };
                 try
                 {
-                    if (!CloseMode.HasFlag(CloseMode.NoControl) && PARENT.IsHandleCreated) rects.Add(new Rectangle(PARENT.PointToScreen(Point.Empty), PARENT.Size));
+                    if (!CloseMode.HasFlag(CloseMode.NoControl) && ParentHandleCreated && ParentScreenRect is Rectangle pr) rects.Add(pr);
                 }
                 catch { }
                 if (PARENT is SubLayeredForm subForm) FunSub(subForm, ref rects);
@@ -675,6 +702,13 @@ namespace AntdUI
         /// <param name="hand">要设置的窗口句柄</param>
         /// <returns>是否设置成功</returns>
         public void SetTopMost(Target? target, IntPtr hand, bool top = false) => SetTopMostCore(target.FindPARENT(), hand, top);
+
+        /// <summary>
+        /// 根据Form的TopMost属性设置窗口置顶
+        /// </summary>
+        /// <param name="form">参考窗口</param>
+        /// <param name="hand">要设置的窗口句柄</param>
+        public void SetTopMost(Form? form, IntPtr hand, bool top = false) => SetTopMostCore(form, hand, top);
 
         LayeredFormPopover? popover;
         void SetTopMostCore(Form? form, IntPtr hand, bool top = false)

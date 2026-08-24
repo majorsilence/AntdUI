@@ -7,6 +7,7 @@
 using System.ComponentModel;
 using System.Threading;
 using Majorsilence.Forms;
+using ComponentResourceManager = Majorsilence.Forms.ComponentResourceManager;
 
 namespace AntdUI
 {
@@ -119,6 +120,20 @@ namespace AntdUI
             resources.ApplyResources(form, "$this");
             Loading(form, resources);
             if (form is BaseForm baseForm && baseForm.AutoHandDpi) baseForm.AutoDpi(baseForm);
+        }
+
+        /// <summary>
+        /// 加载语言
+        /// </summary>
+        /// <param name="form">窗口</param>
+        /// <param name="resources">语言资源</param>
+        static void Loading(Form form, ComponentResourceManager resources)
+        {
+            foreach (Control c in form.Controls)
+            {
+                resources.ApplyResources(c, c.Name);
+                Loading(c, resources);
+            }
         }
 
         /// <summary>

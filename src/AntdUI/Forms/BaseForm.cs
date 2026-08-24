@@ -260,6 +260,10 @@ namespace AntdUI
 
         public void AutoDpi(float dpi, Control control) => Helper.DpiAuto(dpi, control);
 
+        public void AutoDpi(Form form) => AutoDpi(Dpi, form);
+
+        public void AutoDpi(float dpi, Form form) => Helper.DpiAuto(dpi, form);
+
         protected override void WndProc(ref Majorsilence.Forms.Message m)
         {
             if (m.Msg == 0x02E0)

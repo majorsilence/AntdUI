@@ -147,7 +147,11 @@ namespace AntdUI
 
         protected override void OnLoad(EventArgs e)
         {
-            Win32.User32.SetWindowPos(Handle, Win32.HWND.NULL, 0, 0, 0, 0, Win32.User32.SetWindowPosFlags.SWP_NOZORDER | Win32.User32.SetWindowPosFlags.SWP_NOOWNERZORDER | Win32.User32.SetWindowPosFlags.SWP_NOMOVE | Win32.User32.SetWindowPosFlags.SWP_NOSIZE | Win32.User32.SetWindowPosFlags.SWP_FRAMECHANGED);
+            // Forces the Win32 non-client area to redraw after CreateParams changed the window style
+            // (see the DwmEnabled branch above). Majorsilence.Forms paints its own chrome instead of
+            // relying on a native non-client area, so this has no cross-platform equivalent -- Windows
+            // only, like the rest of this class's direct Win32 P/Invokes.
+            if (OperatingSystem.IsWindows()) Win32.User32.SetWindowPos(Handle, Win32.HWND.NULL, 0, 0, 0, 0, Win32.User32.SetWindowPosFlags.SWP_NOZORDER | Win32.User32.SetWindowPosFlags.SWP_NOOWNERZORDER | Win32.User32.SetWindowPosFlags.SWP_NOMOVE | Win32.User32.SetWindowPosFlags.SWP_NOSIZE | Win32.User32.SetWindowPosFlags.SWP_FRAMECHANGED);
             base.OnLoad(e);
         }
 
@@ -460,7 +464,7 @@ namespace AntdUI
         bool isMe(IntPtr intPtr)
         {
             var frm = FromHandle(intPtr);
-            if (frm == this || GetParent(frm) == this) return true;
+            if (frm?.FindForm() == this) return true;
             return false;
         }
 

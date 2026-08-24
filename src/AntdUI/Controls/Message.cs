@@ -272,7 +272,7 @@ namespace AntdUI
             /// 所属窗口
             /// </summary>
             [Obsolete("use Target")]
-            public Control Form => Target.GetForm!;
+            public Form Form => Target.GetForm!;
 
             string? text;
             /// <summary>

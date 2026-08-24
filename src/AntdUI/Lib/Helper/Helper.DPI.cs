@@ -13,11 +13,26 @@ namespace AntdUI
 {
     partial class Helper
     {
+        // Split into a Control overload and a Form overload (below): Form doesn't derive from Control
+        // here (see Majorsilence.Forms' WindowBase), so a single "control is Form" check that used to
+        // cover both cases can no longer compile. Callers that pass a plain Control (popup content,
+        // FrmColorEditor as a UserControl) hit this one; BaseForm.AutoDpi and friends, which always
+        // pass a top-level Form, hit the Form overload.
         public static void DpiAuto(float dpi, Control control)
+        {
+            if (dpi == 1F) return;
+            if (Config.DpiMode == DpiMode.Compatible)
+            {
+                DpiCompatible(dpi, control);
+                return;
+            }
+            DpiLS(dpi, DpiInfo(control));
+        }
+        public static void DpiAuto(float dpi, Form form)
         {
             if (dpi == 1F)
             {
-                if (control is Window window && window.StartPosition == FormStartPosition.CenterScreen)
+                if (form is Window window && window.StartPosition == FormStartPosition.CenterScreen)
                 {
                     var size = window.sizeInit ?? window.ClientSize;
                     var screen = Screen.FromPoint(window.Location).WorkingArea;
@@ -27,27 +42,23 @@ namespace AntdUI
             }
             if (Config.DpiMode == DpiMode.Compatible)
             {
-                DpiCompatible(dpi, control);
+                DpiCompatible(dpi, form);
                 return;
             }
-            if (control is Form form)
+            switch (form.AutoScaleMode)
             {
-                switch (form.AutoScaleMode)
-                {
-                    case AutoScaleMode.Font:
-                    case AutoScaleMode.Dpi:
-                        break;
-                    default:
-                        if (form.WindowState == FormWindowState.Maximized)
-                        {
-                            DpiCompatible(dpi, control);
-                            return;
-                        }
-                        DpiLS(dpi, form, DpiInfo(form.Controls));
-                        break;
-                }
+                case AutoScaleMode.Font:
+                case AutoScaleMode.Dpi:
+                    break;
+                default:
+                    if (form.WindowState == FormWindowState.Maximized)
+                    {
+                        DpiCompatible(dpi, form);
+                        return;
+                    }
+                    DpiLS(dpi, form, DpiInfo(form.Controls));
+                    break;
             }
-            else DpiLS(dpi, DpiInfo(control));
         }
         public static void DpiChangeAuto(float dpi, float dpiold, Control control)
         {
@@ -59,23 +70,42 @@ namespace AntdUI
                 DpiCompatible(dpi, control);
                 return;
             }
-            if (control is Form form)
+            DpiLS(dpi, DpiInfo(control));
+        }
+        public static void DpiChangeAuto(float dpi, float dpiold, Form form)
+        {
+            if (dpi == dpiold) return;
+            var revert_dpi = 1F / dpiold;
+            if (Config.DpiMode == DpiMode.Compatible)
             {
-                switch (form.AutoScaleMode)
-                {
-                    case AutoScaleMode.Font:
-                    case AutoScaleMode.Dpi:
-                        break;
-                    default:
-                        DpiCompatible(revert_dpi, control);
-                        DpiCompatible(dpi, control);
-                        break;
-                }
+                DpiCompatible(revert_dpi, form);
+                DpiCompatible(dpi, form);
+                return;
             }
-            else DpiLS(dpi, DpiInfo(control));
+            switch (form.AutoScaleMode)
+            {
+                case AutoScaleMode.Font:
+                case AutoScaleMode.Dpi:
+                    break;
+                default:
+                    DpiCompatible(revert_dpi, form);
+                    DpiCompatible(dpi, form);
+                    break;
+            }
         }
 
         public static void DpiCompatible(float dpi, Control control) => control.Scale(new SizeF(dpi, dpi));
+
+        /// <summary>
+        /// Form-level equivalent of <see cref="DpiCompatible(float, Control)"/>. Form has no Scale
+        /// method of its own here (it isn't a Control), so this scales its client size directly and
+        /// then scales each direct child the same way Control.Scale recurses into its own children.
+        /// </summary>
+        public static void DpiCompatible(float dpi, Form form)
+        {
+            form.ClientSize = new Size((int)Math.Round(form.ClientSize.Width * dpi), (int)Math.Round(form.ClientSize.Height * dpi));
+            foreach (Control c in form.Controls) c.Scale(new SizeF(dpi, dpi));
+        }
 
         static Dictionary<Control, AnchorDock> DpiInfo(Control control)
         {
@@ -214,6 +244,18 @@ namespace AntdUI
             return Config.Dpi;
 #else
             return control.DeviceDpi / 96F;
+#endif
+        }
+
+        public static float GetScreenDpi(Form form)
+        {
+            var targetScreen = Screen.FromPoint(Control.MousePosition); // 根据坐标找到对应屏幕
+            var rawDpi = GetScreenDpiByApi(targetScreen);
+            if (rawDpi.HasValue) return rawDpi.Value;
+#if NET40 || NET46 || NET48
+            return Config.Dpi;
+#else
+            return form.DeviceDpi / 96F;
 #endif
         }
 

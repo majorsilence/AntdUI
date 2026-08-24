@@ -23,7 +23,7 @@ namespace AntdUI
         /// <param name="interval">间隔</param>
         /// <param name="end">结束回调</param>
         /// <param name="sleep">运行前睡眠</param>
-        public AnimationTask(Control control, Func<bool> action, int interval, Action? end = null, int sleep = 0)
+        public AnimationTask(object control, Func<bool> action, int interval, Action? end = null, int sleep = 0)
         {
             Run(() =>
             {
@@ -38,7 +38,7 @@ namespace AntdUI
                 }
             }, new IAnimationConfig().SetEnd(end).SetSleep(sleep).SetPriority());
         }
-        public AnimationTask(Control control, Func<bool> action)
+        public AnimationTask(object control, Func<bool> action)
         {
             Run(() =>
             {
@@ -502,7 +502,7 @@ namespace AntdUI
         /// <param name="interval">动画间隔</param>
         /// <param name="max">最大值</param>
         /// <param name="add">更新量</param>
-        public AnimationLinearConfig(Control control, Func<int, bool> call, int interval, int max, int add)
+        public AnimationLinearConfig(object control, Func<int, bool> call, int interval, int max, int add)
         {
             Control = control;
             Call = call;
@@ -517,7 +517,7 @@ namespace AntdUI
         /// <param name="control">句柄</param>
         /// <param name="call">任务</param>
         /// <param name="interval">动画间隔</param>
-        public AnimationLinearConfig(Control control, Func<int, bool> call, int interval)
+        public AnimationLinearConfig(object control, Func<int, bool> call, int interval)
         {
             Control = control;
             Call = call;
@@ -525,9 +525,11 @@ namespace AntdUI
         }
 
         /// <summary>
-        /// 句柄
+        /// 句柄. A Control in most cases, but a Form in others (e.g. ITaskOpacity's Form-based
+        /// constructors) -- Form doesn't derive from Control here, so this has to be the common
+        /// supertype of both; see Helper.Wait(CancellationTokenSource, object) for how it's consumed.
         /// </summary>
-        public Control Control { get; set; }
+        public object Control { get; set; }
 
         /// <summary>
         /// 任务
@@ -551,7 +553,7 @@ namespace AntdUI
 
         #region 设置
 
-        public AnimationLinearConfig SetControl(Control value)
+        public AnimationLinearConfig SetControl(object value)
         {
             Control = value;
             return this;
@@ -622,7 +624,7 @@ namespace AntdUI
         /// <param name="interval">动画间隔</param>
         /// <param name="max">最大值</param>
         /// <param name="add">更新量</param>
-        public AnimationLinearFConfig(Control control, Func<float, bool> call, int interval, int max, int add)
+        public AnimationLinearFConfig(object control, Func<float, bool> call, int interval, int max, int add)
         {
             Control = control;
             Call = call;
@@ -637,7 +639,7 @@ namespace AntdUI
         /// <param name="control">句柄</param>
         /// <param name="call">任务</param>
         /// <param name="interval">动画间隔</param>
-        public AnimationLinearFConfig(Control control, Func<float, bool> call, int interval)
+        public AnimationLinearFConfig(object control, Func<float, bool> call, int interval)
         {
             Control = control;
             Call = call;
@@ -647,7 +649,7 @@ namespace AntdUI
         /// <summary>
         /// 句柄
         /// </summary>
-        public Control Control { get; set; }
+        public object Control { get; set; }
 
         /// <summary>
         /// 任务
@@ -671,7 +673,7 @@ namespace AntdUI
 
         #region 设置
 
-        public AnimationLinearFConfig SetControl(Control value)
+        public AnimationLinearFConfig SetControl(object value)
         {
             Control = value;
             return this;
@@ -733,7 +735,7 @@ namespace AntdUI
     /// </summary>
     public class AnimationLoopConfig : IAnimationConfig
     {
-        public AnimationLoopConfig(Control control, Func<bool> call, int interval)
+        public AnimationLoopConfig(object control, Func<bool> call, int interval)
         {
             Control = control;
             Call = call;
@@ -742,7 +744,7 @@ namespace AntdUI
         /// <summary>
         /// 句柄
         /// </summary>
-        public Control Control { get; set; }
+        public object Control { get; set; }
 
         /// <summary>
         /// 任务
@@ -756,7 +758,7 @@ namespace AntdUI
 
         #region 设置
 
-        public AnimationLoopConfig SetControl(Control value)
+        public AnimationLoopConfig SetControl(object value)
         {
             Control = value;
             return this;

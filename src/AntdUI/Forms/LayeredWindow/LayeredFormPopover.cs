@@ -38,7 +38,10 @@ namespace AntdUI
                 Padding = new Padding(paddingx, paddingy, paddingx, paddingy);
                 if (config.Content is Control control)
                 {
-                    control.Parent = this;
+                    // Form doesn't derive from Control here, so "control.Parent = this" (which really
+                    // means "add me to this.Controls", per Control.Parent's setter) has to be spelled
+                    // as the Controls.Add it desugars to on a real Control parent.
+                    this.Controls.Add(control);
                     control.BackColor = config.Back ?? Colour.BgElevated.Get(config.ColorScheme, name);
                     control.ForeColor = config.Fore ?? Colour.Text.Get(config.ColorScheme, name);
                     Win32.WindowTheme(control, config.ColorScheme);

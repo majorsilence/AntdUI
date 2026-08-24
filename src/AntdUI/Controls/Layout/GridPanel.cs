@@ -475,9 +475,9 @@ namespace AntdUI
                 if (!string.IsNullOrEmpty(Span))
                 {
                     var rects = ConvertToRects(DisplayRectangle, Span);
-                    using (var fore = new SolidBrush(Style.Db.Text))
-                    using (var bg = new SolidBrush(Style.Db.Fill))
-                    using (var pen = new Pen(Style.Db.PrimaryBorder, Dpi * 2))
+                    using (var fore = new SolidBrush(AntdUI.Style.Db.Text))
+                    using (var bg = new SolidBrush(AntdUI.Style.Db.Fill))
+                    using (var pen = new Pen(AntdUI.Style.Db.PrimaryBorder, Dpi * 2))
                     {
                         int gap = (int)(3 * Dpi), gap2 = gap * 2;
                         foreach (var it in rects)

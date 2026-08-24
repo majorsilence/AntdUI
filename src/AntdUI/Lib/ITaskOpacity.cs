@@ -12,7 +12,7 @@ namespace AntdUI
     public class ITaskOpacity : IDisposable
     {
         string key;
-        Control control;
+        object control;
         Action action;
         public ITaskOpacity(string k, ILayeredFormOpacityDown _control)
         {

@@ -61,7 +61,7 @@ namespace AntdUI
         {
             int gap = (int)(3 * g.Dpi), paddingy = (int)(6 * g.Dpi), paddingx = (int)(8 * g.Dpi), gap2 = gap * 2, paddingy2 = paddingy * 2, paddingx2 = paddingx * 2;
             int radius = (int)(core.Radius * g.Dpi);
-            using (var brush = new SolidBrush(core.Back ?? Style.Get(Colour.BgSpotlight, nameof(Tooltip))))
+            using (var brush = new SolidBrush(core.Back ?? AntdUI.Style.Get(Colour.BgSpotlight, nameof(Tooltip))))
             {
                 if (core.ArrowAlign == TAlign.None)
                 {
@@ -72,7 +72,7 @@ namespace AntdUI
                         DrawShadow(core, g, radius, rect, rect_shadow, path);
                         g.Fill(brush, path);
                     }
-                    g.DrawText(core.Text, core.Font, core.Fore ?? Style.Get(Colour.TextSpotlight, nameof(Tooltip)), rect_text, multiline ? s_l : s_c);
+                    g.DrawText(core.Text, core.Font, core.Fore ?? AntdUI.Style.Get(Colour.TextSpotlight, nameof(Tooltip)), rect_text, multiline ? s_l : s_c);
                 }
                 else
                 {
@@ -107,7 +107,7 @@ namespace AntdUI
                         if (arrowX > -1) g.FillPolygon(brush, core.ArrowAlign.AlignLines(arrowSize, rect, rect_shadow, arrowX));
                         else g.FillPolygon(brush, core.ArrowAlign.AlignLines(arrowSize, rect, rect_shadow));
                     }
-                    g.DrawText(core.Text, core.Font, core.Fore ?? Style.Get(Colour.TextSpotlight, nameof(Tooltip)), rect_text, multiline ? s_l : s_c);
+                    g.DrawText(core.Text, core.Font, core.Fore ?? AntdUI.Style.Get(Colour.TextSpotlight, nameof(Tooltip)), rect_text, multiline ? s_l : s_c);
                 }
             }
         }

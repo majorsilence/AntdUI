@@ -489,13 +489,13 @@ namespace AntdUI
             switch (Status)
             {
                 case TType.Success:
-                    return Style.Get(bg ? Colour.SuccessBg : Colour.Success, ColorScheme, nameof(SelectMultiple));
+                    return AntdUI.Style.Get(bg ? Colour.SuccessBg : Colour.Success, ColorScheme, nameof(SelectMultiple));
                 case TType.Warn:
-                    return Style.Get(bg ? Colour.WarningBg : Colour.Warning, ColorScheme, nameof(SelectMultiple));
+                    return AntdUI.Style.Get(bg ? Colour.WarningBg : Colour.Warning, ColorScheme, nameof(SelectMultiple));
                 case TType.Error:
-                    return Style.Get(bg ? Colour.ErrorBg : Colour.Error, ColorScheme, nameof(SelectMultiple));
+                    return AntdUI.Style.Get(bg ? Colour.ErrorBg : Colour.Error, ColorScheme, nameof(SelectMultiple));
                 case TType.Info:
-                    return Style.Get(bg ? Colour.InfoBg : Colour.Info, ColorScheme, nameof(SelectMultiple));
+                    return AntdUI.Style.Get(bg ? Colour.InfoBg : Colour.Info, ColorScheme, nameof(SelectMultiple));
                 default:
                     return (bg ? Colour.FillSecondary : Colour.Text).Get(ColorScheme, nameof(SelectMultiple), Name);
             }

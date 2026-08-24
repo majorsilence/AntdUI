@@ -75,7 +75,7 @@ namespace AntdUI
                 Font = new Font(Font.FontFamily, Font.Size * config.FontRatio);
             }
             mode = config.Mode;
-            color_alpha = Value = ValueDefault = config.Value ?? Style.Db.Primary;
+            color_alpha = Value = ValueDefault = config.Value ?? AntdUI.Style.Db.Primary;
             ValueNAlpha = Color.FromArgb(255, Value);
             var hsv = ValueNAlpha.ToHSV();
             hsv.s = hsv.v = 1;
@@ -280,7 +280,7 @@ namespace AntdUI
                 PaddGap = 0F,
                 IconGap = 0F,
                 IconRatioRight = 0F,
-                PrefixFore = Style.Db.TextTertiary,
+                PrefixFore = AntdUI.Style.Db.TextTertiary,
                 PrefixText = "#",
                 Bounds = new Rectangle(shadow + rect.X, shadow + rect.Y, rect.Width, rect.Height),
                 TextAlign = HorizontalAlignment.Center,
@@ -302,7 +302,7 @@ namespace AntdUI
                 PaddGap = 0F,
                 IconGap = 0F,
                 IconRatioRight = 0F,
-                PrefixFore = Style.Db.TextTertiary,
+                PrefixFore = AntdUI.Style.Db.TextTertiary,
                 PrefixText = PrefixText,
                 TabStop = false,
                 ShowControl = false,
@@ -326,7 +326,7 @@ namespace AntdUI
                 PaddGap = 0F,
                 IconGap = 0F,
                 IconRatioRight = 0F,
-                SuffixFore = Style.Db.TextTertiary,
+                SuffixFore = AntdUI.Style.Db.TextTertiary,
                 SuffixText = "%",
                 TabStop = false,
                 ShowControl = false,

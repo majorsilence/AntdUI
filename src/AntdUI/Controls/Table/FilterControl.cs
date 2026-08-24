@@ -183,7 +183,7 @@ namespace AntdUI
                     if (Option.AllowNull == false) continue;
                     if (item_null == null)
                     {
-                        item_null = new AntItem[] { new AntItem("tag"), new AntItem("check", check), new AntItem("text", new CellText().SetText("(空白)", "Filter.Blank").SetFore(Style.Db.TextTertiary)) };
+                        item_null = new AntItem[] { new AntItem("tag"), new AntItem("check", check), new AntItem("text", new CellText().SetText("(空白)", "Filter.Blank").SetFore(AntdUI.Style.Db.TextTertiary)) };
                         items.Insert(0, item_null);
                     }
                 }

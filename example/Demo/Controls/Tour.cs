@@ -111,7 +111,7 @@ namespace Demo.Controls
                 {
                     popover?.Close();
                     popover = null;
-                    if (info.Rect.HasValue) popover = AntdUI.Popover.open(new AntdUI.Popover.Config(info.Form, new TourPopover(info, info.Index == 8 ? "DIV Rectangle" : "Button " + (info.Index + 1), "Tour Step " + (info.Index + 1), (info.Index + 1), 9)) { Offset = info.Rect.Value, Focus = false });
+                    if (info.Rect.HasValue) popover = AntdUI.Popover.open(new AntdUI.Popover.Config(this, new TourPopover(info, info.Index == 8 ? "DIV Rectangle" : "Button " + (info.Index + 1), "Tour Step " + (info.Index + 1), (info.Index + 1), 9)) { Offset = info.Rect.Value, Focus = false });
                 }));
             }
             else tourForm.Next();

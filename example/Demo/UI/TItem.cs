@@ -32,13 +32,13 @@ namespace AntdUI
 
         public override void Paint(Canvas g, VirtualPanelArgs e)
         {
-            g.String(Localization.Get(LocalizationTitle, Title), font_title, Style.Db.Text, rect, FormatFlags.Left | FormatFlags.VerticalCenter | FormatFlags.NoWrap);
+            g.String(Localization.Get(LocalizationTitle, Title), font_title, AntdUI.Style.Db.Text, rect, FormatFlags.Left | FormatFlags.VerticalCenter | FormatFlags.NoWrap);
             using (var path = rect_count.RoundPath(e.Radius))
             {
-                g.Fill(Style.Db.TagDefaultBg, path);
-                g.Draw(Style.Db.DefaultBorder, sp, path);
+                g.Fill(AntdUI.Style.Db.TagDefaultBg, path);
+                g.Draw(AntdUI.Style.Db.DefaultBorder, sp, path);
             }
-            g.String(Count, font_count, Style.Db.Text, rect_count);
+            g.String(Count, font_count, AntdUI.Style.Db.Text, rect_count);
         }
 
         internal int sp = 1, rl = 0;

@@ -66,7 +66,7 @@ namespace Demo.Controls
         private void btnWindow_Click(object sender, EventArgs e)
         {
             CancellationTokenSource token = new CancellationTokenSource();
-            AntdUI.Spin.open(form, AntdUI.Localization.Get("Loading2", "正在加载中..."), config =>
+            AntdUI.Spin.open(this, AntdUI.Localization.Get("Loading2", "正在加载中..."), config =>
             {
                 Thread.Sleep(1000);
                 for (int i = 0; i < 101; i++)
@@ -90,7 +90,7 @@ namespace Demo.Controls
 
         private void buttonError_Click(object sender, EventArgs e)
         {
-            AntdUI.Spin.open(form, AntdUI.Localization.Get("Loading2", "正在加载中..."), config =>
+            AntdUI.Spin.open(this, AntdUI.Localization.Get("Loading2", "正在加载中..."), config =>
             {
                 Thread.Sleep(1000);
                 for (int i = 0; i < 101; i++)
@@ -121,7 +121,7 @@ namespace Demo.Controls
         private void BtnGif_Click(object sender, EventArgs e)
         {
             CancellationTokenSource token = new CancellationTokenSource();
-            AntdUI.Spin.open(form, "Loading Gif...", config =>
+            AntdUI.Spin.open(this, "Loading Gif...", config =>
             {
                 Image gif = Properties.Resources.Loading_indicator_wavy_transparent;
                 config.SetIndicator(gif);

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using Majorsilence.Forms;
 using Majorsilence.Forms.Drawing;
 using Majorsilence.Forms.Design;
 using Majorsilence.Forms.Drawing.Drawing2D;
@@ -546,7 +547,7 @@ namespace AntdUI
             });
         }
 
-        bool GetOwner(out ContainerControl? owner)
+        bool GetOwner(out IWin32Window? owner)
         {
             if (ownerTmp is ContainerControl tmp)
             {
@@ -555,7 +556,7 @@ namespace AntdUI
             }
             else
             {
-                owner = ContainerControl ?? Parent.FindPARENT();
+                owner = ContainerControl ?? (IWin32Window?)Parent.FindPARENT();
                 if (owner == null)
                 {
                     ownerTmp = 1;
@@ -628,7 +629,7 @@ namespace AntdUI
             }
         }
 
-        void TaskbarProgressState(ContainerControl hwnd, ThumbnailProgressState state)
+        void TaskbarProgressState(IWin32Window hwnd, ThumbnailProgressState state)
         {
             if (old_state == state) return;
             old_state = state;
@@ -642,7 +643,7 @@ namespace AntdUI
 
         ulong old_value = 0;
         ThumbnailProgressState old_state = ThumbnailProgressState.NoProgress;
-        void TaskbarProgressValue(ContainerControl hwnd, ulong value)
+        void TaskbarProgressValue(IWin32Window hwnd, ulong value)
         {
             if (old_value == value) return;
             old_value = value;

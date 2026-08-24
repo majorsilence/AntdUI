@@ -560,7 +560,7 @@ namespace AntdUI
             if (Title == null) return;
             var titleFont = TitleFont ?? Font;
             var titleSize = g.MeasureString(Title, titleFont).SizeEm(titleFont);
-            g.DrawText(Title, titleFont, TitleColor ?? Style.Db.Text, new Rectangle(rect.X + (rect.Width - titleSize.Width) / 2, rect.Y, titleSize.Width, titleSize.Height));
+            g.DrawText(Title, titleFont, TitleColor ?? AntdUI.Style.Db.Text, new Rectangle(rect.X + (rect.Width - titleSize.Width) / 2, rect.Y, titleSize.Width, titleSize.Height));
         }
 
         private void DrawLegend(Canvas g, Rectangle rect, Rectangle chartRect)
@@ -708,7 +708,7 @@ namespace AntdUI
 
         private void DrawGrid(Canvas g, Rectangle chartRect)
         {
-            using (var pen = new Pen(GridColor ?? Style.Db.BorderColor, Dpi))
+            using (var pen = new Pen(GridColor ?? AntdUI.Style.Db.BorderColor, Dpi))
             {
                 pen.DashStyle = DashStyle.Dot;
 
@@ -732,7 +732,7 @@ namespace AntdUI
 
         private void DrawAxes(Canvas g, Rectangle chartRect)
         {
-            using (var pen = new Pen(AxisColor ?? Style.Db.BorderColor, Dpi * 2))
+            using (var pen = new Pen(AxisColor ?? AntdUI.Style.Db.BorderColor, Dpi * 2))
             {
                 // X轴
                 g.DrawLine(pen, chartRect.X, chartRect.Bottom, chartRect.Right, chartRect.Bottom);
@@ -741,7 +741,7 @@ namespace AntdUI
             }
 
             // 绘制坐标轴标签
-            var labelColor = Style.Db.Text;
+            var labelColor = AntdUI.Style.Db.Text;
             var labelFont = Font;
 
             // 绘制Y轴标签
@@ -894,7 +894,7 @@ namespace AntdUI
             if (!SupportsCursor()) return;
 
             var point = mousePosition.Value;
-            using (var pen = new Pen(AxisColor ?? Style.Db.Primary, Dpi))
+            using (var pen = new Pen(AxisColor ?? AntdUI.Style.Db.Primary, Dpi))
             {
                 pen.DashStyle = DashStyle.Dash;
                 if (CursorMode == TChartCursor.Vertical || CursorMode == TChartCursor.Cross) g.DrawLine(pen, point.X, chartRect.Y, point.X, chartRect.Bottom);

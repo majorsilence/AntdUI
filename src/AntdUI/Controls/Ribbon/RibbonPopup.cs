@@ -69,7 +69,7 @@ namespace AntdUI
             // Clicks inside the popup pass through unchanged; clicks on the owner ribbon pass through
             // so Ribbon.OnMouseDown can swap the popup's tab in place (same-tab → close, different-tab → re-open).
             var ctl = Control.FromHandle(m.HWnd);
-            if (IsInTree(ctl, this) || IsInTree(ctl, owner)) return false;
+            if (ctl?.FindForm() == this || IsInTree(ctl, owner)) return false;
 
             try { Close(); } catch { /* swallow */ }
             return false;

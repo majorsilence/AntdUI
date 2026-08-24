@@ -24,9 +24,6 @@
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net48'">
-    <Reference Include="System.Design" />
-  </ItemGroup>
   <ItemGroup>
     <None Include="../logo.png">
       <Pack>True</Pack>
@@ -59,8 +56,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Majorsilence.Forms" Version="26.0.32" />
-    <PackageReference Include="Majorsilence.Forms.Avalonia" Version="26.0.32" />
+    <ProjectReference Include="../../../Majorsilence.Forms/src/Majorsilence.Forms/Majorsilence.Forms.csproj" />
+    <ProjectReference Include="../../../Majorsilence.Forms/src/Majorsilence.Forms.Avalonia/Majorsilence.Forms.Avalonia.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.CodeDom" Version="10.0.0" />

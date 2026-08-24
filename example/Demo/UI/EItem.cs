@@ -34,12 +34,12 @@ namespace AntdUI
         Bitmap bmp = null;
         public override void Paint(Canvas g, VirtualPanelArgs e)
         {
-            if (bmp == null) bmp = Value.SvgToBmp(rect_icon_hover.Width, rect_icon_hover.Height, Style.Db.Text);
+            if (bmp == null) bmp = Value.SvgToBmp(rect_icon_hover.Width, rect_icon_hover.Height, AntdUI.Style.Db.Text);
             if (Hover)
             {
                 using (var path = e.Rect.RoundPath(e.Radius))
                 {
-                    g.Draw(Style.Db.Primary, sp, path);
+                    g.Draw(AntdUI.Style.Db.Primary, sp, path);
                 }
                 g.Image(bmp, rect_icon_hover);
             }

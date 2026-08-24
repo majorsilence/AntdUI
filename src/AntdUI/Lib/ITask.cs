@@ -354,5 +354,15 @@ namespace AntdUI
             return control.Invoke(method);
 #endif
         }
+
+        public static T? Invoke<T>(Form form, Func<T> method)
+        {
+            if (form.IsDisposed || form.Disposing) return default;
+#if NET40 || NET46 || NET48
+            return (T)form.Invoke(method);
+#else
+            return form.Invoke(method);
+#endif
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace AntdUI
             TopMost = true;
             DoubleBuffered = true;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            BackColor = Style.Db.BgElevated;
+            BackColor = AntdUI.Style.Db.BgElevated;
         }
 
         /// <summary>Return true so the form never takes activation — the underlying content keeps focus.</summary>
@@ -158,11 +158,11 @@ namespace AntdUI
             int headerH = (int)(24 * dpi);
 
             var fullRect = new Rectangle(0, 0, Width - 1, Height - 1);
-            var border = Style.Db.BorderColor;
-            var textColor = Style.Db.Text;
-            var secondary = Style.Db.TextSecondary;
-            var accentBg = Style.Db.PrimaryBg;
-            var accent = Style.Db.Primary;
+            var border = AntdUI.Style.Db.BorderColor;
+            var textColor = AntdUI.Style.Db.Text;
+            var secondary = AntdUI.Style.Db.TextSecondary;
+            var accentBg = AntdUI.Style.Db.PrimaryBg;
+            var accent = AntdUI.Style.Db.Primary;
 
             using (var pen = new Pen(border, Math.Max(1f, dpi)))
             {

@@ -367,7 +367,7 @@ namespace AntdUI.Captcha
             using (var g = Graphics.FromImage(bmp).HighLay(Dpi))
             {
                 // 绘制一个简单的风景图作为示例
-                using (var brush = new LinearGradientBrush(rect, Style.Db.PrimaryBg, Style.Db.PrimaryColor, 90f))
+                using (var brush = new LinearGradientBrush(rect, AntdUI.Style.Db.PrimaryBg, AntdUI.Style.Db.PrimaryColor, 90f))
                 {
                     g.Fill(brush, rect);
                 }
@@ -381,7 +381,7 @@ namespace AntdUI.Captcha
                     new Point(rect.Width, rect.Height)
                 };
 
-                using (var mountainBrush = new SolidBrush(Style.Db.TextQuaternary))
+                using (var mountainBrush = new SolidBrush(AntdUI.Style.Db.TextQuaternary))
                 {
                     g.FillClosedCurve(mountainBrush, mountains);
                 }
@@ -389,7 +389,7 @@ namespace AntdUI.Captcha
                 int size = (int)(40 * Dpi), gap = (int)(12 * Dpi);
                 // 绘制太阳
                 var sunRect = new Rectangle(rect.Right - size - gap, rect.Y + gap, size, size);
-                using (var sunBrush = new SolidBrush(Style.Db.Warning))
+                using (var sunBrush = new SolidBrush(AntdUI.Style.Db.Warning))
                 {
                     g.FillEllipse(sunBrush, sunRect);
                 }
@@ -409,10 +409,10 @@ namespace AntdUI.Captcha
 
             using (var holePath = CreatePuzzlePath(holeRect))
             {
-                g.Fill(Style.Db.Fill, holePath);
+                g.Fill(AntdUI.Style.Db.Fill, holePath);
 
                 // 绘制边框
-                using (var pen = new Pen(Style.Db.BgBase, bor))
+                using (var pen = new Pen(AntdUI.Style.Db.BgBase, bor))
                 {
                     g.Draw(pen, holePath);
                 }
@@ -439,8 +439,8 @@ namespace AntdUI.Captcha
                 // 绘制拼图块边框
                 Color borderColor = state switch
                 {
-                    PuzzleCaptchaState.Failed => Style.Db.Error,
-                    _ => Style.Db.BgBase
+                    PuzzleCaptchaState.Failed => AntdUI.Style.Db.Error,
+                    _ => AntdUI.Style.Db.BgBase
                 };
 
                 using (var pen = new Pen(borderColor, bor))
@@ -494,7 +494,7 @@ namespace AntdUI.Captcha
         private void DrawSlider(Canvas g)
         {
             // 绘制滑块轨道
-            g.Fill(Style.Db.BorderColor, sliderRect);
+            g.Fill(AntdUI.Style.Db.BorderColor, sliderRect);
 
             // 绘制滑块提示文本
             string sliderText = state switch
@@ -504,7 +504,7 @@ namespace AntdUI.Captcha
                 _ => "向右拖动滑块填充拼图"
             };
 
-            Color textColor = fore ?? Style.Db.Text;
+            Color textColor = fore ?? AntdUI.Style.Db.Text;
             using (var brush = new SolidBrush(textColor))
             {
                 g.String(sliderText, Font, brush, sliderRect);
@@ -518,9 +518,9 @@ namespace AntdUI.Captcha
                 var progressRect = new Rectangle(sliderRect.X, sliderRect.Y, sliderPosition + sliderThumbWidth, sliderRect.Height);
                 Color progressColor = state switch
                 {
-                    PuzzleCaptchaState.Success => Style.Db.SuccessBg,
-                    PuzzleCaptchaState.Failed => Style.Db.ErrorBg,
-                    _ => Style.Db.PrimaryBg
+                    PuzzleCaptchaState.Success => AntdUI.Style.Db.SuccessBg,
+                    PuzzleCaptchaState.Failed => AntdUI.Style.Db.ErrorBg,
+                    _ => AntdUI.Style.Db.PrimaryBg
                 };
                 g.Fill(progressColor, progressRect);
             }
@@ -529,13 +529,13 @@ namespace AntdUI.Captcha
             var thumbRect = GetSliderThumbRect();
             Color thumbColor = state switch
             {
-                PuzzleCaptchaState.Success => Style.Db.Success,
-                PuzzleCaptchaState.Failed => Style.Db.Error,
-                _ => Style.Db.BgBase
+                PuzzleCaptchaState.Success => AntdUI.Style.Db.Success,
+                PuzzleCaptchaState.Failed => AntdUI.Style.Db.Error,
+                _ => AntdUI.Style.Db.BgBase
             };
 
             using (var brush = new SolidBrush(thumbColor))
-            using (var pen = new Pen(Style.Db.PrimaryBorder, Dpi))
+            using (var pen = new Pen(AntdUI.Style.Db.PrimaryBorder, Dpi))
             {
                 g.Fill(brush, thumbRect);
                 g.Draw(pen, thumbRect);
@@ -545,13 +545,13 @@ namespace AntdUI.Captcha
             switch (state)
             {
                 case PuzzleCaptchaState.Success:
-                    g.Svg("CheckOutlined", icoRect, Style.Db.SuccessColor);
+                    g.Svg("CheckOutlined", icoRect, AntdUI.Style.Db.SuccessColor);
                     break;
                 case PuzzleCaptchaState.Failed:
-                    g.Svg("CloseOutlined", icoRect, Style.Db.ErrorColor);
+                    g.Svg("CloseOutlined", icoRect, AntdUI.Style.Db.ErrorColor);
                     break;
                 default:
-                    g.Svg("ArrowRightOutlined", icoRect, Style.Db.Text);
+                    g.Svg("ArrowRightOutlined", icoRect, AntdUI.Style.Db.Text);
                     break;
             }
         }

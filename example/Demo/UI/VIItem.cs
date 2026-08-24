@@ -25,17 +25,17 @@ namespace AntdUI
             {
                 using (var path = e.Rect.RoundPath(e.Radius))
                 {
-                    g.Fill(Style.Db.Primary, path);
+                    g.Fill(AntdUI.Style.Db.Primary, path);
                 }
-                if (bmp_ac == null) bmp_ac = Value.SvgToBmp(icon_size, icon_size, Style.Db.PrimaryColor);
+                if (bmp_ac == null) bmp_ac = Value.SvgToBmp(icon_size, icon_size, AntdUI.Style.Db.PrimaryColor);
                 g.Image(bmp_ac, rect_icon);
-                g.String(Key, e.Panel.Font, Style.Db.PrimaryColor, rect_text);
+                g.String(Key, e.Panel.Font, AntdUI.Style.Db.PrimaryColor, rect_text);
             }
             else
             {
-                if (bmp == null) bmp = Value.SvgToBmp(icon_size, icon_size, Style.Db.Text);
+                if (bmp == null) bmp = Value.SvgToBmp(icon_size, icon_size, AntdUI.Style.Db.Text);
                 g.Image(bmp, rect_icon);
-                g.String(Key, e.Panel.Font, Style.Db.Text, rect_text);
+                g.String(Key, e.Panel.Font, AntdUI.Style.Db.Text, rect_text);
 
             }
         }

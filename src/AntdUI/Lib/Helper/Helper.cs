@@ -130,7 +130,7 @@ namespace AntdUI
         /// <param name="alpha">透明度值（0-255）</param>
         /// <param name="color">原始颜色</param>
         /// <returns>带透明度的颜色</returns>
-        public static Color ToColor(int alpha, Color color) => Color.FromArgb(Style.rgbbyte(alpha), color);
+        public static Color ToColor(int alpha, Color color) => Color.FromArgb(AntdUI.Style.rgbbyte(alpha), color);
 
         /// <summary>
         /// 查找控件的父级Form
@@ -140,20 +140,16 @@ namespace AntdUI
         /// <returns>找到的Form，找不到则返回null</returns>
         public static Form? FindPARENT(this Control? control, bool mdi = false)
         {
+            // A Control can never itself be a Form here (Form derives from WindowBase, not Control --
+            // see Majorsilence.Forms' WindowBase for why), so the old walk that checked "is Form"/
+            // "is DoubleBufferForm" at every step up control.Parent can't happen; FindForm() is the
+            // framework's own equivalent walk, ending at the ControlAdapter that resolves to the
+            // hosting Form.
             if (control == null) return null;
-            if (control is DoubleBufferForm formd)
-            {
-                if (formd.Tag is Form form) return form;
-                else if (formd.Parent != null) return FindPARENT(formd.Parent, mdi);
-                return formd;
-            }
-            else if (control is Form form)
-            {
-                if (mdi) return form;
-                return form.ParentForm ?? form;
-            }
-            else if (control.Parent != null) return FindPARENT(control.Parent, mdi);
-            return null;
+            var form = control.FindForm();
+            if (form == null) return null;
+            if (mdi) return form;
+            return form.ParentForm ?? form;
         }
 
         /// <summary>
@@ -176,7 +172,7 @@ namespace AntdUI
                 if (mdi) return form;
                 return form.ParentForm ?? form;
             }
-            else if (target.Value is Control control) return FindPARENT(control.Parent, mdi);
+            else if (target.Value is Control control) return control.FindPARENT(mdi);
             return null;
         }
 
@@ -188,36 +184,16 @@ namespace AntdUI
         /// <returns>父级Form列表</returns>
         public static List<Control> FindPARENTs(this Control control, bool mdi = false)
         {
+            // Same reasoning as FindPARENT above: control.Parent is a Control-only chain here, it
+            // never reaches a Form, so this just walks it to the top rather than special-casing a
+            // Form/DoubleBufferForm that can never appear in it.
             var list = new List<Control>(2);
-            if (control is DoubleBufferForm formd)
+            Control? current = control;
+            while (current != null)
             {
-                list.Add(formd);
-                if (formd.Tag is Form form)
-                {
-                    list.Add(form);
-                    return list;
-                }
-                else if (formd.Parent != null)
-                {
-                    var tmp = FindPARENTs(formd.Parent, mdi);
-                    if (tmp != null) list.AddRange(tmp);
-                    return list;
-                }
-                else return list;
+                list.Add(current);
+                current = current.Parent;
             }
-            else if (control is Form form)
-            {
-                if (mdi) list.Add(form);
-                else list.Add(form.ParentForm ?? form);
-                return list;
-            }
-            else if (control.Parent != null)
-            {
-                list.Add(control);
-                var tmp = FindPARENTs(control.Parent, mdi);
-                if (tmp != null) list.AddRange(tmp);
-            }
-            else list.Add(control);
             return list;
         }
 
@@ -403,6 +379,26 @@ namespace AntdUI
         }
 
         /// <summary>
+        /// Same as <see cref="Wait(System.Threading.CancellationTokenSource?, Control)"/>, for a handle
+        /// that may be a Control or a Form (Form doesn't derive from Control here -- see
+        /// AnimationLinearConfig.Control, the only current caller of this overload).
+        /// </summary>
+        public static bool Wait(this System.Threading.CancellationTokenSource? token, object handle)
+        {
+            try
+            {
+                if (token == null || token.IsCancellationRequested) return true;
+                if (handle is Control control) return control.IsDisposed;
+                if (handle is Form form) return form.IsDisposed;
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// 检查列表索引是否越界
         /// </summary>
         /// <param name="list">要检查的列表</param>
@@ -466,6 +462,13 @@ namespace AntdUI
         public static bool ClipboardSetText(this Control control, string? text)
         {
             if (control.InvokeRequired) return ITask.Invoke(control, new Func<bool>(() => ClipboardSetText(text)));
+            return ClipboardSetText(text);
+        }
+
+        /// <summary>Same as <see cref="ClipboardSetText(Control, string?)"/>, for a Form-hosted caller.</summary>
+        public static bool ClipboardSetText(this Form form, string? text)
+        {
+            if (form.InvokeRequired) return ITask.Invoke(form, new Func<bool>(() => ClipboardSetText(text)));
             return ClipboardSetText(text);
         }
 
@@ -1031,7 +1034,7 @@ namespace AntdUI
         internal static Color HandColor(this Color? color, Colour? db, Color def)
         {
             if (color.HasValue) return color.Value;
-            if (db.HasValue) return Style.Get(db.Value);
+            if (db.HasValue) return AntdUI.Style.Get(db.Value);
             return def;
         }
     }
