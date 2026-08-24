@@ -509,6 +509,18 @@ namespace AntdUI
                 if (force) cacheadmin = null;
                 else return cacheadmin.Value;
             }
+            // WindowsIdentity is Windows-only and THROWS PlatformNotSupportedException elsewhere, so
+            // this has to be asked before it is called -- under Majorsilence.Forms the same control
+            // library runs on macOS and Linux. Reported as not-elevated off Windows: callers use this to
+            // decide whether an elevation-only path is available (UploadDragger checks it because Windows
+            // refuses drag-and-drop from a non-elevated process into an elevated one), and there is no
+            // such restriction to work around on the other platforms.
+            if (!OperatingSystem.IsWindows())
+            {
+                cacheadmin = false;
+                return false;
+            }
+
             using (var id = System.Security.Principal.WindowsIdentity.GetCurrent())
             {
                 cacheadmin = new System.Security.Principal.WindowsPrincipal(id).IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
