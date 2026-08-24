@@ -235,7 +235,13 @@ namespace AntdUI
         /// 设置窗口置顶
         /// </summary>
         /// <param name="hand">要设置的窗口句柄</param>
-        public static void SetTopMost(IntPtr hand) => Win32.User32.SetWindowPos(hand, new IntPtr(-1), 0, 0, 0, 0, Win32.User32.SetWindowPosFlags.SWP_NOACTIVATE);
+        public static void SetTopMost(IntPtr hand)
+        {
+            // Callers pass a raw HWND, so there is no window object here to set TopMost on; off Windows
+            // the z-order request is simply dropped rather than throwing.
+            if (!OperatingSystem.IsWindows()) return;
+            Win32.User32.SetWindowPos(hand, new IntPtr(-1), 0, 0, 0, 0, Win32.User32.SetWindowPosFlags.SWP_NOACTIVATE);
+        }
 
         /// <summary>
         /// 等待WaitHandle信号
@@ -439,7 +445,9 @@ namespace AntdUI
         /// <returns>剪贴板文本，获取失败返回null</returns>
         public static string? ClipboardGetText()
         {
-            if (Win32.User32.GetClipBoardText(out var text)) return text;
+            // The managed Clipboard fallback below was unreachable off Windows: this P/Invoke threw
+            // before the try block that holds it, so any copy/paste killed the process.
+            if (OperatingSystem.IsWindows() && Win32.User32.GetClipBoardText(out var text)) return text;
             else
             {
                 try
@@ -479,7 +487,8 @@ namespace AntdUI
         /// <returns>是否设置成功</returns>
         public static bool ClipboardSetText(string? text)
         {
-            if (Win32.User32.SetClipBoardText(text)) return true;
+            // As in ClipboardGetText: reach the managed fallback instead of throwing.
+            if (OperatingSystem.IsWindows() && Win32.User32.SetClipBoardText(text)) return true;
             else
             {
                 try
@@ -918,6 +927,7 @@ namespace AntdUI
         /// <returns></returns>
         public static bool IsTouch()
         {
+            if (!OperatingSystem.IsWindows()) return false;
             uint extra = Win32.User32.GetMessageExtraInfo();
             bool isTouchOrPen = ((extra & 0xFFFFFF00) == 0xFF515700);
             if (isTouchOrPen) return ((extra & 0x00000080) == 0x00000080);
@@ -992,7 +1002,7 @@ namespace AntdUI
             // DWM Window can be cloaked
             // see https://social.msdn.microsoft.com/Forums/vstudio/en-US/f8341376-6015-4796-8273-31e0be91da62/difference-between-actually-visible-and-not-visiblewhich-are-there-but-we-cant-see-windows-of?forum=vcgeneral
             int cloaked;
-            if (Win32.DwmApi.DwmGetWindowAttribute(handle, 14, out cloaked, 4) == 0)
+            if (OperatingSystem.IsWindows() && Win32.DwmApi.DwmGetWindowAttribute(handle, 14, out cloaked, 4) == 0)
             {
                 if (cloaked != 0) return false;
             }

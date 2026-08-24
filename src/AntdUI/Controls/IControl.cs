@@ -695,10 +695,10 @@ namespace AntdUI
                 switch (m.Msg)
                 {
                     case WM_POINTERDOWN:
-                        Win32.User32.PostMessage(m.HWnd, WM_LBUTTONDOWN, m.WParam, m.LParam);
+                        if (OperatingSystem.IsWindows()) Win32.User32.PostMessage(m.HWnd, WM_LBUTTONDOWN, m.WParam, m.LParam);
                         break;
                     case WM_POINTERUP:
-                        Win32.User32.PostMessage(m.HWnd, WM_LBUTTONUP, m.WParam, m.LParam);
+                        if (OperatingSystem.IsWindows()) Win32.User32.PostMessage(m.HWnd, WM_LBUTTONUP, m.WParam, m.LParam);
                         break;
                     default:
                         base.WndProc(ref m);

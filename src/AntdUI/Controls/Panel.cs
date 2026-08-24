@@ -803,11 +803,13 @@ namespace AntdUI
                     case Win32.User32.WindowMessage.WM_PAINT:
                     case Win32.User32.WindowMessage.WM_MOUSEWHEEL:
                     case Win32.User32.WindowMessage.WM_SIZE:
-                        Win32.User32.HideScrollBar(Handle);
+                        // Majorsilence.Forms has no native scrollbars to hide; AutoScroll is off, which
+                        // is what this was suppressing the visible result of.
+                        if (OperatingSystem.IsWindows()) Win32.User32.HideScrollBar(Handle);
                         LoadScroll();
                         break;
                     case Win32.User32.WindowMessage.WM_NCCALCSIZE:
-                        Win32.User32.HideScrollBar(Handle);
+                        if (OperatingSystem.IsWindows()) Win32.User32.HideScrollBar(Handle);
                         break;
                 }
                 base.WndProc(ref m);

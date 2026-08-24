@@ -305,6 +305,14 @@ namespace AntdUI
         public virtual void DraggableMouseDown()
         {
             if (IsFull) return;
+            // ReleaseCapture + WM_NCLBUTTONDOWN(HTCAPTION) is the Win32 idiom for "let the user drag
+            // the window from here". Majorsilence.Forms exposes the same thing directly, and off
+            // Windows the P/Invokes are absent -- so use it rather than throwing on a title-bar drag.
+            if (!OperatingSystem.IsWindows())
+            {
+                BeginMoveDrag();
+                return;
+            }
             Win32.User32.ReleaseCapture();
             Win32.User32.SendMessage(Handle, 0x0112, 61456 | 2, IntPtr.Zero);
         }
@@ -370,8 +378,14 @@ namespace AntdUI
             {
                 is_resizable = true;
                 SetCursorHit(mode);
-                Win32.User32.ReleaseCapture();
-                Win32.User32.SendMessage(Handle, Win32.User32.WindowMessage.WM_NCLBUTTONDOWN, mode, Win32.Macros.MAKELPARAM(pointScreen.X, pointScreen.Y));
+                if (OperatingSystem.IsWindows())
+                {
+                    Win32.User32.ReleaseCapture();
+                    Win32.User32.SendMessage(Handle, Win32.User32.WindowMessage.WM_NCLBUTTONDOWN, mode, Win32.Macros.MAKELPARAM(pointScreen.X, pointScreen.Y));
+                }
+                // As in DraggableMouseDown: the same gesture, expressed through the windowing layer
+                // rather than by faking a non-client mouse-down message.
+                else if (EdgeOf(mode) is { } edge) BeginResizeDrag(edge);
                 is_resizable = false;
                 return true;
             }
@@ -392,6 +406,7 @@ namespace AntdUI
             if (Window.CanHandMessage && EnableHitTest)
             {
                 float htSize = 8F * Dpi, htSize2 = htSize * 2;
+                if (!OperatingSystem.IsWindows()) return Win32.User32.HitTestValues.HTCLIENT;
                 Win32.User32.GetWindowRect(Handle, out var lpRect);
 
                 var rect = new Rectangle(Point.Empty, lpRect.Size);
@@ -439,10 +454,30 @@ namespace AntdUI
 
         internal void LoadCursors(int id)
         {
+            // The OCR_* ids below are Win32 system cursors; off Windows there is no handle to load, and
+            // SetCursorHit has already assigned the equivalent Cursors.* value.
+            if (!OperatingSystem.IsWindows()) return;
             var handle = Win32.User32.LoadCursor(IntPtr.Zero, id);
             if (handle == IntPtr.Zero) return;
             Win32.User32.SetCursor(handle);
         }
+
+        /// <summary>
+        /// Maps a Win32 hit-test value to the window edge being dragged, for the managed resize path.
+        /// Null where the hit is not a resizable edge.
+        /// </summary>
+        static Majorsilence.Forms.Backends.WindowEdge? EdgeOf(Win32.User32.HitTestValues mode) => mode switch
+        {
+            Win32.User32.HitTestValues.HTTOP => Majorsilence.Forms.Backends.WindowEdge.North,
+            Win32.User32.HitTestValues.HTBOTTOM => Majorsilence.Forms.Backends.WindowEdge.South,
+            Win32.User32.HitTestValues.HTLEFT => Majorsilence.Forms.Backends.WindowEdge.West,
+            Win32.User32.HitTestValues.HTRIGHT => Majorsilence.Forms.Backends.WindowEdge.East,
+            Win32.User32.HitTestValues.HTTOPLEFT => Majorsilence.Forms.Backends.WindowEdge.NorthWest,
+            Win32.User32.HitTestValues.HTTOPRIGHT => Majorsilence.Forms.Backends.WindowEdge.NorthEast,
+            Win32.User32.HitTestValues.HTBOTTOMLEFT => Majorsilence.Forms.Backends.WindowEdge.SouthWest,
+            Win32.User32.HitTestValues.HTBOTTOMRIGHT => Majorsilence.Forms.Backends.WindowEdge.SouthEast,
+            _ => null,
+        };
 
         #endregion
 

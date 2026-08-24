@@ -1162,11 +1162,12 @@ namespace AntdUI
                         else
                         {
                             if (form is BaseForm form_win) form_win.DraggableMouseDown();
-                            else
+                            else if (OperatingSystem.IsWindows())
                             {
                                 Win32.User32.ReleaseCapture();
                                 Win32.User32.SendMessage(form.Handle, 0x0112, 61456 | 2, IntPtr.Zero);
                             }
+                            else form.BeginMoveDrag();
                         }
                     }
                 }

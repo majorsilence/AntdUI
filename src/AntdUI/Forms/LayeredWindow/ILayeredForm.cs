@@ -31,7 +31,11 @@ namespace AntdUI
             ShowInTaskbar = false;
             Size = new Size(0, 0);
             actionCursor = val => SetCursor(val);
-            memDc = Win32.Render.CreateCompatibleDC(Win32.Render.screenDC);
+            // Every popup in the library derives from this type, and this one unguarded call meant
+            // that clicking anything which opens one -- a dropdown, colour picker, tooltip, menu,
+            // float button -- threw DllNotFoundException out of the constructor and killed the
+            // process. See PresentManaged for what stands in for the Win32 layer.
+            if (Win32.Render.Available) memDc = Win32.Render.CreateCompatibleDC(Win32.Render.screenDC);
         }
 
         protected override void OnHandleCreated(EventArgs e)
@@ -109,6 +113,11 @@ namespace AntdUI
             messageHandler = null;
             popover?.CloseLockedDel(this);
             popover = null;
+            managedSurface?.Dispose();
+            managedSurface = null;
+
+            if (!Win32.Render.Available) return;
+
             Win32.Render.Dispose(memDc, ref hBitmap, ref oldBits);
             if (memDc == IntPtr.Zero) return;
             Win32.Render.DeleteDC(memDc);
@@ -196,7 +205,7 @@ namespace AntdUI
         public Bitmap? Printmap()
         {
             RenderCache = false;
-            Win32.Render.Dispose(memDc, ref hBitmap, ref oldBits);
+            if (Win32.Render.Available) Win32.Render.Dispose(memDc, ref hBitmap, ref oldBits);
             return PrintBit();
         }
 
@@ -254,15 +263,15 @@ namespace AntdUI
                 try
                 {
                     if (IsDisposed || Disposing) return Win32.RenderResult.Skip;
-                    if (RenderCache) return Invoke(() => Win32.Render.SetBits(memDc, rect, handle, alpha));
+                    if (RenderCache) return Invoke(() => SetBits(null, rect, handle, alpha));
                     RenderCache = true;
-                    return Invoke(() => Win32.Render.SetBits(memDc, bmp, rect, handle, alpha, out hBitmap, out oldBits));
+                    return Invoke(() => SetBits(bmp, rect, handle, alpha));
                 }
                 catch { }
             }
-            if (RenderCache) return Win32.Render.SetBits(memDc, rect, handle, alpha);
+            if (RenderCache) return SetBits(null, rect, handle, alpha);
             RenderCache = true;
-            return Win32.Render.SetBits(memDc, bmp, rect, handle, alpha, out hBitmap, out oldBits);
+            return SetBits(bmp, rect, handle, alpha);
         }
         Win32.RenderResult Render(IntPtr handle, byte alpha, Rectangle rect)
         {
@@ -271,11 +280,83 @@ namespace AntdUI
                 try
                 {
                     if (IsDisposed || Disposing) return Win32.RenderResult.Skip;
-                    return Invoke(() => Win32.Render.SetBits(memDc, rect, handle, alpha));
+                    return Invoke(() => SetBits(null, rect, handle, alpha));
                 }
                 catch { }
             }
-            return Win32.Render.SetBits(memDc, rect, handle, alpha);
+            return SetBits(null, rect, handle, alpha);
+        }
+
+        /// <summary>
+        /// The single seam every composite goes through. A null <paramref name="bmp"/> means "re-present
+        /// what was last set", which is how the fade-in animation changes only the alpha.
+        /// </summary>
+        Win32.RenderResult SetBits(Bitmap? bmp, Rectangle rect, IntPtr handle, byte alpha)
+        {
+            if (!Win32.Render.Available) return PresentManaged(bmp, rect, alpha);
+            if (bmp is null) return Win32.Render.SetBits(memDc, rect, handle, alpha);
+            return Win32.Render.SetBits(memDc, bmp, rect, handle, alpha, out hBitmap, out oldBits);
+        }
+
+        Bitmap? managedSurface;
+        byte managedAlpha = 255;
+
+        /// <summary>
+        /// Stands in for UpdateLayeredWindow where the Win32 layer does not exist.
+        /// </summary>
+        /// <remarks>
+        /// UpdateLayeredWindow both POSITIONS and PAINTS these popups: nothing else ever sets their
+        /// bounds, which the constructor leaves at 0x0. So merely guarding the P/Invoke would trade a
+        /// crash for an invisible zero-sized window. Instead the bitmap the popup already renders for
+        /// itself is kept and drawn through the ordinary paint path, and the form is moved and sized to
+        /// the rectangle the layered window would have occupied.
+        /// </remarks>
+        Win32.RenderResult PresentManaged(Bitmap? bmp, Rectangle rect, byte alpha)
+        {
+            if (bmp is not null)
+            {
+                // The caller disposes bmp as soon as this returns and the paint path needs it later.
+                var previous = managedSurface;
+                try { managedSurface = (Bitmap)bmp.Clone(); }
+                catch { return Win32.RenderResult.Error; }
+                previous?.Dispose();
+            }
+
+            if (Location != rect.Location) Location = rect.Location;
+            if (Size != rect.Size) Size = rect.Size;
+
+            managedAlpha = alpha;
+            Invalidate();
+
+            return Win32.RenderResult.OK;
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            var surface = managedSurface;
+            if (surface is null || managedAlpha == 0) return;
+
+            var dest = new Rectangle(0, 0, surface.Width, surface.Height);
+
+            if (managedAlpha >= 255)
+            {
+                e.Graphics.DrawImage(surface, dest);
+                return;
+            }
+
+            // The layered window's constant alpha; an alpha-scaling colour matrix is the
+            // System.Drawing equivalent, and drives the popups' fade-in.
+            using (var attributes = new Majorsilence.Forms.Drawing.Imaging.ImageAttributes())
+            {
+                attributes.SetColorMatrix(new Majorsilence.Forms.Drawing.Imaging.ColorMatrix
+                {
+                    Matrix33 = managedAlpha / 255f
+                });
+                e.Graphics.DrawImage(surface, dest, 0, 0, surface.Width, surface.Height,
+                    Majorsilence.Forms.Drawing.GraphicsUnit.Pixel, attributes);
+            }
         }
 
         Action<bool> actionCursor;

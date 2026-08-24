@@ -251,6 +251,7 @@ namespace AntdUI
                 else margin = 0;
                 if (oldmargin == margin) return;
                 oldmargin = margin;
+                if (!OperatingSystem.IsWindows()) return;   // see Window.DwmArea
                 var v = 2;
                 Win32.DwmApi.DwmSetWindowAttribute(Handle, 2, ref v, 4);
                 Win32.DwmApi.DwmExtendFrameIntoClientArea(Handle, new Win32.DwmApi.MARGINS(margin));
@@ -366,7 +367,7 @@ namespace AntdUI
         protected override void OnHandleCreated(EventArgs e)
         {
             if (UseDwm && OS.Version.Major >= 6) DwmEnabled = Win32.IsCompositionEnabled;
-            Win32.User32.DisableProcessWindowsGhosting();
+            if (OperatingSystem.IsWindows()) Win32.User32.DisableProcessWindowsGhosting();   // see Window.OnCreated
             base.OnHandleCreated(e);
             HandMessage();
             DwmArea();
@@ -409,8 +410,13 @@ namespace AntdUI
                     }
                 });
             }
-            Win32.User32.ReleaseCapture();
-            Win32.User32.SendMessage(Handle, 0x0112, 61456 | 2, IntPtr.Zero);
+            // See BaseForm.DraggableMouseDown for why this is expressed two ways.
+            if (OperatingSystem.IsWindows())
+            {
+                Win32.User32.ReleaseCapture();
+                Win32.User32.SendMessage(Handle, 0x0112, 61456 | 2, IntPtr.Zero);
+            }
+            else BeginMoveDrag();
             end = false;
             if (handmax)
             {

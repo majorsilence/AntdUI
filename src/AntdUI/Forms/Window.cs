@@ -107,7 +107,10 @@ namespace AntdUI
         {
             if (OS.Version.Major >= 6) DwmEnabled = Win32.IsCompositionEnabled;
             else DwmEnabled = false;
-            Win32.User32.DisableProcessWindowsGhosting();
+            // Suppressing the "not responding" ghost window is a Windows shell behaviour with no
+            // counterpart elsewhere. Reached from BaseForm.OnHandleCreated, which under
+            // Majorsilence.Forms did not used to run at all -- so this threw as soon as that was fixed.
+            if (OperatingSystem.IsWindows()) Win32.User32.DisableProcessWindowsGhosting();
             if (WindowState == FormWindowState.Maximized) rmax = true;
             if (FormBorderStyle != FormBorderStyle.None && !rmax)
             {
@@ -158,6 +161,9 @@ namespace AntdUI
         bool eNonclient = true;
         private void InvalidateNonclient()
         {
+            // Majorsilence.Forms draws its own chrome rather than hosting a native non-client area, so
+            // there is nothing here to invalidate off Windows.
+            if (!OperatingSystem.IsWindows()) return;
             if (eNonclient) return;
             Win32.User32.UpdateWindow(Handle);
             Win32.User32.SetWindowPos(Handle, Win32.HWND.NULL, 0, 0, 0, 0, Win32.User32.SetWindowPosFlags.SWP_FRAMECHANGED | Win32.User32.SetWindowPosFlags.SWP_NOACTIVATE | Win32.User32.SetWindowPosFlags.SWP_NOCOPYBITS | Win32.User32.SetWindowPosFlags.SWP_NOMOVE | Win32.User32.SetWindowPosFlags.SWP_NOOWNERZORDER | Win32.User32.SetWindowPosFlags.SWP_NOREPOSITION | Win32.User32.SetWindowPosFlags.SWP_NOSIZE | Win32.User32.SetWindowPosFlags.SWP_NOZORDER);
@@ -213,7 +219,10 @@ namespace AntdUI
         bool iszoomed = false;
         bool ISZoomed()
         {
-            bool value = Win32.User32.IsZoomed(Handle);
+            // WindowState is the portable answer to the same question.
+            bool value = OperatingSystem.IsWindows()
+                ? Win32.User32.IsZoomed(Handle)
+                : WindowState == FormWindowState.Maximized;
             if (iszoomed == value) return value;
             iszoomed = value;
             DwmArea();
@@ -223,6 +232,9 @@ namespace AntdUI
         int oldmargin = -1;
         void DwmArea()
         {
+            // Extending the frame into the client area is a DWM composition feature; there is no
+            // equivalent to ask for elsewhere.
+            if (!OperatingSystem.IsWindows()) return;
             int margin;
             if (iszoomed || IsFull) margin = 0;
             else margin = 1;
@@ -552,7 +564,11 @@ namespace AntdUI
             var screenRect = ClientRectangle;
             screenRect.Offset(-Bounds.Left, -Bounds.Top);
             var rect = new Win32.RECT(screenRect);
-            Win32.User32.AdjustWindowRectEx(ref rect, (Win32.User32.WindowStyles)CreateParams.Style, false, (Win32.User32.WindowStylesEx)CreateParams.ExStyle);
+            // The border/caption metrics this derives come from the native frame. Majorsilence.Forms
+            // borderless windows have none, so the insets are zero -- which is what leaving `rect`
+            // equal to `screenRect` produces below.
+            if (OperatingSystem.IsWindows())
+                Win32.User32.AdjustWindowRectEx(ref rect, (Win32.User32.WindowStyles)CreateParams.Style, false, (Win32.User32.WindowStylesEx)CreateParams.ExStyle);
             return new Padding
             {
                 Top = screenRect.Top - rect.top,
