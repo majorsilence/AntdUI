@@ -14,6 +14,27 @@ namespace AntdUI
 {
     public class Window : BaseForm, IMessageFilter
     {
+        public Window()
+        {
+            // This class draws its own caption -- title, icon, and the minimise/maximise/close
+            // buttons -- and on Windows it hides the system one through the non-client area
+            // (CreateParams dropping WS_CAPTION, or WM_NCCALCSIZE when DWM composition is on).
+            //
+            // Majorsilence.Forms has no non-client area to reshape, so those mechanisms are invisible
+            // to it and it supplied a system caption of its own: the window wore two title bars.
+            // FormBorderStyle.None is how a form declares custom chrome in terms the windowing layer
+            // understands -- it suppresses both the OS decorations and the title bar that library
+            // would otherwise draw itself.
+            //
+            // Set through this class's own property rather than base, so the field the maximise and
+            // full-screen paths restore from (BaseForm.formBorderStyle) is None too; assigning base
+            // directly would let the caption reappear on the first restore.
+            //
+            // Dragging and edge-resizing still work: DraggableMouseDown and ResizableMouseDown ask the
+            // windowing layer for those gestures directly where the Win32 route is unavailable.
+            if (!OperatingSystem.IsWindows()) FormBorderStyle = FormBorderStyle.None;
+        }
+
         #region 属性
 
         bool resizable = true;
